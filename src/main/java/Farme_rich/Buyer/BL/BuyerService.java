@@ -2775,7 +2775,7 @@ public class BuyerService {
     public SignupOrLoginResponse login(LoginRequest loginRequest) throws Exception {
         SignupOrLoginResponse response = new SignupOrLoginResponse();
         log.info("Sellerid :" + loginRequest.sellerid);
-        Buyer buyer = buyerRepo.findByMobileNumAndBuyerSiteid(loginRequest.identifier, loginRequest.sellerid);
+        Buyer buyer = buyerRepo.findByEmail(loginRequest.identifier);
         if (buyer == null) {
             log.info("Buyer not found ");
             response.success = false;
@@ -2788,7 +2788,7 @@ public class BuyerService {
             return response;
         }
 
-        String secretKey = loginRequest.identifier + "intellesydetech";
+        String secretKey = buyer.getMobileNum() + "intellesydetech";
 
         String encryptedInputPassword = encrypt(loginRequest.password, secretKey);
 
@@ -3002,9 +3002,9 @@ public class BuyerService {
     }
 
     public boolean ResetPassword(@RequestBody GetOTPRequest getOTPRequest) throws Exception {
-        Buyer buyer = buyerRepo.findByMobileNumAndBuyerSiteid(getOTPRequest.mobileNum, getOTPRequest.sellerid);
+        Buyer buyer = buyerRepo.findByEmail(getOTPRequest.email);
         if (buyer != null) {
-            String secretKey = getOTPRequest.mobileNum + "intellesydetech";
+            String secretKey = buyer.getMobileNum() + "intellesydetech";
             String encryptedInputPin = encrypt(getOTPRequest.password, secretKey);
             buyer.setPassword(encryptedInputPin);
             buyerRepo.save(buyer);
