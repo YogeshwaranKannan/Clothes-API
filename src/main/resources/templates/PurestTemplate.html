@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Tax Invoice</title>
+
+    <style>
+        /* ============================================================
+           RESET
+           ============================================================ */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eceff2;
+            color: #000;
+            font-size: 13px;
+            line-height: 1.35;
+            padding: 20px 10px 40px;
+            overflow-x: hidden;
+        }
+
+
+        /* ============================================================
+           INVOICE VIEWPORT
+           ============================================================ */
+
+        .invoice-viewport {
+            position: relative;
+            width: 900px;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: visible;
+        }
+
+        .sheet {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 900px;
+            max-width: none;
+
+            background: #fff;
+
+            transform-origin: top left;
+        }
+
+
+        /* ============================================================
+           TITLE
+           ============================================================ */
+
+        .title-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 14px;
+        }
+
+        .title-table td {
+            height: 52px;
+
+            border: 1px solid #000;
+
+            text-align: center;
+            vertical-align: middle;
+
+            font-size: 22px;
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+
+            padding: 10px;
+        }
+
+
+        /* ============================================================
+           COMPANY / CUSTOMER INFORMATION
+           ============================================================ */
+
+        .info-table {
+            width: 100%;
+
+            border-collapse: collapse;
+            table-layout: fixed;
+
+            border: 1px solid #000;
+        }
+
+        .info-table td,
+        .info-table th {
+            border: 1px solid #000;
+        }
+
+
+        /* ============================================================
+           COMPANY
+           ============================================================ */
+
+        .company-cell {
+            height: 104px;
+            padding: 10px;
+        }
+
+        .company-flex {
+            display: flex;
+            align-items: flex-start;
+
+            gap: 16px;
+
+            width: 100%;
+            min-height: 82px;
+        }
+
+        .logo-cell {
+            width: 130px;
+            min-width: 130px;
+            flex: 0 0 130px;
+
+            text-align: left;
+        }
+
+        .logo-cell img {
+            display: block;
+
+            width: 120px;
+            height: 82px;
+
+            object-fit: contain;
+        }
+
+        .company-info-cell {
+            flex: 1;
+            min-width: 0;
+
+            text-align: left;
+
+            padding-top: 2px;
+        }
+
+        .company-name {
+            font-size: 23px;
+            font-weight: 700;
+
+            margin-bottom: 6px;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .company-line {
+            font-size: 13px;
+
+            margin-top: 3px;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            white-space: normal;
+        }
+
+        .company-line b {
+            font-weight: 700;
+        }
+
+        .email-cell {
+            width: 250px;
+            min-width: 250px;
+            flex: 0 0 250px;
+
+            align-self: center;
+
+            text-align: right;
+
+            font-size: 13px;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            white-space: normal;
+        }
+
+        .email-cell b {
+            font-weight: 700;
+        }
+
+
+        /* ============================================================
+           BILL TO / INVOICE DETAILS
+           ============================================================ */
+
+        .info-table th {
+            height: 30px;
+
+            text-align: left;
+            vertical-align: middle;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            padding: 6px 10px;
+
+            background: #e6e6e6;
+        }
+
+        .info-table td {
+            height: 68px;
+
+            vertical-align: top;
+
+            padding: 8px 10px;
+
+            font-size: 12px;
+        }
+
+        .field {
+            margin-top: 3px;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            white-space: normal;
+        }
+
+        .field:first-child {
+            margin-top: 0;
+        }
+
+        .field b {
+            font-weight: 700;
+        }
+
+
+        /* ============================================================
+           ITEMS TABLE
+           ============================================================ */
+
+        .items-table {
+            width: 100%;
+
+            border-collapse: collapse;
+            table-layout: fixed;
+
+            border: 1px solid #000;
+
+            margin-top: 16px;
+        }
+
+        .items-table th {
+            height: 30px;
+
+            background: #e6e6e6;
+
+            font-weight: 700;
+            font-size: 12px;
+
+            text-align: left;
+            vertical-align: middle;
+
+            padding: 6px 8px;
+
+            border: 1px solid #000;
+
+            white-space: nowrap;
+        }
+
+        .items-table td {
+            min-height: 38px;
+            height: 38px;
+
+            padding: 6px 8px;
+
+            border: 1px solid #000;
+
+            font-size: 12px;
+
+            vertical-align: top;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .items-table td.num,
+        .items-table th.num {
+            text-align: right;
+        }
+
+        .items-table td.center,
+        .items-table th.center {
+            text-align: center;
+        }
+
+        .item-name-text {
+            font-weight: 700;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .item-variant {
+            color: #555;
+
+            font-size: 11px;
+            font-weight: 400;
+
+            margin-top: 1px;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .total-row td {
+            height: 32px;
+
+            font-weight: 700;
+            vertical-align: middle;
+        }
+
+
+        /* ============================================================
+           SUMMARY
+           ============================================================ */
+
+        .summary-row td {
+            height: 32px;
+
+            padding: 6px 8px;
+
+            vertical-align: middle;
+        }
+
+        /*
+         * The summary section uses:
+         *
+         * Columns 1-4 = blank area
+         * Column 5     = label
+         * Columns 6-7  = amount
+         *
+         * This removes the old middle ":" column completely.
+         */
+
+        .blank-summary-cell {
+            border-right: 1px solid #000;
+            vertical-align: top !important;
+        }
+
+        .summary-row .label {
+            width: 130px;
+            white-space: nowrap;
+            text-align: left;
+        }
+
+        .summary-amount {
+            text-align: right !important;
+        }
+
+        .summary-total td {
+            font-weight: 700;
+        }
+
+        .summary-words-label td {
+            height: 30px;
+
+            background: #e6e6e6;
+
+            font-weight: 700;
+
+            vertical-align: middle;
+        }
+
+        .summary-words-value td {
+            min-height: 38px;
+            height: auto;
+
+            padding: 8px;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            white-space: normal;
+
+            vertical-align: top;
+        }
+
+        .summary-tight td {
+            border-bottom: none;
+        }
+
+        .summary-notop td {
+            border-top: none;
+        }
+
+
+        /* ============================================================
+           CLOSING / TERMS / SIGNATURE
+           ============================================================ */
+
+        .closing-table {
+            width: 100%;
+
+            border-collapse: collapse;
+            table-layout: fixed;
+
+            border: 1px solid #000;
+
+            margin-top: 16px;
+        }
+
+        .terms-col {
+            width: 55%;
+        }
+
+        .amount-col {
+            width: 45%;
+        }
+
+        .terms-title-cell {
+            height: 30px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            background: #e6e6e6;
+
+            padding: 6px 14px;
+
+            border-bottom: 1px solid #000;
+        }
+
+        .terms-body-cell {
+            min-height: 56px;
+            height: auto;
+
+            padding: 10px 14px;
+
+            border-bottom: 1px solid #000;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .terms-body-cell p {
+            font-size: 12px;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            white-space: normal;
+        }
+
+        .blank-cell {
+            width: 55%;
+            border-right: 1px solid #000;
+        }
+
+        .sign-td {
+            width: 45%;
+
+            height: 128px;
+
+            padding: 10px 14px 14px;
+
+            vertical-align: bottom;
+        }
+
+        .sign-block {
+            width: 260px;
+            max-width: 100%;
+
+            margin-left: auto;
+
+            text-align: center;
+        }
+
+        .sign-for {
+            font-size: 12px;
+            font-weight: 700;
+
+            text-align: left;
+
+            margin-bottom: 18px;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .sign-img-wrap {
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 4px;
+        }
+
+        .sign-img-wrap img {
+            display: block;
+
+            max-height: 55px;
+            max-width: 100%;
+
+            object-fit: contain;
+        }
+
+        .sign-label {
+            font-size: 12px;
+
+            padding-top: 6px;
+
+            border-top: 1px solid #000;
+        }
+
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+
+        .footer-strip {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-top: 8px;
+
+            padding: 0 2px;
+
+            font-size: 11px;
+
+            color: #666;
+
+            gap: 10px;
+        }
+
+        .footer-strip span {
+            min-width: 0;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+
+        /* ============================================================
+           PAGE BREAK SAFETY
+           ============================================================ */
+
+        .title-table,
+        .info-table,
+        .items-table,
+        .closing-table {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .items-table tr,
+        .closing-table tr {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        tfoot {
+            display: table-footer-group;
+        }
+
+
+        /* ============================================================
+           PRINT
+           ============================================================ */
+
+        @page {
+            size: 9.98in auto;
+            margin: 0.3in;
+        }
+
+        @media print {
+
+            html,
+            body {
+                width: auto;
+                min-height: auto;
+            }
+
+            body {
+                background: #fff;
+
+                padding: 0;
+
+                overflow: visible;
+            }
+
+            .invoice-viewport {
+                position: static;
+
+                width: 900px !important;
+                max-width: none !important;
+
+                height: auto !important;
+
+                margin: 0 !important;
+
+                overflow: visible !important;
+            }
+
+            .sheet {
+                position: static !important;
+
+                width: 900px !important;
+                max-width: none !important;
+
+                margin: 0 !important;
+
+                transform: none !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+
+
+        /* ============================================================
+           MOBILE
+           ============================================================ */
+
+        @media (max-width: 480px) {
+
+            body {
+                padding: 6px;
+            }
+
+            .invoice-viewport {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="invoice-viewport">
+
+    <div class="sheet">
+
+        <!-- ============================================================
+             TITLE
+             ============================================================ -->
+
+        <table class="title-table">
+            <tr>
+                <td>{{invoiceTitle}}</td>
+            </tr>
+        </table>
+
+
+        <!-- ============================================================
+             COMPANY / BILL TO / INVOICE DETAILS
+             ============================================================ -->
+
+        <table class="info-table">
+
+            <colgroup>
+                <col style="width:50%"/>
+                <col style="width:50%"/>
+            </colgroup>
+
+
+            <!-- COMPANY -->
+
+            <tr>
+                <td class="company-cell" colspan="2">
+
+                    <div class="company-flex">
+
+                        <div class="logo-cell">
+
+                            <img
+                                    alt="{{companyName}} logo"
+                                    src="{{companyLogo}}"
+                            />
+
+                        </div>
+
+
+                        <div class="company-info-cell">
+
+                            <div class="company-name">
+                                {{companyName}}
+                            </div>
+
+                            <div class="company-line">
+                                {{companyAddress}}
+                            </div>
+
+                            <div class="company-line">
+                                Phone:
+                                <b>{{companyPhone}}</b>
+                            </div>
+
+                            <div class="company-line">
+                                State:
+                                <b>{{companyState}}</b>
+                            </div>
+
+                        </div>
+
+
+                        <div class="email-cell">
+
+                            Email:
+                            <b>{{companyEmail}}</b>
+
+                        </div>
+
+                    </div>
+
+                </td>
+            </tr>
+
+
+            <!-- HEADERS -->
+
+            <tr>
+
+                <th>
+                    Bill To:
+                </th>
+
+                <th>
+                    Invoice Details:
+                </th>
+
+            </tr>
+
+
+            <!-- CUSTOMER / INVOICE -->
+
+            <tr>
+
+                <td>
+
+                    <div class="field">
+                        <b>{{customerName}}</b>
+                    </div>
+
+                    <div class="field">
+                        {{customerAddressLine}}
+                    </div>
+
+                    <div class="field">
+                        Contact No:
+                        {{customerMobile}}
+                    </div>
+
+                </td>
+
+
+                <td>
+
+                    <div class="field">
+                        No:
+                        <b>{{refno}}</b>
+                    </div>
+
+                    <div class="field">
+                        Date:
+                        <b>{{orderDate}}</b>
+                    </div>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+
+        <!-- ============================================================
+             ITEMS
+             ============================================================ -->
+
+        <table class="items-table">
+
+            <colgroup>
+
+                <col style="width:5%"/>
+                <col style="width:27%"/>
+                <col style="width:12%"/>
+                <col style="width:12%"/>
+                <col style="width:10%"/>
+                <col style="width:16%"/>
+                <col style="width:18%"/>
+
+            </colgroup>
+
+
+            <thead>
+
+            <tr>
+
+                <th class="center">
+                    #
+                </th>
+
+                <th>
+                    Item Name
+                </th>
+
+                <th class="center">
+                    HSN/ SAC
+                </th>
+
+                <th class="num">
+                    Quantity
+                </th>
+
+                <th class="center">
+                    Unit
+                </th>
+
+                <th class="num">
+                    Price/ Unit (Rs.)
+                </th>
+
+                <th class="num">
+                    Amount(Rs.)
+                </th>
+
+            </tr>
+
+            </thead>
+
+
+            <tbody>
+
+            {{itemRows}}
+
+
+            <!-- ========================================================
+                 TOTAL ITEM VALUE
+                 ======================================================== -->
+
+            <tr class="total-row">
+
+                <td colspan="3">
+                    Total
+                </td>
+
+                <td class="num">
+                    {{totalQuantity}}
+                </td>
+
+                <td></td>
+
+                <td></td>
+
+                <td class="num">
+                    Rs. {{totalItemValue}}
+                </td>
+
+            </tr>
+
+
+            <!-- ========================================================
+                 SUB TOTAL
+                 ======================================================== -->
+
+            <tr class="summary-row">
+
+                <!-- Blank left section -->
+                <td
+                        class="blank-summary-cell"
+                        colspan="4"
+                        rowspan="{{summaryRowCount}}">
+                </td>
+
+                <!-- Label -->
+                <td class="label">
+                    Sub Total
+                </td>
+
+                <!-- Amount - merged across remaining 2 columns -->
+                <td
+                        class="num summary-amount"
+                        colspan="2">
+                    Rs. {{subTotal}}
+                </td>
+
+            </tr>
+
+
+            <!-- ========================================================
+                 DISCOUNT
+                 ======================================================== -->
+
+            {{discountRowHtml}}
+
+
+            <!-- ========================================================
+                 TOTAL
+                 ======================================================== -->
+
+            <tr class="summary-row summary-total">
+
+                <td class="label">
+                    Total
+                </td>
+
+                <td
+                        class="num summary-amount"
+                        colspan="2">
+                    Rs. {{totalAmount}}
+                </td>
+
+            </tr>
+
+
+            <!-- ========================================================
+                 AMOUNT IN WORDS LABEL
+                 ======================================================== -->
+
+            <tr class="summary-row summary-words-label">
+
+                <td colspan="3">
+                    Invoice Amount In Words :
+                </td>
+
+            </tr>
+
+
+            <!-- ========================================================
+                 AMOUNT IN WORDS
+                 ======================================================== -->
+
+            <tr class="summary-row summary-words-value">
+
+                <td colspan="3">
+                    {{amountInWords}}
+                </td>
+
+            </tr>
+
+
+            <!-- ========================================================
+                 ADVANCE
+                 ======================================================== -->
+
+            {{advanceRowHtml}}
+
+            <!-- ========================================================
+                 RECEIVED
+                 ======================================================== -->
+
+            <tr class="summary-row summary-tight">
+
+                <td class="label">
+                    Received
+                </td>
+
+                <td
+                        class="num summary-amount"
+                        colspan="2">
+                    Rs. {{totalPaid}}
+                </td>
+
+            </tr>
+
+
+            <!-- ========================================================
+                 BALANCE
+                 ======================================================== -->
+
+            <tr class="summary-row summary-notop">
+
+                <td class="label">
+                    Balance
+                </td>
+
+                <td
+                        class="num summary-amount"
+                        colspan="2">
+                    Rs. {{totalAmountDue}}
+                </td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+
+        <!-- ============================================================
+             TERMS + SIGNATURE
+             ============================================================ -->
+
+        <table class="closing-table">
+
+            <colgroup>
+
+                <col class="terms-col"/>
+                <col class="amount-col"/>
+
+            </colgroup>
+
+
+            <!-- TERMS TITLE -->
+
+            <tr>
+
+                <td
+                        class="terms-title-cell"
+                        colspan="2">
+
+                    Terms And Conditions:
+
+                </td>
+
+            </tr>
+
+
+            <!-- TERMS -->
+
+            <tr>
+
+                <td
+                        class="terms-body-cell"
+                        colspan="2">
+
+                    <p>
+                        {{termsAndConditions}}
+                    </p>
+
+                </td>
+
+            </tr>
+
+
+            <!-- SIGNATURE -->
+
+            <tr>
+
+                <td class="blank-cell"></td>
+
+                <td class="sign-td">
+
+                    <div class="sign-block">
+
+                        <div class="sign-for">
+                            For {{companyName}}:
+                        </div>
+
+                        <div class="sign-img-wrap">
+
+                            <img
+                                    alt="Signature"
+                                    src="{{signatureImage}}"
+                            />
+
+                        </div>
+
+                        <div class="sign-label">
+                            Authorized Signatory
+                        </div>
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+
+        <!-- ============================================================
+             FOOTER
+             ============================================================ -->
+
+        <div class="footer-strip">
+
+            <span>
+                Payment: {{paymentStatus}}
+            </span>
+
+            <span>
+                {{deliveryStatus}}
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    /* ============================================================
+       FIXED INVOICE WIDTH
+       ============================================================ */
+
+    const PAGE_WIDTH = 900;
+
+
+    /* ============================================================
+       FIT INVOICE TO SCREEN
+       ============================================================ */
+
+    function fitInvoice() {
+
+        const page = document.querySelector('.sheet');
+        const viewport = document.querySelector('.invoice-viewport');
+
+        if (!page || !viewport) {
+            return;
+        }
+
+        /*
+         * Do not run screen scaling while printing.
+         */
+        if (
+            window.matchMedia &&
+            window.matchMedia('print').matches
+        ) {
+            return;
+        }
+
+        /*
+         * Reset transform before measuring
+         * natural dimensions.
+         */
+        page.style.transform = 'scale(1)';
+
+        /*
+         * Force browser layout calculation.
+         */
+        const naturalHeight = page.offsetHeight;
+
+        /*
+         * Available screen width.
+         */
+        const availableWidth = Math.max(
+            1,
+            window.innerWidth - 20
+        );
+
+        /*
+         * Never enlarge the invoice.
+         */
+        const scale = Math.min(
+            1,
+            availableWidth / PAGE_WIDTH
+        );
+
+        /*
+         * Apply scaling.
+         */
+        page.style.transform = `scale(${scale})`;
+
+        /*
+         * Reserve scaled size.
+         */
+        viewport.style.width =
+            `${PAGE_WIDTH * scale}px`;
+
+        viewport.style.height =
+            `${naturalHeight * scale}px`;
+    }
+
+
+    /* ============================================================
+       INITIAL LOAD
+       ============================================================ */
+
+    window.addEventListener(
+        'DOMContentLoaded',
+        () => {
+            requestAnimationFrame(fitInvoice);
+        }
+    );
+
+
+    /* ============================================================
+       WINDOW LOAD
+       ============================================================ */
+
+    window.addEventListener(
+        'load',
+        () => {
+            requestAnimationFrame(fitInvoice);
+        }
+    );
+
+
+    /* ============================================================
+       RESIZE
+       ============================================================ */
+
+    window.addEventListener(
+        'resize',
+        () => {
+            requestAnimationFrame(fitInvoice);
+        }
+    );
+
+
+    /* ============================================================
+       ORIENTATION CHANGE
+       ============================================================ */
+
+    window.addEventListener(
+        'orientationchange',
+        () => {
+            setTimeout(
+                fitInvoice,
+                100
+            );
+        }
+    );
+
+</script>
+
+</body>
+</html>

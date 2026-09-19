@@ -1,0 +1,283 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #FFFFFF;
+          color: #000000;
+          padding: 20px;
+        }
+        .header {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          height: 10%;
+        }
+        .title {
+          font-size: 38px;
+          text-align: center;
+          flex: 1;
+        }
+        .logo {
+          width: 50px;
+          height: 50px;
+        }
+        hr {
+          border: 1px solid white;
+          margin: 10px 0;
+        }
+        .row {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 5px;
+        }
+        .section-title {
+          font-weight: bold;
+          text-align: center;
+          margin: 10px 0;
+          font-size: 20px;
+        }
+        .product-header{
+          display: flex;
+          flex-direction: row;
+          margin-top: 20px;
+          padding: 8px 0;
+          border-bottom: 1px solid black;
+          align-items:center;
+        }
+        .product-row {
+          display: flex;
+          flex-direction: row;
+          margin-top: 20px;
+          padding: 8px 0;
+<!--          border-bottom: 1px solid black;-->
+          align-items:center;
+        }
+        .product-row.attributes-row {
+            padding-left: 48px; /* aligns under product name (after image) */
+
+            border: 1px solid #000;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-top: 6px;
+            box-sizing: border-box;
+        }
+
+        .product-row.attributes-row table {
+            margin-top: 4px;
+        }
+        .product-col {
+          flex: 1;
+          text-align: center;
+
+          font-size: 18px;
+          word-wrap: break-word;
+        }
+       .product-col.batch {
+            flex: 1;
+            text-align: center;
+            font-size: 18px;
+
+            word-wrap: break-word;  /* older support */
+            overflow-wrap: anywhere; /* modern browsers */
+            word-break: break-all;   /* forces break for long IDs */
+            white-space: normal;     /* allow wrapping */
+        }
+
+        .measure-table {
+          border: 1px solid #b33;
+          width: 100%;
+        }
+
+        .measure-table > div {
+          border-right: 2px solid #b33;
+          padding: 8px 0;
+          text-align: center;
+          font-weight: bold;
+          font-size: 13px;
+        }
+
+        .measure-table > div:last-child {
+          border-right: none;
+        }
+
+        .measure-table.values > div {
+          font-weight: normal;
+        }
+
+
+        .text-row {
+            display: flex;
+            flex-direction: column;   /* Makes it row */
+            align-items: flex-start;
+            gap: 12px;             /* spacing between columns */
+        }
+
+        .text-row > div {
+            flex: 1;               /* Equal width columns */
+        }
+
+        .text-row .zip {
+            flex: 0.5;             /* Smaller width for zip column (optional) */
+        }
+
+        .spacer {
+            height: 8px;
+        }
+
+
+
+
+.product-col.name {
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items:center;
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.product-attributes {
+    font-size: 11px;
+}
+
+
+.name-wrapper {
+    display: flex;
+    flex: 1;
+    gap: 6px;
+}
+
+<!--.product-name {-->
+<!--    flex: 1;-->
+<!--    font-size: 12px;-->
+<!--    font-weight: bold;-->
+<!--    line-height: 1.2;-->
+<!--}-->
+
+<!--.product-attributes {-->
+<!--    flex: 2;-->
+<!--    font-size: 11px;-->
+<!--    line-height: 1.2;-->
+<!--}-->
+
+
+
+
+
+        .totals {
+          margin-top: 10px;
+        }
+        .totals .row {
+          margin-top: 5px;
+        }
+        .gst-summary {
+          display: flex;
+          justify-content: space-around;
+          margin-top: 10px;
+          font-size: 14px;
+        }
+        .footer {
+          margin-top: 15px;
+          font-size: 14px;
+        }
+        .img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border: 1px solid black;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="title">{{company_name}}</div>
+    <img src="data:image/png;base64,{{logo_base64}}" class="logo" />
+</div>
+
+
+<div class="row">
+    <div>#{{refno}}</div>
+    <div><p>Order date : {{date}}</p></div>
+</div>
+<hr />
+
+<div class="row">
+    <div>Customer: {{buyerid}}</div>
+</div>
+<hr />
+
+<div class="section-title">Products</div>
+<div>
+    <div class="product-header" style="font-weight: bold;">
+        <div class="product-col name">Product</div>
+        <div class="product-col">Quantity</div>
+        <div class="product-col">Rate</div>
+        <div class="product-col batch">Batch</div>
+        <div class="product-col">Amount</div>
+    </div>
+
+    {{product_rows}}
+
+</div>
+
+<hr />
+
+<div class="totals">
+    <div class="row">
+        <div>Total # of Items</div>
+        <div>{{cartlength}}</div>
+    </div>
+    <div class="row">
+        <div>Order value</div>
+        <div>Rs.{{order_total}}</div>
+    </div>
+</div>
+
+<div class="gst-summary">
+    <div>
+        <div><strong>CGST</strong></div>
+        <div>Rs.{{cgst}}</div>
+    </div>
+    <div>
+        <div><strong>SGST</strong></div>
+        <div>Rs.{{sgst}}</div>
+    </div>
+    <div>
+        <div><strong>Cess</strong></div>
+        <div>-</div>
+    </div>
+    <div>
+        <div><strong>Total GST</strong></div>
+        <div>Rs.{{gst_total}}</div>
+    </div>
+</div>
+<hr />
+
+<div class="footer">
+    <p>Customer Name: {{CustomerName}}</p>
+    <p>Customer Mobile: {{CustomerMobileNum}}</p>
+    <p>Delivery Mode: {{delivery_mode}}</p>
+    <p>Customer Delivery Address: {{CustomerDeliveryAddress}}</p>
+    <p>Customer Pickup Address: {{CustomerPickupAddress}}</p>
+    <p>Delivery Date: {{DeliveryDate}}</p>
+    <p>Estimated Delivery Date: {{EstimatedDeliveryDate}}</p>
+    <p>Payment Mode: {{payment}}</p>
+    <p>Payment Ref: {{refno}}</p>
+    <p>Total Amount: {{Total_Amount}}</p>
+    <p>Total Advance: {{Total_Advance}}</p>
+    <p>Total Discount: {{Total_Discount}}</p>
+    <p>Total Discount: {{Total_AmountDue}}</p>
+    <p>Total Discount: {{Total_Paid}}</p>
+</div>
+</body>
+</html>

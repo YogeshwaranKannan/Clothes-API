@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Thermal Invoice</title>
+    <style>
+        @page {
+            size: 80mm auto;
+            margin: 5mm;
+        }
+        body {
+            width: 80mm;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            margin: 0;
+            padding: 5px;
+            color: black;
+        }
+        h2 {
+            font-size: 14px;
+            margin: 0 0 5px 0;
+            text-align: center;
+        }
+        p {
+            margin: 2px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+            font-size: 10px;
+        }
+        th, td {
+            padding: 3px 2px;
+            vertical-align: top;
+        }
+        th {
+            border-bottom: 1px solid black;
+            font-weight: bold;
+        }
+        tr {
+            border-bottom: 1px dashed #000;
+        }
+        /* Column width control */
+        th:nth-child(1), td:nth-child(1) { width: 8%; text-align: center; }
+        th:nth-child(2), td:nth-child(2) { width: 44%; word-wrap: break-word; }
+        th:nth-child(3), td:nth-child(3) { width: 8%; text-align: center; }
+        th:nth-child(4), td:nth-child(4) { width: 20%; text-align: right; }
+        th:nth-child(5), td:nth-child(5) { width: 20%; text-align: right; }
+        /* Small property line under product name */
+        .attr {
+            display: block;
+            font-size: 9px;
+            color: #555;
+        }
+        .totals p {
+            font-weight: bold;
+            margin: 2px 0;
+        }
+    </style>
+</head>
+<body>
+<h2>Invoice Ref: {{refno}}</h2>
+<p>Customer: {{buyerid}}</p>
+<p>Date: {{date}}</p>
+
+<table>
+    <thead>
+    <tr>
+        <th>No.</th>
+        <th>Product</th>
+        <th>Qty</th>
+        <th>Rate</th>
+        <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{product_rows}}
+    </tbody>
+</table>
+
+<div class="totals">
+    <p>Order Value: Rs.{{order_total}}</p>
+    <p>Discount: Rs.{{discount}}</p>
+    <p>Paid: Rs.{{Total_Paid}}</p>
+    <p>CGST: Rs.{{cgst}}</p>
+    <p>SGST: Rs.{{sgst}}</p>
+    <p>Total GST: Rs.{{gst_total}}</p>
+    <p>Payment Mode: {{payment}}</p>
+    <p>Delivery Mode: {{delivery_mode}}</p>
+</div>
+</body>
+</html>

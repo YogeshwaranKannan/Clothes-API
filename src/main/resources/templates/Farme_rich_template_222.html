@@ -1,0 +1,280 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #FFFFFF;
+          color: #000000;
+          padding: 20px;
+        }
+
+        /* HEADER */
+        .header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .title {
+          font-size: 38px;
+          text-align: center;
+          flex: 1;
+        }
+
+        .logo {
+          width: 50px;
+          height: 50px;
+        }
+
+        hr {
+          border: 1px solid #ddd;   /* fixed */
+          margin: 10px 0;
+        }
+
+        /* COMMON ROW */
+        .row {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 5px;
+        }
+
+        /* SECTION TITLE */
+        .section-title {
+          font-weight: bold;
+          text-align: center;
+          margin: 10px 0;
+          font-size: 15px;
+        }
+
+        /* PRODUCT TABLE */
+        .product-row {
+          display: flex;
+          padding: 8px 0;
+          border-bottom: 1px solid #eee;
+        }
+
+        .product-col {
+          flex: 1;
+          text-align: center;
+          font-size: 12px;
+          word-wrap: break-word;
+        }
+
+        .product-col.name {
+          flex: 3;
+          text-align: left;
+          padding-left: 5px;
+          display: flex;
+          align-items: center;
+        }
+        .product-name-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.product-attribute {
+  font-size: 13px;
+  color: #777;
+}
+
+        .product-col.batch {
+          overflow-wrap: anywhere;
+          word-break: break-all;
+          white-space: normal;
+        }
+
+        .product-name {
+          font-size: 12px;
+          line-height: 1.2;
+        }
+
+        /* TOTALS */
+        .totals {
+          margin-top: 10px;
+        }
+
+        .totals .row {
+          margin-top: 5px;
+        }
+
+        /* GST */
+        .gst-summary {
+          display: flex;
+          justify-content: space-around;
+          margin-top: 10px;
+          font-size: 14px;
+        }
+
+        /* FOOTER */
+        .footer {
+          margin-top: 15px;
+          font-size: 14px;
+        }
+
+        .img {
+          width: 40px;
+          height: 40px;
+          object-fit: contain;
+          margin-right: 8px;
+        }
+
+        /* ================= MOBILE VIEW ================= */
+        @media (max-width: 768px) {
+
+          body {
+            padding: 10px;
+          }
+
+          .header {
+            flex-direction: column;
+            text-align: center;
+          }
+
+          .title {
+            font-size: 24px;
+            margin-bottom: 10px;
+          }
+
+          .row {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+          }
+
+          .section-title {
+            font-size: 14px;
+          }
+
+          /* Stack product columns vertically */
+          .product-row {
+            flex-direction: column;
+            align-items: flex-start;
+            border-bottom: 1px solid #ddd;
+          }
+
+          .product-col {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 4px;
+          }
+
+          .product-col.name {
+            padding-left: 0;
+          }
+
+          /* Hide header row in mobile */
+          .product-row:first-child {
+            display: none;
+          }
+
+          .gst-summary {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+          }
+
+          .footer p {
+            font-size: 13px;
+            margin: 4px 0;
+          }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="title">{{company_name}}</div>
+    <img src="data:image/png;base64,{{logo_base64}}" class="logo" />
+</div>
+
+<div class="row">
+    <div>#{{refno}}</div>
+    <div>Order date : {{date}}</div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div>Customer: {{buyerid}}</div>
+</div>
+
+<hr />
+
+<div class="section-title">Products</div>
+
+<div>
+    <!-- Header Row -->
+    <div class="product-row" style="font-weight: bold;">
+        <div class="product-col name">Product</div>
+        <div class="product-col">Quantity</div>
+        <div class="product-col">Rate</div>
+        <div class="product-col batch">Batch</div>
+        <div class="product-col">Amount</div>
+    </div>
+
+    {{product_rows}}
+</div>
+
+<hr />
+
+<div class="totals">
+    <div class="row">
+        <div>Total # of Items</div>
+        <div>{{cartlength}}</div>
+    </div>
+    <div class="row">
+        <div>Order value</div>
+        <div>Rs.{{order_total}}</div>
+    </div>
+</div>
+
+<div class="gst-summary">
+    <div>
+        <strong>CGST</strong>
+        <div>Rs.{{cgst}}</div>
+    </div>
+    <div>
+        <strong>SGST</strong>
+        <div>Rs.{{sgst}}</div>
+    </div>
+    <div>
+        <strong>Cess</strong>
+        <div>-</div>
+    </div>
+    <div>
+        <strong>Total GST</strong>
+        <div>Rs.{{gst_total}}</div>
+    </div>
+</div>
+
+<hr />
+
+<div class="footer">
+    <p>Customer Name: {{CustomerName}}</p>
+    <p>Customer Mobile: {{CustomerMobileNum}}</p>
+    <p>Delivery Mode: {{delivery_mode}}</p>
+    <p>Customer Delivery Address: {{CustomerDeliveryAddress}}</p>
+    <p>Customer Pickup Address: {{CustomerPickupAddress}}</p>
+    <p>Delivery Date: {{DeliveryDate}}</p>
+    <p>Estimated Delivery Date: {{EstimatedDeliveryDate}}</p>
+    <p>Payment Mode: {{payment}}</p>
+    <p>Payment Ref: {{refno}}</p>
+    <p>Total Amount: {{Total_Amount}}</p>
+    <p>Total Advance: {{Total_Advance}}</p>
+    <p>Total Discount: {{Total_Discount}}</p>
+    <p>Total Amount Due: {{Total_AmountDue}}</p>
+    <p>Total Paid: {{Total_Paid}}</p>
+</div>
+
+</body>
+</html>

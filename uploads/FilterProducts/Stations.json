@@ -1,0 +1,257 @@
+[
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000001"
+    },
+    "station_Name": "Trichy EV Charging Hub",
+    "station_Address": "Trichy Junction, Tamil Nadu",
+    "locationPoints": {
+      "latitude": 10.790483,
+      "longitude": 78.704673
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000002"
+    },
+    "station_Name": "Srirangam EV Point",
+    "station_Address": "Srirangam, Trichy",
+    "locationPoints": {
+      "latitude": 10.8628,
+      "longitude": 78.6932
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000003"
+    },
+    "station_Name": "Viralimalai Fast Charger",
+    "station_Address": "Viralimalai Highway",
+    "locationPoints": {
+      "latitude": 10.6012,
+      "longitude": 78.5467
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000004"
+    },
+    "station_Name": "Karur Charge Station",
+    "station_Address": "Karur Bus Stand",
+    "locationPoints": {
+      "latitude": 10.9577,
+      "longitude": 78.0809
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000005"
+    },
+    "station_Name": "Dindigul EV Hub",
+    "station_Address": "Dindigul Main Road",
+    "locationPoints": {
+      "latitude": 10.3673,
+      "longitude": 77.9803
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000006"
+    },
+    "station_Name": "Madurai Super Charger",
+    "station_Address": "Mattuthavani, Madurai",
+    "locationPoints": {
+      "latitude": 9.9252,
+      "longitude": 78.1198
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000007"
+    },
+    "station_Name": "Salem EV Plaza",
+    "station_Address": "Salem Junction",
+    "locationPoints": {
+      "latitude": 11.6643,
+      "longitude": 78.1460
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000008"
+    },
+    "station_Name": "Erode Green Charger",
+    "station_Address": "Erode Bus Stand",
+    "locationPoints": {
+      "latitude": 11.3410,
+      "longitude": 77.7172
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000009"
+    },
+    "station_Name": "Namakkal EV Hub",
+    "station_Address": "Namakkal Main Road",
+    "locationPoints": {
+      "latitude": 11.2213,
+      "longitude": 78.1652
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000010"
+    },
+    "station_Name": "Coimbatore EV Point",
+    "station_Address": "Gandhipuram, Coimbatore",
+    "locationPoints": {
+      "latitude": 11.0168,
+      "longitude": 76.9558
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000011"
+    },
+    "station_Name": "Tiruppur Charge Hub",
+    "station_Address": "Tiruppur Town",
+    "locationPoints": {
+      "latitude": 11.1085,
+      "longitude": 77.3411
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000012"
+    },
+    "station_Name": "Pollachi EV Charger",
+    "station_Address": "Pollachi Bus Stand",
+    "locationPoints": {
+      "latitude": 10.6589,
+      "longitude": 77.0087
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000013"
+    },
+    "station_Name": "Thanjavur EV Point",
+    "station_Address": "Thanjavur New Bus Stand",
+    "locationPoints": {
+      "latitude": 10.7867,
+      "longitude": 79.1378
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000014"
+    },
+    "station_Name": "Kumbakonam Charge Hub",
+    "station_Address": "Kumbakonam Town",
+    "locationPoints": {
+      "latitude": 10.9617,
+      "longitude": 79.3881
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6870a1000000000000000015"
+    },
+    "station_Name": "Chennai EV Plaza",
+    "station_Address": "OMR, Chennai",
+    "locationPoints": {
+      "latitude": 13.0827,
+      "longitude": 80.2707
+    },
+    "created_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    },
+    "updated_At": {
+      "$date": "2026-07-22T10:00:00.000Z"
+    }
+  }
+]

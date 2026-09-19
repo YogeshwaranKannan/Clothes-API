@@ -1,0 +1,2277 @@
+[{
+  "_id": {
+    "$oid": "69550ceb1b9f6d2800ce5fb4"
+  },
+  "productName": "Road Bike AeroLite",
+  "productDescription": "Lightweight carbon frame road bike designed for speed and endurance",
+  "productCategory": {
+    "_id": {
+      "$oid": "695507f51b9f6d2800ce5f91"
+    },
+    "category_name": "Road Bikes"
+  },
+  "brand": "Trek",
+  "Quickadd": true
+},
+{
+  "_id": {
+    "$oid": "69550df41b9f6d2800ce5fb9"
+  },
+  "productName": "Bike Helmet ProShield",
+  "productDescription": "Aerodynamic helmet with advanced ventilation and safety certification",
+  "productCategory": {
+    "_id": {
+      "$oid": "695507f51b9f6d2800ce5f92"
+    },
+    "category_name": "Helmets"
+  },
+  "brand": "Bell",
+  "Quickadd": true,
+  "price": "500.00",
+  "sellerLists": [
+    {
+      "companyname": "yogesh entreprise",
+      "companyid": {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      }
+    },
+    {
+      "companyname": "UiUi",
+      "companyid": {
+        "$oid": "6a2f9d3538b5326a184c769e"
+      }
+    }
+  ],
+  "defaultImage": "productdefault.jpg"
+},
+{
+  "_id": {
+    "$oid": "69c262da8579004fbd084601"
+  },
+  "productName": "Coconut oil",
+  "productDescription": "Cold pressed Coconut oil",
+  "productCategory": {
+    "_id": {
+      "$oid": "69c252c88579004fbd0845e5"
+    },
+    "category_name": "Oils"
+  },
+  "brand": "Vaagai",
+  "Quickadd": true,
+  "defaultImage": "Coconut-Oil2.png",
+  "sellerLists": [
+    {
+      "companyname": "yogesh entreprise",
+      "companyid": {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      }
+    },
+    {}
+  ]
+},
+{
+  "_id": {
+    "$oid": "69de4460e0ece4bba9e35817"
+  },
+  "productName": "Groundnut Oil",
+  "productDescription": "Cold pressed Groundnut Oil",
+  "productCategory": {
+    "_id": {
+      "$oid": "697dcf552702eb9071c05b92"
+    },
+    "category_name": "Cold Pressed"
+  },
+  "brand": "Nalam",
+  "Quickadd": true,
+  "defaultImage": "ground-nut-oil-2.png",
+  "sellerLists": [
+    {
+      "companyname": "yogesh entreprise",
+      "companyid": {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      }
+    },
+    {
+      "companyname": "Mina Tailors",
+      "companyid": {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f8d9301a26a33bd72947ed"
+  },
+  "productName": "U Dal",
+  "productDescription": "Cold pressed Groundnut Oil",
+  "productCategory": {
+    "_id": {
+      "$oid": "69f8d8121a26a33bd72947e7"
+    },
+    "category_name": "Pulses"
+  },
+  "brand": "Nalam",
+  "Quickadd": true,
+  "defaultImage": "ground-nut-oil-2.png",
+  "sellerLists": [
+    {
+      "companyname": "Mr. Mobile",
+      "companyid": {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69fdd370f4a5751cabf2b7ea"
+  },
+  "productName": "yuuu",
+  "productDescription": "asads",
+  "productCategory": {
+    "_id": {
+      "$oid": "69c252c88579004fbd0845e5"
+    },
+    "category_name": "Oils",
+    "sellerids": [
+      {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      },
+      {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "frfr",
+  "procumentPrice": 0,
+  "sellingPrice": 0,
+  "margin": 0,
+  "offerPrice": 0,
+  "discount": 0,
+  "sellerLists": [
+    {
+      "companyname": "yogesh entreprise",
+      "companyid": {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      }
+    }
+  ],
+  "createdAt": "1778242416829",
+  "updatedAt": "1778242416829",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a0048b9d66182277b3f6c3e"
+  },
+  "productName": "Surf Excel Maric",
+  "productDescription": "Detergent",
+  "productCategory": {
+    "_id": {
+      "$oid": "69c252c88579004fbd0845e5"
+    },
+    "category_name": "Oils",
+    "sellerids": [
+      {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      },
+      {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": false,
+  "unit": "",
+  "brand": "Surf",
+  "defaultImage": "1000302033.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Mina Tailors",
+      "companyid": {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    }
+  ],
+  "createdAt": "1778403513015",
+  "updatedAt": "1778403513015",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a006e00d66182277b3f6c41"
+  },
+  "productName": "Colgate tooth paste",
+  "productDescription": "Tooth paste",
+  "productCategory": {
+    "_id": {
+      "$oid": "69c252c88579004fbd0845e5"
+    },
+    "category_name": "Oils",
+    "sellerids": [
+      {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      },
+      {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": false,
+  "unit": "",
+  "brand": "Colgate",
+  "defaultImage": "1000302243.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Mina Tailors",
+      "companyid": {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    }
+  ],
+  "createdAt": "1778413056680",
+  "updatedAt": "1778413056680",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a006eb6d66182277b3f6c44"
+  },
+  "productName": "Pepsodent tooth paste",
+  "productDescription": "Tooth oaste",
+  "productCategory": {
+    "_id": {
+      "$oid": "69c252c88579004fbd0845e5"
+    },
+    "category_name": "Oils",
+    "sellerids": [
+      {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      },
+      {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": false,
+  "unit": "",
+  "brand": "Pepsodent",
+  "defaultImage": "1000302243.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Mina Tailors",
+      "companyid": {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    }
+  ],
+  "createdAt": "1778413238526",
+  "updatedAt": "1778413238526",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a01df7e41e7af636dedba84"
+  },
+  "productName": "Rice (Boiled) - 25kg",
+  "productDescription": "Rice ",
+  "productCategory": {
+    "_id": {
+      "$oid": "69f6e26e47a432d2908e0fb3"
+    },
+    "category_name": "Lunch",
+    "sellerids": [
+      {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Sivaji",
+  "defaultImage": "1000200441.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Mina Tailors",
+      "companyid": {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    }
+  ],
+  "createdAt": "1778507646144",
+  "updatedAt": "1778507646144",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a01dfbf41e7af636dedba87"
+  },
+  "productName": "Rice (Boiled) - 25kg",
+  "productDescription": "Rice ",
+  "productCategory": {
+    "_id": {
+      "$oid": "69f6e26e47a432d2908e0fb3"
+    },
+    "category_name": "Lunch",
+    "sellerids": [
+      {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Sivaji",
+  "defaultImage": "1000200441.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Mina Tailors",
+      "companyid": {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    }
+  ],
+  "createdAt": "1778507711705",
+  "updatedAt": "1778507711705",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a028e6641e7af636dedba8b"
+  },
+  "productName": "Penguin Rice 25 kg",
+  "productDescription": "Blue Rice",
+  "productCategory": {
+    "_id": {
+      "$oid": "69f6e26e47a432d2908e0fb3"
+    },
+    "category_name": "Lunch",
+    "sellerids": [
+      {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Penguin ",
+  "defaultImage": "1000200551.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Mina Tailors",
+      "companyid": {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    }
+  ],
+  "createdAt": "1778552422184",
+  "updatedAt": "1778552422184",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a02e4be41e7af636dedba92"
+  },
+  "productName": "Horlicks",
+  "productDescription": "Malt based drink",
+  "productCategory": {
+    "_id": {
+      "$oid": "69c252c88579004fbd0845e5"
+    },
+    "category_name": "Oils",
+    "sellerids": [
+      {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      },
+      {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Horlicks",
+  "defaultImage": "1000303534.png",
+  "sellerLists": [
+    {
+      "companyname": "Mina Tailors",
+      "companyid": {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    }
+  ],
+  "createdAt": "1778574526861",
+  "updatedAt": "1778574526861",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a032d1241e7af636dedba95"
+  },
+  "productName": "Boost",
+  "productDescription": "Energy secret",
+  "productCategory": {
+    "_id": {
+      "$oid": "69c252c88579004fbd0845e5"
+    },
+    "category_name": "Oils",
+    "sellerids": [
+      {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      },
+      {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": false,
+  "unit": "",
+  "brand": "Boost",
+  "defaultImage": "1000303534.png",
+  "sellerLists": [
+    {
+      "companyname": "Mina Tailors",
+      "companyid": {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    }
+  ],
+  "createdAt": "1778593042147",
+  "updatedAt": "1778593042147",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a06a0e30b2a984a1126a630"
+  },
+  "productName": "Colgate paste",
+  "productDescription": "nice one to pick ",
+  "productCategory": {
+    "_id": {
+      "$oid": "69c252c88579004fbd0845e5"
+    },
+    "category_name": "Oils",
+    "sellerids": [
+      {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      },
+      {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "ToothPaste",
+  "defaultImage": "cvfd.jpg",
+  "sellerLists": [
+    {
+      "companyname": "yogesh entreprise",
+      "companyid": {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      }
+    }
+  ],
+  "createdAt": "1778819299550",
+  "updatedAt": "1778819299550",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a094b63eb3ffe6b06d2b074"
+  },
+  "productName": "Boost new",
+  "productDescription": "Boost",
+  "productCategory": {
+    "_id": {
+      "$oid": "69c252c88579004fbd0845e5"
+    },
+    "category_name": "Oils",
+    "sellerids": [
+      {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      },
+      {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Boost",
+  "defaultImage": "1000302033.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Mina Tailors",
+      "companyid": {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    }
+  ],
+  "createdAt": "1778994019080",
+  "updatedAt": "1779162129872",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a09e7ffeb3ffe6b06d2b078"
+  },
+  "productName": "Wheat Flour",
+  "productDescription": "Wheat Flour",
+  "productCategory": {
+    "_id": {
+      "$oid": "69f6e26e47a432d2908e0fb3"
+    },
+    "category_name": "Lunch",
+    "sellerids": [
+      {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Aashirvaad",
+  "defaultImage": "1000201861.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Mina Tailors",
+      "companyid": {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    }
+  ],
+  "createdAt": "1779034111752",
+  "updatedAt": "1779212656100",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a0bd5aaf8b90d33e693a86a"
+  },
+  "productName": "Country Sugar - நாட்டு சர்க்கரை",
+  "productDescription": "Country Sugar - நாட்டு சர்க்கரை",
+  "productCategory": {
+    "_id": {
+      "$oid": "69f6e26e47a432d2908e0fb3"
+    },
+    "category_name": "Lunch",
+    "sellerids": [
+      {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Urban Platter",
+  "defaultImage": "1000202193.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Mina Tailors",
+      "companyid": {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    }
+  ],
+  "createdAt": "1779160490906",
+  "updatedAt": "1779212264062",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1ba29957d4fd5d5be2878d"
+  },
+  "productName": "Toor Dal துவரம் பருப்பு",
+  "productDescription": "தினசரி சாம்பார் மற்றும் கூட்டு வகைகளில் அதிகம் பயன்படுத்தப்படும் முக்கிய பருப்பு.\nideal for sambar and kootu..",
+  "productCategory": {
+    "_id": {
+      "$oid": "69f8d8121a26a33bd72947e7"
+    },
+    "category_name": "Pulses பருப்பு வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Naturals",
+  "defaultImage": "toordal.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780195993886",
+  "updatedAt": "1780195993886",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1ba6c057d4fd5d5be28791"
+  },
+  "productName": "Urad Dal உளுந்து",
+  "productDescription": "உளுந்து – இட்லி, தோசை மாவு, வடை போன்றவற்றிற்கு மென்மை மற்றும் சுவை தரும் essential for idli/dosa batter and vada, adds softness and texture.[",
+  "productCategory": {
+    "_id": {
+      "$oid": "69f8d8121a26a33bd72947e7"
+    },
+    "category_name": "Pulses பருப்பு வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Naturals",
+  "defaultImage": "ulundhu2.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780197056519",
+  "updatedAt": "1780197056519",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1baf3657d4fd5d5be28795"
+  },
+  "productName": "Moong Dal பாசி பருப்பு",
+  "productDescription": "எளிதில் ஜீரணமாகும், குழந்தைகள் மற்றும் நோயாளிகளுக்கு ஏற்றது.\nLight, easily digestible, suitable for kids and recovery diets.\n",
+  "productCategory": {
+    "_id": {
+      "$oid": "69f8d8121a26a33bd72947e7"
+    },
+    "category_name": "Pulses பருப்பு வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Naturals",
+  "defaultImage": "moong1.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780199222869",
+  "updatedAt": "1780199222869",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1bafd857d4fd5d5be28799"
+  },
+  "productName": "Pachai Payaru பச்சை பயறு",
+  "productDescription": "சுண்டல், கறி மற்றும் பொங்கல் வகைகளில் சத்தான சேர்க்கை.\nNutritious pulse used in sundal, curries, and pongal.",
+  "productCategory": {
+    "_id": {
+      "$oid": "69f8d8121a26a33bd72947e7"
+    },
+    "category_name": "Pulses பருப்பு வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Naturals",
+  "defaultImage": "pachai.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780199384105",
+  "updatedAt": "1780199384105",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1bb0a557d4fd5d5be2879c"
+  },
+  "productName": "Konda Kadalai கொண்டைக்கடலை \n",
+  "productDescription": "சோறு, சாலட், சுண்டல் மற்றும் சோலை போன்ற உணவுகளில் பயன்படுத்தப்படும்.\nசுண்டல், கறி மற்றும் நெய் வறுவல் வகைகளில் சுவையான பருப்பு.\nflavorful pulse used in sundal, curries, and roasted snacks.\nused in salads, sundal, curries, and chole.",
+  "productCategory": {
+    "_id": {
+      "$oid": "69f8d8121a26a33bd72947e7"
+    },
+    "category_name": "Pulses பருப்பு வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Nature products",
+  "defaultImage": "whitechanna.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780199589030",
+  "updatedAt": "1780199589030",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1bb10a57d4fd5d5be287a0"
+  },
+  "productName": "Kadalai Paruppu கடலை பருப்பு ",
+  "productDescription": "சுண்டல், பருப்பு வடை, மற்றும் பல இனிப்புகளில் பயன்படுத்தப்படும் பருப்பு.\nUsed in sundal, paruppu vadai, and many sweets.",
+  "productCategory": {
+    "_id": {
+      "$oid": "69f8d8121a26a33bd72947e7"
+    },
+    "category_name": "Pulses பருப்பு வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Agro",
+  "defaultImage": "channa.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780199690210",
+  "updatedAt": "1780199690210",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1be36b57d4fd5d5be287a3"
+  },
+  "productName": "Ponni Rice பொன்னி அரிசி",
+  "productDescription": "தினசரி சோறு செய்வதற்கு அதிகம் பயன்படுத்தப்படும் மென்மையான, மணமுள்ள அரிசி.\nSoft, aromatic rice widely used for daily meals",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1bcf433795ee30367053ad"
+    },
+    "category_name": "Rice அரிசி வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Nature",
+  "defaultImage": "ponni1.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780212587132",
+  "updatedAt": "1780212587132",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1bf79757d4fd5d5be287a7"
+  },
+  "productName": "Sona Masoori Rice சோனா மசூரி அரிசி",
+  "productDescription": "இலகுவான, குறைந்த ஒட்டும் தன்மை கொண்டது; தினசரி சோறு மற்றும் புலாவுக்கு ஏற்றது.\nLight, non‑sticky rice ideal for everyday meals and pulao.\n",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1bcf433795ee30367053ad"
+    },
+    "category_name": "Rice அரிசி வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Naturals",
+  "defaultImage": "sona_masoori_rice.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780217751223",
+  "updatedAt": "1780217751223",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1bf88357d4fd5d5be287ab"
+  },
+  "productName": "Idli Rice இட்லி அரிசி",
+  "productDescription": "இட்லி, தோசை மாவு அரைக்க சிறப்பாக பயன்படுத்தப்படும் சிறிய தானிய அரிசி.\nShort‑grain rice used mainly for idli and dosa batter.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1bcf433795ee30367053ad"
+    },
+    "category_name": "Rice அரிசி வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Naturals",
+  "defaultImage": "idlirice.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780217987467",
+  "updatedAt": "1780217987467",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1bf91757d4fd5d5be287af"
+  },
+  "productName": "Basmati Rice பாஸ்மதி அரிசி",
+  "productDescription": "நீளமான, மணமுள்ள அரிசி; பிரியாணி மற்றும் புலாவுக்கு சிறந்தது.\nLong‑grain aromatic rice perfect for biryani and pulao.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1bcf433795ee30367053ad"
+    },
+    "category_name": "Rice அரிசி வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "India Gate",
+  "defaultImage": "basmati.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780218135902",
+  "updatedAt": "1780218135902",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1bf9e457d4fd5d5be287b2"
+  },
+  "productName": "Seeraga Samba Rice சீரக சம்பா அரிசி",
+  "productDescription": "மணமும் சுவையும் அதிகம்; திண்டுக்கல்/செட்டிநாடு பிரியாணியில் முக்கியமானது.\nHighly aromatic small‑grain rice used in Dindigul & Chettinad biryani.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1bcf433795ee30367053ad"
+    },
+    "category_name": "Rice அரிசி வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Naturals",
+  "defaultImage": "seeraga.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780218340509",
+  "updatedAt": "1780218340509",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1bface57d4fd5d5be287b5"
+  },
+  "productName": "Matta Rice மட்டா அரிசி ",
+  "productDescription": "நார்ச்சத்து நிறைந்த சிவப்பு அரிசி; ஆரோக்கிய உணவாக அதிகம் பயன்படுத்தப்படுகிறது.\nFiber‑rich red rice commonly used for healthy meals.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1bcf433795ee30367053ad"
+    },
+    "category_name": "Rice அரிசி வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Naturals",
+  "defaultImage": "redrice.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780218574714",
+  "updatedAt": "1780218574714",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1bfbc957d4fd5d5be287b8"
+  },
+  "productName": "Ragi கேழ்வரகு",
+  "productDescription": "எலும்பு பலம் தரும், கால்சியம் நிறைந்த பாரம்பரிய சிறுதானியம்.\nCalcium‑rich millet widely used for porridge, kali, dosa, and kids’ nutrition.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1bfb2ca0e3e42fc1ba1575"
+    },
+    "category_name": "Millets சிறுதானியங்கள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Naturals ",
+  "defaultImage": "ragi1.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780218825578",
+  "updatedAt": "1780218825578",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1bfcbb57d4fd5d5be287bb"
+  },
+  "productName": "Thinai திணை",
+  "productDescription": "இரும்புச் சத்து நிறைந்தது.\nIron‑rich and great for pongal, upma, and rice substitute.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1bfb2ca0e3e42fc1ba1575"
+    },
+    "category_name": "Millets சிறுதானியங்கள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Naturals ",
+  "defaultImage": "thinai.jpeg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780219067843",
+  "updatedAt": "1780219067843",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1bfd8a57d4fd5d5be287bf"
+  },
+  "productName": "Kambu கம்பு",
+  "productDescription": "கோடை காலத்தில் கம்பு கூழ் மிகவும் பிரபலமானது; உடல் சூட்டை குறைக்கும்.\nPopular summer millet used for koozh; good for hydration and gut health",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1bfb2ca0e3e42fc1ba1575"
+    },
+    "category_name": "Millets சிறுதானியங்கள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Naturals ",
+  "defaultImage": "kambu2.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780219274545",
+  "updatedAt": "1780219274545",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1bfe4e57d4fd5d5be287c3"
+  },
+  "productName": "Samai சாமை",
+  "productDescription": "எளிதில் ஜீரணமாகும்; அரிசிக்கு மாற்றாக பயன்படுத்தப்படும் சிறுதானியம்.\nLight, diabetic‑friendly millet used for upma, lemon rice, and curd samai.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1bfb2ca0e3e42fc1ba1575"
+    },
+    "category_name": "Millets சிறுதானியங்கள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Naturals ",
+  "defaultImage": "Samai2.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780219470732",
+  "updatedAt": "1780219470732",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1bff1457d4fd5d5be287c7"
+  },
+  "productName": "Varagu வரகு",
+  "productDescription": "உடல் எடையை கட்டுப்படுத்த உதவும்; ஆன்டி‑ஆக்ஸிடன்ட் நிறைந்தது.\nWeight‑management friendly millet ideal for pongal, pulao, and dosa",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1bfb2ca0e3e42fc1ba1575"
+    },
+    "category_name": "Millets சிறுதானியங்கள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Naturals ",
+  "defaultImage": "varagu.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780219668518",
+  "updatedAt": "1780219668518",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1c002157d4fd5d5be287ca"
+  },
+  "productName": "Kuthiraivali குதிரைவாலி",
+  "productDescription": " உடல் சுறுசுறுப்பை அதிகரிக்கும்.\nLow‑calorie millet used for pongal, payasam, and upma.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1bfb2ca0e3e42fc1ba1575"
+    },
+    "category_name": "Millets சிறுதானியங்கள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Naturals ",
+  "defaultImage": "kuthiraivali1.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780219937725",
+  "updatedAt": "1780219937725",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1c278d57d4fd5d5be287cd"
+  },
+  "productName": "Wheat Flour கோதுமை மாவு",
+  "productDescription": "மென்மையான சப்பாத்தி, ரொட்டி, பூரி போன்றவற்றிற்கு பயன்படுத்தப்படும் கோதுமை மாவு.\nSoft wheat flour used for chapati, roti, and puri.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1c25f8a0e3e42fc1ba1576"
+    },
+    "category_name": "Flour மாவு வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Aashirvaad",
+  "defaultImage": "wheatflour.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780230029881",
+  "updatedAt": "1780230029881",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1c284757d4fd5d5be287d0"
+  },
+  "productName": "Rice Flour அரிசி மாவு",
+  "productDescription": "முறுக்கு, அதிரசம், கொழுக்கட்டை போன்ற பாரம்பரிய உணவுகளுக்கு முக்கியமானது.\nEssential for snacks like murukku, adhirasam, and kozhukattai.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1c25f8a0e3e42fc1ba1576"
+    },
+    "category_name": "Flour மாவு வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Nature",
+  "defaultImage": "riceflour.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780230215595",
+  "updatedAt": "1780230215595",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1ea73f51e99115ef5e457d"
+  },
+  "productName": "Ragi Flour கேழ்வரகு மாவு",
+  "productDescription": "கால்சியம் நிறைந்தது; கூழ், அடை, தோசை போன்ற ஆரோக்கிய உணவுகளில் பயன்படுத்தப்படும்.\nCalcium‑rich flour used for porridge, dosa, and healthy dishes.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1c25f8a0e3e42fc1ba1576"
+    },
+    "category_name": "Flour மாவு வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Nature",
+  "defaultImage": "ragiflour.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780393791200",
+  "updatedAt": "1780393791200",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1ea7bc51e99115ef5e4580"
+  },
+  "productName": "Besan Flour கடலை மாவு",
+  "productDescription": "பஜ்ஜி, பக்கோடா, மைசூர் பாக் போன்ற இனிப்பு/உப்புக் கலவைகளில் பயன்படுத்தப்படும்.\nUsed for bajji, pakoda, Mysore pak, and many savory mixes.\n",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1c25f8a0e3e42fc1ba1576"
+    },
+    "category_name": "Flour மாவு வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Nature",
+  "defaultImage": "besan-flour-1.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780393916485",
+  "updatedAt": "1780393916485",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1eaa9d51e99115ef5e4583"
+  },
+  "productName": "Maida மைதா",
+  "productDescription": "பரோட்டா, பூரி, கேக், பிஸ்கட் போன்றவற்றிற்கு பயன்படுத்தப்படும் நெகிழ்வான மாவு.\nSoft refined flour used for parotta, bakery items, and snacks.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1c25f8a0e3e42fc1ba1576"
+    },
+    "category_name": "Flour மாவு வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Nature",
+  "defaultImage": "plainflour.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780394653918",
+  "updatedAt": "1780394653918",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1ec12f51e99115ef5e4587"
+  },
+  "productName": "Sugar வெள்ளை சர்க்கரை",
+  "productDescription": "தினசரி தேநீர், காபி, இனிப்புகள் தயாரிக்க அதிகம் பயன்படுத்தப்படும் சர்க்கரை.\nRegular refined sugar used for tea, coffee, and everyday sweets.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1ebcd37d74b04827ac86aa"
+    },
+    "category_name": "Sugar சர்க்கரை வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Nanban Naturals",
+  "defaultImage": "sarkarai.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780400431927",
+  "updatedAt": "1780400431927",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1ec33351e99115ef5e458b"
+  },
+  "productName": "Karupatti கருப்பட்டி",
+  "productDescription": "பனை மரச் சாறில் இருந்து தயாரிக்கப்படும்; சத்தான, நாட்டு இனிப்பு.\nNutrient‑rich palm jaggery used in traditional sweets and medicinal drinks",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1ebcd37d74b04827ac86aa"
+    },
+    "category_name": "Sugar சர்க்கரை வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Nanban Naturals\n",
+  "defaultImage": "karuppatti-sarkarai.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780400947905",
+  "updatedAt": "1780400947905",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1ec3dd51e99115ef5e458f"
+  },
+  "productName": "Jaggery வெல்லம்\n",
+  "productDescription": "கரும்புச் சாறில் இருந்து தயாரிக்கப்படும்; ஆரோக்கியமான இனிப்பு.\nTraditional cane jaggery used in sweets, pongal, and herbal drinks.\n",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1ebcd37d74b04827ac86aa"
+    },
+    "category_name": "Sugar சர்க்கரை வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Naturals",
+  "defaultImage": "jaggery.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780401117698",
+  "updatedAt": "1780401117698",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1ec47e51e99115ef5e4592"
+  },
+  "productName": "Palm Jaggery கருப்பட்டி",
+  "productDescription": "பனை மரச் சாறில் இருந்து தயாரிக்கப்படும்; சத்தான, நாட்டு இனிப்பு.\nNutrient‑rich palm jaggery used in traditional sweets and medicinal drinks.\n",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1ebcd37d74b04827ac86aa"
+    },
+    "category_name": "Sugar சர்க்கரை வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Nanban",
+  "defaultImage": "Palm-Jaggery.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780401278111",
+  "updatedAt": "1780401278111",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a1ec51051e99115ef5e4595"
+  },
+  "productName": "Crystal sugar கல்கண்டு",
+  "productDescription": "பனை மரச் சாறில் இருந்து தயாரிக்கப்படும்; சத்தான, நாட்டு இனிப்பு.\nTraditional cane jaggery used in sweets, pongal, and herbal drinks.\n",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1ebcd37d74b04827ac86aa"
+    },
+    "category_name": "Sugar சர்க்கரை வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Naturals",
+  "defaultImage": "panamkalkandu.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780401424915",
+  "updatedAt": "1780401424915",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a217a89654e5035276f8dfb"
+  },
+  "productName": "Kambu Murukku கம்பு முறுக்கு",
+  "productDescription": "Pearl millet murukku  crispy, savoury snack \nகம்பு மாவில் செய்யப்பட்ட குருமுருப்பான நாட்டு ஸ்நாக்.\n",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1feb32e35ff2bd84a6669b"
+    },
+    "category_name": "Snacks ஸ்நாக்ஸ் ",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin",
+  "defaultImage": "KambuMurukku4.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1780578953415",
+  "updatedAt": "1780578953415",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a2e1a9499e83d31bcd9448a"
+  },
+  "productName": "சாமை அதிரசம் (Samai Adhirasam) ",
+  "productDescription": "சாமை மாவு மற்றும் வெல்லம் கொண்டு செய்யப்பட்ட பாரம்பரிய இனிப்பு‑ஸ்நாக்.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1feb32e35ff2bd84a6669b"
+    },
+    "category_name": "Snacks ஸ்நாக்ஸ் ",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Nature",
+  "defaultImage": "adhirasam-1-1.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1781406356590",
+  "updatedAt": "1781406356590",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a2e1b1a99e83d31bcd9448d"
+  },
+  "productName": "ராகி சேவ் (Ragi Sev)",
+  "productDescription": "கேழ்வரகு மாவில் செய்யப்பட்ட ஆரோக்கியமான கார சேவ்.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1feb32e35ff2bd84a6669b"
+    },
+    "category_name": "Snacks ஸ்நாக்ஸ் ",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin ",
+  "defaultImage": "ragi_sev.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1781406490320",
+  "updatedAt": "1781406490320",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a2e1b8399e83d31bcd94490"
+  },
+  "productName": "கடலை உருண்டை (Nattu Kadalai Urundai)",
+  "productDescription": "வறுத்த கடலை மற்றும் வெல்லம் கொண்டு செய்யப்பட்ட எளிய ஸ்நாக்.\n",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1feb32e35ff2bd84a6669b"
+    },
+    "category_name": "Snacks ஸ்நாக்ஸ் ",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Nature",
+  "defaultImage": "Kadalaiurundai.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1781406595547",
+  "updatedAt": "1781406595547",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a2e1c0b99e83d31bcd94493"
+  },
+  "productName": "மிளகு தட்டை (Milagu Thattai)",
+  "productDescription": "அரிசி மாவு, மிளகு, நாட்டு சக்கரை/உப்பு சேர்த்து செய்யப்பட்ட கார தட்டை",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1feb32e35ff2bd84a6669b"
+    },
+    "category_name": "Snacks ஸ்நாக்ஸ் ",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin ",
+  "defaultImage": "Pepperthattai.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1781406731760",
+  "updatedAt": "1781406731760",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a2e1c6599e83d31bcd94497"
+  },
+  "productName": "கருப்பட்டி மிட்டாய் (Karupatti Mittai)",
+  "productDescription": "பனை கருப்பட்டியால் செய்யப்பட்ட ஆரோக்கியமான இனிப்பு.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1feb32e35ff2bd84a6669b"
+    },
+    "category_name": "Snacks ஸ்நாக்ஸ் ",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin ",
+  "defaultImage": "Karuppati-Thaen-Kozhal.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1781406821402",
+  "updatedAt": "1781406821402",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a2e1cd099e83d31bcd9449a"
+  },
+  "productName": "நாட்டு சக்கரை லட்டு (Nattu Sakkarai Laddu)",
+  "productDescription": "நாட்டு சக்கரை மற்றும் கடலை மாவு கொண்டு தயாரிக்கப்படும் லட்டு",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1feb32e35ff2bd84a6669b"
+    },
+    "category_name": "Snacks ஸ்நாக்ஸ் ",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Nature food ",
+  "defaultImage": "Naatusakkari.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1781406928254",
+  "updatedAt": "1781406928254",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a2e1fd099e83d31bcd9449d"
+  },
+  "productName": "நல்லெண்ணெய் (Chekku sesame Oil)\n",
+  "productDescription": "பாரம்பரிய சுவை, உடல் சூட்டை குறைக்கும், தாளிப்பு மற்றும் ஊறுகாய்க்கு சிறந்தது.\nTraditional flavor; cooling oil ideal for tempering and pickles.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a2e1d8cd3efdbb0022dd121"
+    },
+    "category_name": "Oils எண்ணெய்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin ",
+  "defaultImage": "cold-pressed-sesame-oil-2.jpeg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1781407696315",
+  "updatedAt": "1781407696315",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a2e223b99e83d31bcd944a2"
+  },
+  "productName": "கடலை எண்ணெய் (Chekku Groundnut Oil)",
+  "productDescription": "மணமும் சுவையும் அதிகம்; தினசரி சமையலுக்கு ஆரோக்கியமான தேர்வு.\nRich aroma and nutty taste; healthy choice for daily cooking.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a2e1d8cd3efdbb0022dd121"
+    },
+    "category_name": "Oils எண்ணெய்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Nalam",
+  "defaultImage": "ground-nut-oil-2.png",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1781408315657",
+  "updatedAt": "1781408315657",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a2e22b599e83d31bcd944a7"
+  },
+  "productName": "தேங்காய் எண்ணெய் (Chekku Coconut Oil)",
+  "productDescription": "தென்னக சமையலின் முக்கிய எண்ணெய்; நெய் போன்ற மணம், ஆரோக்கியமான கொழுப்பு அமிலங்கள்.\nSouth Indian staple; aromatic and rich in healthy fatty acids.",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a2e1d8cd3efdbb0022dd121"
+    },
+    "category_name": "Oils எண்ணெய்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin ",
+  "defaultImage": "Coconut-Oil2.png",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1781408437165",
+  "updatedAt": "1781408437165",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a2fadb438b5326a184c769f"
+  },
+  "productName": "Water bottle",
+  "productDescription": "1litre bottle",
+  "productCategory": {
+    "_id": {
+      "$oid": "69c252c88579004fbd0845e5"
+    },
+    "category_name": "Oils",
+    "sellerids": [
+      {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      },
+      {
+        "$oid": "69c7dc8513992d7ffb4752a8"
+      }
+    ],
+    "createdAt": "Wed Dec 31 16:54:37 IST 2025",
+    "coverImagePath": "/test/test-img.jpg",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 16:54:37 IST 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Bottles",
+  "defaultImage": "water-bottel1.jpg",
+  "sellerLists": [
+    {
+      "companyname": "yogesh entreprise",
+      "companyid": {
+        "$oid": "69c22b3df9f8a15991d96da8"
+      }
+    }
+  ],
+  "createdAt": "1781509556073",
+  "updatedAt": "1781606498938",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a3750611b23e76788261ec2"
+  },
+  "productName": " சன் பிளவர் மரசெக்கு எண்ணெய் (Sunflower cold pressed Oil)",
+  "productDescription": "பாரம்பரிய முறையில் வாகை மரச்செக்கினால் தயாரிக்கப்பட்ட இயற்கை  சன் பிளவர் மரசெக்கு எண்ணெய்",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a2e1d8cd3efdbb0022dd121"
+    },
+    "category_name": "Oils எண்ணெய்",
+    "parent_id": {
+      "$oid": "695507f51b9f6d2800ce5f91"
+    },
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": true,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "",
+  "defaultImage": "1000208618.jpg",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1782009953071",
+  "updatedAt": "1782009953071",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+},
+{
+  "_id": {
+    "$oid": "6a3784a21b23e76788261ed6"
+  },
+  "productName": "Organic vellam",
+  "productDescription": "Organic vellam natural",
+  "productCategory": {
+    "_id": {
+      "$oid": "6a1ebcd37d74b04827ac86aa"
+    },
+    "category_name": "Sugar சர்க்கரை வகைகள்",
+    "sellerids": [
+      {
+        "$oid": "69cbd376ea05ef3eb0ba9cd6"
+      },
+      {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    ],
+    "createdAt": "Wed Dec 31 11:24:37 UTC 2025",
+    "coverImagePath": "",
+    "displayOnHomePage": false,
+    "updatedAt": "Wed Dec 31 11:24:37 UTC 2025"
+  },
+  "Quickadd": true,
+  "unit": "",
+  "brand": "Dolphin Nature ",
+  "defaultImage": "blue.png",
+  "sellerLists": [
+    {
+      "companyname": "Dolphin Naturals",
+      "companyid": {
+        "$oid": "6a1b993257d4fd5d5be2878c"
+      }
+    }
+  ],
+  "createdAt": "1782023330231",
+  "updatedAt": "1782023330231",
+  "_class": "Farme_rich.Seller.Model.BackEnd.Products"
+}]

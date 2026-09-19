@@ -1,0 +1,1 @@
+import{aa as o,l as t}from"./chunk-WNB5IQIF.js";var a=class r{orderSearchSubject=new t("");orderSearch$=this.orderSearchSubject.asObservable();searchOrders(e){this.orderSearchSubject.next(e.trim())}clearOrderSearch(){this.orderSearchSubject.next("")}static \u0275fac=function(c){return new(c||r)};static \u0275prov=o({token:r,factory:r.\u0275fac,providedIn:"root"})};export{a};

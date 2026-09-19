@@ -1,0 +1,197 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background: #f5f5f5;
+        }
+
+        .invoice {
+<!--          max-width: 420px;-->
+          margin: auto;
+          background: #fff;
+          padding: 12px;
+        }
+
+        /* HEADER */
+        .header {
+          text-align: center;
+        }
+
+        .logo {
+          width: 60px;
+          height: 60px;
+          object-fit: contain;
+        }
+
+        .company-name {
+          font-size: 18px;
+          font-weight: bold;
+        }
+
+        .total {
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        .ref {
+          font-size: 12px;
+          color: gray;
+        }
+
+        .row {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 6px;
+        }
+
+        .divider {
+          border-top: 1px dashed #ccc;
+          margin: 10px 0;
+        }
+
+        /* TABLE */
+        .table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+
+        .table th {
+          text-align: left;
+          font-size: 12px;
+          border-bottom: 1px solid #ddd;
+        }
+
+        .table td {
+          font-size: 12px;
+          padding: 4px 0;
+        }
+        .topItem {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .item {
+          display: flex;
+          align-items: center;
+        }
+
+        .item img {
+          width: 35px;
+          height: 35px;
+          margin-right: 6px;
+        }
+
+        .right {
+          text-align: left;
+        }
+
+        .center {
+          text-align: left;
+        }
+
+        /* SUMMARY */
+        .summary {
+          margin-top: 10px;
+        }
+
+        .summary-row {
+          display: flex;
+          justify-content: space-between;
+          font-size: 13px;
+          margin-top: 4px;
+        }
+
+        /* CUSTOMER */
+        .section-title {
+          font-weight: bold;
+          margin-top: 12px;
+        }
+
+        .card {
+          font-size: 12px;
+          margin-top: 4px;
+        }
+
+        /* PAYMENT */
+        .payment {
+          margin-top: 10px;
+          font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="invoice">
+
+    <!-- HEADER -->
+    <div class="header">
+
+        <img src="{{logoUri}}" class="logo"/>
+        <div class="company-name">{{companyname}}</div>
+        <div class="total">₹{{total_paid}}</div>
+        <div class="ref">Order #{{refno}}</div>
+    </div>
+
+    <!-- DATE -->
+    <div class="row">
+        <div></div>
+        <div>{{date}}</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ITEMS -->
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Item</th>
+            <th class="right">Price</th>
+            <th class="center">Qty</th>
+            <th class="right">Value</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{items}}
+        </tbody>
+    </table>
+
+    <div class="divider"></div>
+
+    <!-- SUMMARY -->
+    <div class="summary">
+        <div class="summary-row">
+            <span>Total Items</span>
+            <span>{{cartlength}}</span>
+        </div>
+
+        <div class="summary-row">
+            <span>Order Value</span>
+            <span>₹{{order_total}}</span>
+        </div>
+    </div>
+
+    <!-- TAX -->
+    {{tax_section}}
+
+    <!-- CUSTOMER -->
+    <div class="section-title">Customer Information</div>
+    <div class="card">
+        Name: {{customer_name}}<br/>
+        Mobile: {{customer_mobile}}<br/>
+        Address: {{address}}<br/>
+        Mode: {{delivery_mode}}
+    </div>
+
+    <!-- PAYMENT -->
+    {{payment_section}}
+
+</div>
+
+</body>
+</html>

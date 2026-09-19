@@ -1,0 +1,39 @@
+[
+
+  {
+    "_id": "67bfee576a5bacdf1bcb0cf9",
+    "seller_id": "6954d2dfa8cca61b24a2ea11",
+    "productName": "Apple iPhone 15 Pro",
+    "productDescription": "Premium smartphone with A17 Bionic chip and Pro camera.",
+    "productCategory": {
+      "_id": "67bfee576a5bacdf1bcb0cf0",
+      "category_name": "Smartphones"
+    },
+    "price":"156000"
+  },
+  {
+    "_id": "67bfee576a5bacdf1bcb0cfe",
+    "seller_id": "6954d2dfa8cca61b24a2ea11",
+    "productName": "Samsung 65-inch QLED TV",
+    "productDescription": "Ultra HD 4K Smart QLED TV with HDR and AI upscaling.",
+    "productCategory": {
+      "_id": "67c172740d563d3997cb0cf3",
+      "category_name": "TV"
+    },
+    "price":"14556000"
+
+  },
+  {
+    "_id": "67bfee576a5bacdf1bcb0cff",
+    "seller_id": "6954d2dfa8cca61b24a2ea11",
+    "productName": "Samsung 55-inch OLED TV",
+    "productDescription": "4K Smart OLED TV with deep blacks and vibrant colors.",
+    "productCategory": {
+      "_id": "67c172740d563d3997cb0cf3",
+      "category_name": "TV"
+    },
+    "price":"100"
+
+  }
+
+]

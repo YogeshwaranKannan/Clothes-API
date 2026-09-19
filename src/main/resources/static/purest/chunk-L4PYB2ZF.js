@@ -1,0 +1,1 @@
+function i(e){if(e==null)return 0;if(typeof e=="number")return Number.isFinite(e)?e:0;let n=String(e).trim();n=n.replace(/[\s,]/g,""),n=n.replace(/[^\d.]/g,"");let r=n.split(".");r.length>2&&(n=r.slice(0,-1).join("")+"."+r[r.length-1]),n.startsWith(".")&&(n=n.slice(1));let t=Number(n);return Number.isFinite(t)?t:0}export{i as a};

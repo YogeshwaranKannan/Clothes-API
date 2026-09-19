@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Tax Invoice</title>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+        body{
+        font-family:Arial,Helvetica,sans-serif;
+        background:#eceff2;
+        color:#000;
+        font-size:13px;
+        line-height:1.35;
+        padding:20px 10px 40px;
+        }
+
+        #loader{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:50vh;gap:14px;}
+        .spinner{width:34px;height:34px;border:3px solid #ddd;border-top-color:#333;border-radius:50%;animation:spin .8s linear infinite;}
+        @keyframes spin{to{transform:rotate(360deg);}}
+        #loader p{color:#666;font-size:.85rem;}
+
+        #error-box{
+        display:none;margin:20px auto;max-width:560px;
+        background:#fdeaea;border:1.5px solid #d93535;
+        padding:14px 16px;color:#d93535;font-size:.85rem;line-height:1.5;
+        }
+        #error-box strong{display:block;margin-bottom:4px;font-size:.95rem;}
+
+        #content{display:none;width:100%;}
+
+        /* ── Scale wrapper — the invoice is a fixed-width "page" (.sheet, 900px,
+             exactly the desktop width). On narrow viewports it is NOT reflowed,
+             stacked, or scrolled — it is rendered at full size off-screen-logic
+             and then scaled down as a whole with transform:scale(), same as
+             shrinking a PDF page image. .invoice-viewport is sized by JS to the
+             scaled footprint so the page centers correctly with no extra empty
+             space and no clipped edges. */
+        .invoice-viewport{
+        position:relative;
+        margin:0 auto;
+        /* width/height are set by JS (fitInvoice) to match the current scale */
+        }
+
+        .sheet{
+        position:absolute;
+        top:0;
+        left:0;
+        width:900px; /* fixed "page" width — identical at every viewport size */
+        background:#fff;
+        transform-origin:top left;
+        }
+
+        /* ── Toolbar (download button) — sits above the invoice, never part of
+             the invoice "page" itself, so it's excluded from the scale transform
+             and hidden entirely when printing/saving as PDF. ────────────────── */
+        .toolbar{
+        width:100%;
+        max-width:900px;
+        margin:16px auto 0;
+        display:flex;
+        justify-content:flex-end;
+        }
+        .download-btn{
+        display:inline-flex;
+        align-items:center;
+        gap:5px;
+        font-family:inherit;
+        font-size:11px;
+        font-weight:600;
+        color:#fff;
+        background:#1a5fe0;
+        border:none;
+        padding:6px 12px;
+        cursor:pointer;
+        }
+        .download-btn:hover{background:#154cb8;}
+        .download-btn svg{width:12px;height:12px;flex:none;}
+
+        /* ── Print / Save-as-PDF — the download button triggers the browser's
+             native print dialog (choose "Save as PDF" as the destination). For
+             print we drop the on-screen scale transform entirely so the PDF is
+             generated at full resolution and let the browser fit it to the page,
+             rather than printing the shrunk mobile view. ────────────────────── */
+        @media print{
+        .no-print{display:none !important;}
+        body{
+        background:#fff;
+        min-height:0;
+        padding:0;
+        display:block;
+        }
+        .invoice-viewport{
+        width:auto !important;
+        height:auto !important;
+        }
+        .sheet{
+        position:static !important;
+        transform:none !important;
+        width:900px !important; /* exact page width — matches @page size below,
+                                    so the PDF page hugs the content instead of
+                                    being centered on a much larger sheet */
+        margin:0;
+        }
+        }
+        /* Custom page size = exactly the invoice's own width, with height "auto"
+           so the PDF page ends right where the content does — no leftover blank
+           area below a short invoice, and no shrink-to-fit scaling down of a
+           900px-wide page onto a narrower default paper size. */
+        @page{
+        size:9.98in auto;
+        margin:0.3in;
+        }
+
+        /* ── 1. Title ─────────────────────────────────────────────────────────── */
+        .title-table{
+        width:100%;
+        border-collapse:collapse;
+        margin-bottom:14px;
+        }
+        .title-table td{
+        border:1px solid #000;
+        text-align:center;
+        font-size:22px;
+        font-weight:700;
+        letter-spacing:.5px;
+        text-transform:uppercase;
+        padding:10px 0;
+        }
+
+        /* ── 4 tables total — company/bill-to/invoice-details, items, terms,
+           and summary/signature — each stands alone as its own bordered
+           box with a visible gap between them, not one merged block. ────── */
+        .info-table,
+        .items-table{
+        width:100%;
+        border-collapse:collapse;
+        table-layout:fixed;
+        }
+        .items-table{margin-top:16px;}
+
+        /* ── 2+3. Company + Bill To / Invoice Details — one single table ───────── */
+        .info-table{border:1px solid #000;}
+        .info-table td, .info-table th{border:1px solid #000;}
+
+        .company-cell{padding:14px 16px;}
+        .company-flex{display:flex;align-items:flex-start;gap:16px;}
+        .logo-cell{width:130px;flex:none;text-align:left;}
+        .logo-cell img{max-width:100%;max-height:120px;object-fit:contain;display:block;}
+        .logo-fallback{
+        width:120px;height:120px;border:1px solid #000;
+        display:flex;align-items:center;justify-content:center;
+        font-weight:700;font-size:26px;
+        }
+        .company-info-cell{flex:1;text-align:left;}
+        .company-name{font-size:23px;font-weight:700;margin-bottom:6px;}
+        .company-line{font-size:13px;margin-top:3px;}
+        .company-line b{font-weight:700;}
+        .email-cell{width:260px;flex:none;text-align:right;align-self:center;font-size:13px;}
+        .email-cell b{font-weight:700;}
+
+        .info-table th{
+        text-align:left;
+        font-size:12px;
+        font-weight:700;
+        padding:6px 10px;
+        background:#e6e6e6;
+        }
+        .info-table td{
+        vertical-align:top;
+        padding:8px 10px;
+        font-size:12px;
+        }
+        .info-table .field{margin-top:3px;}
+        .info-table .field:first-child{margin-top:0;}
+        .info-table .field b{font-weight:700;}
+
+        /* ── 4. Items table ───────────────────────────────────────────────────── */
+        .items-table{border:1px solid #000;}
+        .items-table th{
+        background:#e6e6e6;
+        font-weight:700;
+        font-size:12px;
+        text-align:left;
+        padding:6px 8px;
+        border:1px solid #000;
+        white-space:nowrap;
+        }
+        .items-table td{
+        padding:6px 8px;
+        border:1px solid #000;
+        font-size:12px;
+        vertical-align:top;
+        }
+        .items-table td.num, .items-table th.num{text-align:right;}
+        .items-table td.center, .items-table th.center{text-align:center;}
+        .item-name-text{font-weight:700;}
+        .item-variant{color:#555;font-size:11px;font-weight:400;}
+        .items-table tr.total-row td{font-weight:700;}
+
+        /* ── Sub Total / Total / Amount-in-Words / Received / Balance — these
+           are ROWS of the items table itself (left side blank via colspan,
+           right side reuses the Unit/Price/Amount column slots as
+           label/colon/value), matching the PDF where the summary continues
+           directly below the items grid rather than living in a separate
+           table. ──────────────────────────────────────────────────────── */
+        .items-table td.label{white-space:nowrap;}
+        .items-table td.colon{text-align:center;}
+        .items-table tr.summary-total td{font-weight:700;}
+        .items-table tr.summary-words-label td{background:#e6e6e6;font-weight:700;}
+        .items-table tr.summary-tight td{border-bottom:none;}
+        .items-table tr.summary-notop td{border-top:none;}
+
+        /* ── 5. Terms And Conditions + Signature — one single table, moved to
+           the very bottom now that the amount summary lives in the items
+           table above. Terms spans the full width (its own two rows); the
+           final row splits into a blank left cell and the "For <company>" /
+           signature / Authorized Signatory block on the right. ──────────── */
+        .closing-table{
+        width:100%;
+        border-collapse:collapse;
+        table-layout:fixed;
+        border:1px solid #000;
+        margin-top:16px;
+        }
+        .closing-table col.terms-col{width:55%;}
+        .closing-table col.amount-col{width:45%;}
+        .terms-title-cell{
+        font-size:12px;
+        font-weight:700;
+        background:#e6e6e6;
+        padding:6px 14px;
+        border-bottom:1px solid #000;
+        }
+        .terms-body-cell{padding:10px 14px;border-bottom:1px solid #000;}
+        .terms-body-cell p{font-size:12px;}
+        .blank-cell{border-right:1px solid #000;}
+
+        .sign-td{padding:10px 14px 14px;}
+        .sign-block{width:260px;margin-left:auto;text-align:center;}
+        .sign-for{font-size:12px;font-weight:700;text-align:left;margin-bottom:30px;}
+        .sign-img-wrap{height:55px;display:flex;align-items:center;justify-content:center;margin-bottom:4px;}
+        .sign-img-wrap img{max-height:55px;max-width:100%;object-fit:contain;}
+        .sign-label{font-size:12px;padding-top:6px;border-top:1px solid #000;}
+
+
+        /* ── Footer note (payment / delivery status — app metadata, not on PDF) ── */
+        .footer-strip{
+        display:flex;justify-content:space-between;
+        margin-top:8px;padding:0 2px;
+        font-size:11px;color:#666;
+        }
+
+        @media (max-width:480px){
+        body{padding:10px 6px;}
+        }
+    </style>
+</head>
+<body>
+
+<div id="loader">
+    <div class="spinner"></div>
+    <p>Loading invoice…</p>
+</div>
+
+<div id="error-box">
+    <strong>⚠ Unable to load invoice</strong>
+    <span id="error-msg">An unexpected error occurred. Please try again.</span>
+</div>
+
+<div id="content"></div>
+
+<script>
+
+    <!--        const API_BASE = "https://dev.fr.api.intellesyde.com";-->
+            const API_BASE = "https://inock.intellesyde.com";
+    <!--        const API_BASE = "http://192.168.1.8:8080";-->
+            const INVOICE_ENDPOINT = id => `${API_BASE}/api/seller/InvoiceData/${id}`;
+
+            /* ─── Helpers ─────────────────────────────────────────────────────────── */
+            const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+            const rupee = n => Number(n || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            const nz = (...vals) => { for (const v of vals) if (v !== undefined && v !== null && v !== '') return v; return null; };
+
+            function initials(name){
+            return (name || 'NA').split(' ').filter(Boolean).map(w => w[0]).join('').slice(0,2).toUpperCase();
+            }
+
+            function resolveAsset(path, baseUrl) {
+            if (!path) return null;
+            if (/^https?:\/\//i.test(path)) return path;
+            const base = (baseUrl || '').replace(/\/$/, '');
+            const rel = String(path).replace(/^\//, '');
+            return base ? `${base}/${rel}` : rel;
+            }
+
+            function formatDate(dateStr){
+            if (!dateStr) return '—';
+            try{
+            const cleaned = String(dateStr).replace('IST', 'GMT+0530');
+            const d = new Date(cleaned);
+            if (isNaN(d)) return String(dateStr);
+            return d.toLocaleDateString('en-GB', { day:'2-digit', month:'2-digit', year:'numeric' }).replace(/\//g,'-');
+            }catch{ return String(dateStr); }
+            }
+
+            function numberToWordsINR(num){
+            num = Math.round(Number(num || 0));
+            if (num === 0) return 'Zero Rupees only';
+            const ones = ['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten',
+            'Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+            const tens = ['','','Twenty','Thirty','Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];
+
+            function twoDigits(n){
+            if (n < 20) return ones[n];
+            return tens[Math.floor(n/10)] + (n % 10 ? ' ' + ones[n % 10] : '');
+            }
+            function threeDigits(n){
+            if (n < 100) return twoDigits(n);
+            return ones[Math.floor(n/100)] + ' Hundred' + (n % 100 ? ' ' + twoDigits(n % 100) : '');
+            }
+
+            let n = num;
+            const crore = Math.floor(n / 10000000); n %= 10000000;
+            const lakh = Math.floor(n / 100000); n %= 100000;
+            const thousand = Math.floor(n / 1000); n %= 1000;
+            const hundred = n;
+
+            const parts = [];
+            if (crore) parts.push(threeDigits(crore) + ' Crore');
+            if (lakh) parts.push(threeDigits(lakh) + ' Lakh');
+            if (thousand) parts.push(threeDigits(thousand) + ' Thousand');
+            if (hundred) parts.push(threeDigits(hundred));
+
+            return parts.join(' ') + ' Rupees only';
+            }
+
+            /* ─── Fixed company profile ──────────────────────────────────────────────
+               This invoice viewer is deployed for a single seller (Purest Wood Cold
+               Pressed Oil), so the company block is hardcoded rather than read from
+               the per-order API response — it never changes order to order. Only
+               the logo/signature images still resolve from the API (asset paths),
+               and customer/order details below continue to load from the API as
+               normal. ─────────────────────────────────────────────────────────── */
+            const COMPANY_PROFILE = {
+            name: 'Purest Wood Cold Pressed Oil',
+            address: 'sector 44A Seawood, Nerul W',
+            phone: '8149922662',
+            email: 'purestwoodpressedoil@gmail.com',
+            state: '27-Maharashtra',
+            };
+
+            function getOrderId(){
+            const params = new URLSearchParams(window.location.search);
+            return params.get('orderid') || params.get('orderId') || params.get('orderID') || null;
+            }
+
+            /* ─── Normalize the sellerorder-shaped payload ───────────────────────── */
+
+            function normalize(d){
+            const ci = d.customerInformationDTO || {};
+            const pay = d.paymentsDTO || {};
+
+            const addressParts = [ci.deliveryAddress, ci.city, ci.postalCode ? `- ${ci.postalCode}` : null, ci.state]
+            .filter(Boolean);
+
+            return {
+            baseUrl: d.baseUrl || '',
+            // Hardcoded — see COMPANY_PROFILE above. Not read from the API response.
+            companyName: COMPANY_PROFILE.name,
+            companyAddress: COMPANY_PROFILE.address,
+            companyPhone: COMPANY_PROFILE.phone,
+            companyEmail: COMPANY_PROFILE.email,
+            companyState: COMPANY_PROFILE.state,
+            companyLogo: d.companyLogo || null,
+            signatureImage: d.signatureLogo || null,
+
+            refno: d.refno || '',
+            orderDate: d.order_date || '',
+
+            customerName: nz(ci.customerName, d.customerName) || '',
+            customerMobile: nz(ci.customerMobileNum, d.customerMobile) || '',
+            customerAddressLine: addressParts.length ? addressParts.join(', ') : nz(d.delivery_details, null),
+
+            items: Array.isArray(d.inventory) ? d.inventory : [],
+
+            totalAmount: nz(d.total_Amount, 0) || 0,
+            totalDiscount: nz(d.total_Discount, 0) || 0,
+            totalPaid: nz(d.total_Paid, 0) || 0,
+            totalAmountDue: nz(d.total_AmountDue, (nz(d.total_Amount,0) - nz(d.total_Paid,0))) || 0,
+            totalAdvance: nz(d.total_Advance, 0) || 0,
+
+            paymentMode: nz(pay.payment_mode, d.payment_mode),
+            paymentStatus: nz(d.payment_status),
+            referenceNumber: nz(d.refno),
+
+            isDelivered: !!d.isDelivered,
+            };
+            }
+
+            function itemName(item){
+            const base = nz(item.productname, item.servicename, item.name) || 'Item';
+            const variant = item.variantBatches && item.variantBatches[0] && item.variantBatches[0].variantName;
+
+            return { base, variant };
+            }
+            function itemUnitPrice(item){
+            const isService = (item.flag || '').toUpperCase() === 'ISSERVICE';
+            // Plain `||` fallbacks (not nz()) are intentional here: nz() stops at
+            // the first value that isn't undefined/null/'', which means a literal
+            // 0 counts as "set" and short-circuits — exactly what breaks variant
+            // items, whose item-level offerPrice/servicecost is 0 while the real
+            // price lives on sellerprice/pricing.sellerPrice. `||` falls through
+            // 0 to the next candidate, matching CustomerTemplate's working logic.
+            if (isService) return item.servicecost || item.sellerprice || item.offerPrice || 0;
+
+            return item.offerPrice || item.pricing?.sellerPrice || item.sellerprice || 0;
+
+            }
+            function itemQty(item){
+            return nz(item.Order_quantity, item.order_quantity, 1) || 1;
+            }
+            function itemUnit(item){
+            return nz(item.unit, item.Unit, null);
+            }
+            function itemHsn(item){
+            return nz(item.hsn, item.HSN, item.hsnSac, null);
+            }
+
+            /* ─── Main render ─────────────────────────────────────────────────────── */
+            function render(rawData){
+            const d = normalize(rawData);
+            const container = document.getElementById('content');
+
+            const logoSrc = resolveAsset(d.companyLogo, d.baseUrl);
+            const sigSrc = resolveAsset(d.signatureImage, d.baseUrl);
+
+            const logoHtml = logoSrc
+            ? `<img src="${esc(logoSrc)}" alt="${esc(d.companyName)} logo"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <span class="logo-fallback" style="display:none">${esc(initials(d.companyName))}</span>`
+            : `<span class="logo-fallback">${esc(initials(d.companyName))}</span>`;
+
+            let itemsHtml = '';
+            let totalQty = 0;
+            let totalValue = 0;
+
+            d.items.forEach((item, idx) => {
+            const { base, variant } = itemName(item);
+            const qty = itemQty(item);
+            const price = itemUnitPrice(item);
+            const unit = itemUnit(item);
+            const hsn = itemHsn(item);
+            const amount = qty * price;
+            totalQty += Number(qty) || 0;
+            totalValue += amount;
+
+            itemsHtml += `
+            <tr>
+            <td class="center">${idx + 1}</td>
+            <td>
+            <span class="item-name-text">${esc(base)}</span>
+            ${variant ? `<div class="item-variant">${esc(variant)}</div>` : ''}
+            </td>
+            <td class="center">${hsn ? esc(hsn) : ''}</td>
+            <td class="num">${qty}</td>
+            <td class="center">${unit ? esc(unit) : '-'}</td>
+            <td class="num">₹ ${rupee(price)}</td>
+            <td class="num">₹ ${rupee(amount)}</td>
+            </tr>`;
+            });
+
+            if (!d.items.length){
+            itemsHtml = `<tr><td colspan="7" class="center" style="padding:16px;">No items on this order</td></tr>`;
+            }
+            const val = d.totalAmount || totalValue;
+            const grandTotal = d.totalDiscount > 0 ? val - d.totalDiscount : val;
+            const balance = d.totalAmountDue;
+
+            // Sub Total, Total, Words-label, Words-value, Received, Balance = 6 rows,
+            // plus Discount/Advance when present — used as the rowspan on the single
+            // blank cell so it spans the whole summary block with no internal lines.
+            const summaryRowCount = 6 + (d.totalDiscount > 0 ? 1 : 0) + (d.totalAdvance > 0 ? 1 : 0);
+
+            const html = `
+            <div class="invoice-viewport">
+            <div class="sheet">
+
+            <table class="title-table"><tr><td>Tax Invoice</td></tr></table>
+
+            <table class="info-table">
+            <colgroup><col style="width:50%"/><col style="width:50%"/></colgroup>
+            <tr>
+            <td colspan="2" class="company-cell">
+            <div class="company-flex">
+            <div class="logo-cell">${logoHtml}</div>
+            <div class="company-info-cell">
+            <div class="company-name">${esc(d.companyName)}</div>
+            ${d.companyAddress ? `<div class="company-line">${esc(d.companyAddress)}</div>` : ''}
+            ${d.companyPhone ? `<div class="company-line">Phone: <b>${esc(d.companyPhone)}</b></div>` : ''}
+            ${d.companyState ? `<div class="company-line">State: <b>${esc(d.companyState)}</b></div>` : ''}
+            </div>
+            <div class="email-cell">
+            ${d.companyEmail ? `Email: <b>${esc(d.companyEmail)}</b>` : ''}
+            </div>
+            </div>
+            </td>
+            </tr>
+            <tr>
+            <th>Bill To:</th>
+            <th>Invoice Details:</th>
+            </tr>
+            <tr>
+            <td>
+            <div class="field"><b>${esc(d.customerName || '—')}</b></div>
+            ${d.customerAddressLine ? `<div class="field">${esc(d.customerAddressLine)}</div>` : ''}
+            <div class="field">Contact No: ${esc(d.customerMobile || '—')}</div>
+            </td>
+            <td>
+            <div class="field">No: <b>${esc(d.refno || '—')}</b></div>
+            <div class="field">Date: <b>${formatDate(d.orderDate)}</b></div>
+            </td>
+            </tr>
+            </table>
+
+            <table class="items-table">
+            <colgroup>
+            <col style="width:5%"/><col style="width:27%"/><col style="width:12%"/>
+            <col style="width:12%"/><col style="width:10%"/><col style="width:16%"/><col style="width:18%"/>
+            </colgroup>
+            <thead>
+            <tr>
+            <th class="center">#</th>
+            <th>Item Name</th>
+            <th class="center">HSN/ SAC</th>
+            <th class="num">Quantity</th>
+            <th class="center">Unit</th>
+            <th class="num">Price/ Unit (₹)</th>
+            <th class="num">Amount(₹)</th>
+            </tr>
+            </thead>
+            <tbody>
+            ${itemsHtml}
+            <tr class="total-row">
+            <td colspan="3">Total</td>
+            <td class="num">${totalQty}</td>
+            <td></td>
+            <td></td>
+            <td class="num">₹ ${rupee(totalValue)}</td>
+            </tr>
+            <tr class="summary-row">
+            <td colspan="4" rowspan="${summaryRowCount}" class="blank-cell"></td>
+            <td class="label">Sub Total</td><td class="colon">:</td><td class="num">₹ ${rupee(totalValue)}</td>
+            </tr>
+            ${d.totalDiscount > 0 ? `<tr class="summary-row"><td class="label">Discount</td><td class="colon">:</td><td class="num">− ₹ ${rupee(d.totalDiscount)}</td></tr>` : ''}
+            <tr class="summary-row summary-total">
+            <td class="label">Total</td><td class="colon">:</td><td class="num">₹ ${rupee(grandTotal)}</td>
+            </tr>
+            <tr class="summary-row summary-words-label">
+            <td colspan="3">Invoice Amount In Words :</td>
+            </tr>
+            <tr class="summary-row">
+            <td colspan="3">${esc(numberToWordsINR(grandTotal))}</td>
+            </tr>
+            ${d.totalAdvance > 0 ? `<tr class="summary-row"><td class="label">Advance</td><td class="colon">:</td><td class="num">₹ ${rupee(d.totalAdvance)}</td></tr>` : ''}
+            <tr class="summary-row summary-tight">
+            <td class="label">Received</td><td class="colon">:</td><td class="num">₹ ${rupee(d.totalPaid)}</td>
+            </tr>
+            <tr class="summary-row summary-notop">
+            <td class="label">Balance</td><td class="colon">:</td><td class="num">₹ ${rupee(balance)}</td>
+            </tr>
+            </tbody>
+            </table>
+
+            <table class="closing-table">
+            <colgroup><col class="terms-col"/><col class="amount-col"/></colgroup>
+            <tr><td colspan="2" class="terms-title-cell">Terms And Conditions:</td></tr>
+            <tr><td colspan="2" class="terms-body-cell"><p>Thank you for doing business with us.</p></td></tr>
+            <tr>
+            <td class="blank-cell"></td>
+            <td class="sign-td">
+            <div class="sign-block">
+            <div class="sign-for">For ${esc(d.companyName)}:</div>
+            <div class="sign-img-wrap">
+            ${sigSrc
+            ? `<img src="${esc(sigSrc)}" alt="Signature" onerror="this.style.display='none';" />`
+            : ''}
+            </div>
+            <div class="sign-label">Authorized Signatory</div>
+            </div>
+            </td>
+            </tr>
+            </table>
+
+            ${(d.paymentStatus || d.isDelivered !== undefined) ? `
+            <div class="footer-strip">
+            <span>${d.paymentStatus ? `Payment: ${esc(d.paymentStatus)}` : ''}</span>
+            <span>${d.isDelivered ? 'Delivered' : 'Not delivered yet'}</span>
+            </div>` : ''}
+
+            </div>
+            </div>
+
+            <div class="toolbar no-print">
+            <button type="button" class="download-btn" onclick="window.print()">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 3v12m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 17v2a2 2 0 002 2h10a2 2 0 002-2v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Download as PDF
+            </button>
+            </div>`;
+
+            container.innerHTML = html;
+            document.getElementById('loader').style.display = 'none';
+            container.style.display = 'block';
+
+            // Scale the fixed-width page to fit the viewport now that it's visible
+            // (clientWidth reads 0 while #content is display:none).
+            fitInvoice();
+            }
+
+            /* ─── Scale-to-fit ────────────────────────────────────────────────────────
+               The invoice is a fixed-width "page" (.sheet, PAGE_WIDTH px — identical
+               markup/columns/borders/spacing at every screen size). Instead of
+               reflowing or scrolling it, we shrink the whole page visually with
+               transform:scale() — exactly like zooming out on a PDF page — so every
+               column and border stays in the same relative position, just smaller.
+               .invoice-viewport is given the scaled footprint (width/height) via JS
+               so it centers correctly and reserves no extra blank space. ────────────── */
+            const PAGE_WIDTH = 900; // must match .sheet's fixed width in CSS
+
+            function fitInvoice(){
+            const page = document.querySelector('.sheet');
+            const viewport = document.querySelector('.invoice-viewport');
+            if (!page || !viewport) return;
+
+            const container = document.getElementById('content');
+            const available = container.clientWidth;
+            if (!available) return;
+
+            // scrollHeight reflects the page's real (untransformed) box size — CSS
+            // transforms only affect paint, not layout, so this stays accurate
+            // regardless of the previously-applied scale.
+            const naturalHeight = page.scrollHeight;
+
+            const scale = Math.min(1, available / PAGE_WIDTH);
+
+            page.style.transform = `scale(${scale})`;
+            viewport.style.width = (PAGE_WIDTH * scale) + 'px';
+            viewport.style.height = (naturalHeight * scale) + 'px';
+            }
+
+            let _fitRaf = null;
+            function scheduleFit(){
+            if (_fitRaf) cancelAnimationFrame(_fitRaf);
+            _fitRaf = requestAnimationFrame(fitInvoice);
+            }
+            window.addEventListener('resize', scheduleFit, { passive: true });
+            window.addEventListener('orientationchange', scheduleFit);
+
+            /* ─── Error display ──────────────────────────────────────────────────── */
+            function showError(message){
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('error-msg').textContent = message;
+            document.getElementById('error-box').style.display = 'block';
+            }
+
+            /* ─── Fetch ───────────────────────────────────────────────────────────── */
+            async function loadInvoice(){
+            const orderId = getOrderId();
+
+            if (!orderId){
+            showError('Could not load this invoice. Please refresh, or contact support if the problem continues.');
+            return;
+            }
+
+            try{
+            const res = await fetch(INVOICE_ENDPOINT(orderId));
+            if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+            const data = await res.json();
+            render(data);
+            }catch(err){
+            console.error('Failed to load invoice:', err);
+            showError('Could not load this invoice. Please refresh, or contact support if the problem continues.');
+            }
+            }
+
+            window.addEventListener('DOMContentLoaded', loadInvoice);
+</script>
+
+</body>
+</html>

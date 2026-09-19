@@ -1,0 +1,1 @@
+import{a}from"./chunk-JWXMTXJB.js";import"./chunk-IAAIPIMR.js";import"./chunk-WK4AS5CJ.js";import"./chunk-B7ECW2HR.js";import"./chunk-JUIUQOG4.js";import"./chunk-JKW4WEED.js";import"./chunk-WNB5IQIF.js";export{a as CustomerInformationComponent};

@@ -1,0 +1,257 @@
+[
+  {
+    "productCategory": {
+      "_id": "67c172740d563d3997cb0cf3",
+      "category_name": "TV"
+    },
+    "_id": "6996af63c02b965ce873906f",
+    "inventory_id": "6996af63c02b965ce873906f",
+    "seller_id": "6954d2dfa8cca61b24a2ea11",
+    "productName": "Samsung 55-inch OLED TV",
+    "productDescription": "4K Smart OLED TV with deep blacks and vibrant colors.",
+    "sellerprice": 15500,
+    "offerprice": 0,
+    "productId": "67bfee576a5bacdf1bcb0cff",
+    "defaultImage": "productdefault.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67bfee576a5bacdf1bcb0cec",
+      "category_name": "Banana"
+    },
+    "_id": "69b244420a42ba0bdfeff4f7",
+    "inventory_id": "69b244420a42ba0bdfeff4f7",
+    "seller_id": "6954d2dfa8cca61b24a2ea11",
+    "productName": "GroundNut Oil",
+    "productDescription": "Most common type of Oil",
+    "sellerprice": 100,
+    "offerprice": 0,
+    "productId": "69b242f08799fe6cfee0859e",
+    "defaultImage": "productdefault.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67bfee576a5bacdf1bcb0cec",
+      "category_name": "Banana"
+    },
+    "_id": "69b3dbe1e047f31ecac2bdf1",
+    "inventory_id": "69b3dbe1e047f31ecac2bdf1",
+    "seller_id": "6954d2dfa8cca61b24a2ea11",
+    "productName": "LG Top Load Washing Machine",
+    "productDescription": "Smart inverter washing machine with TurboDrum technology.",
+    "sellerprice": 65000,
+    "offerprice": 0,
+    "productId": "67bfee576a5bacdf1bcb0d01",
+    "defaultImage": "productdefault.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67c172740d563d3997cb0cf3",
+      "category_name": "TV"
+    },
+    "_id": "69ba49fffad0b37aec98e069",
+    "inventory_id": "69ba49fffad0b37aec98e069",
+    "seller_id": "69ba47c7167b6c3a4b3d38e4",
+    "productName": "Samsung 55-inch OLED TV",
+    "productDescription": "4K Smart OLED TV with deep blacks and vibrant colors.",
+    "sellerprice": 77000,
+    "offerprice": 0,
+    "productId": "67bfee576a5bacdf1bcb0cff",
+    "defaultImage": "productdefault.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67c172740d563d3997cb0cf3",
+      "category_name": "TV"
+    },
+    "_id": "69c0e2090d8ad856e431468e",
+    "inventory_id": "69c0e2090d8ad856e431468e",
+    "seller_id": "6954d2dfa8cca61b24a2ea12",
+    "productName": "Samsung 55-inch OLED TV",
+    "productDescription": "4K Smart OLED TV with deep blacks and vibrant colors.",
+    "sellerprice": 15400,
+    "offerprice": 0,
+    "productId": "67bfee576a5bacdf1bcb0cff",
+    "defaultImage": "productdefault.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67bfee576a5bacdf1bcb0cf0",
+      "category_name": "Smartphones"
+    },
+    "_id": "69c0e499ae6c0158ad97131b",
+    "inventory_id": "69c0e499ae6c0158ad97131b",
+    "seller_id": "6954d2dfa8cca61b24a2ea12",
+    "productName": "Samsung Galaxy S30",
+    "productDescription": "Flagship smartphone with Gorilla display and Snapdragon processor 13.",
+    "sellerprice": 97000,
+    "offerprice": 0,
+    "productId": "67dbe2f11dcf281e49cb0ce2",
+    "defaultImage": "SamsungS30.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67bfee576a5bacdf1bcb0cf0",
+      "category_name": "Smartphones"
+    },
+    "_id": "69c36613e6fa7d0ec3e19f6b",
+    "inventory_id": "69c36613e6fa7d0ec3e19f6b",
+    "seller_id": "6954d2dfa8cca61b24a2ea12",
+    "productName": "Samsung Front Load Washing Machine",
+    "productDescription": "High-efficiency front load washer with smart features.",
+    "sellerprice": 60000,
+    "offerprice": 0,
+    "productId": "67bfee576a5bacdf1bcb0d00",
+    "defaultImage": "productdefault.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67bfee576a5bacdf1bcb0cf0",
+      "category_name": "Smartphones"
+    },
+    "_id": "69fc449f1f00490b78b219b6",
+    "inventory_id": "69fc449f1f00490b78b219b6",
+    "seller_id": "6954d2dfa8cca61b24a2ea12",
+    "productName": "y",
+    "productDescription": "fdffg",
+    "sellerprice": 1200,
+    "offerprice": 0,
+    "productId": "69fc449f1f00490b78b219b4",
+    "defaultImage": "dfvdfvfd.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67c172740d563d3997cb0cf3",
+      "category_name": "TV"
+    },
+    "_id": "69fc54c01f00490b78b219b9",
+    "inventory_id": "69fc54c01f00490b78b219b9",
+    "seller_id": "6954d2dfa8cca61b24a2ea12",
+    "productName": "tyty",
+    "productDescription": "yyyyyyyyyyyyyyyyyyyyyyyy",
+    "sellerprice": 44,
+    "offerprice": 0,
+    "productId": "69fc54c01f00490b78b219b7",
+    "defaultImage": "dfvdfvfd.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67c172740d563d3997cb0cf3",
+      "category_name": "TV"
+    },
+    "_id": "6a018ec6cfa87247de368487",
+    "inventory_id": "6a018ec6cfa87247de368487",
+    "seller_id": "6954d2dfa8cca61b24a2ea12",
+    "productName": "Colgate paste",
+    "productDescription": "Good taste",
+    "sellerprice": 100,
+    "offerprice": 0,
+    "productId": "6a018ec6cfa87247de368484",
+    "defaultImage": "ftyty.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67bfee576a5bacdf1bcb0cec",
+      "category_name": "Banana"
+    },
+    "_id": "6a041d26d305f26510265c95",
+    "inventory_id": "6a041d26d305f26510265c95",
+    "seller_id": "6954d2dfa8cca61b24a2ea12",
+    "productName": "Apple",
+    "productDescription": "Tasty",
+    "sellerprice": 220,
+    "offerprice": 0,
+    "productId": "6a041d26d305f26510265c92",
+    "defaultImage": "qw.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67c172740d563d3997cb0cf3",
+      "category_name": "TV"
+    },
+    "_id": "6a2acb3b7920c40ded3c8ebe",
+    "inventory_id": "6a2acb3b7920c40ded3c8ebe",
+    "seller_id": "6954d2dfa8cca61b24a2ea12",
+    "productName": "Chair",
+    "productDescription": "good comfort",
+    "sellerprice": 1000,
+    "offerprice": 0,
+    "productId": "6a2acb3b7920c40ded3c8ebc",
+    "defaultImage": "rollingUpandDown.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67bfee576a5bacdf1bcb0cf0",
+      "category_name": "Smartphones"
+    },
+    "_id": "6a3902b612075470470d37f7",
+    "inventory_id": "6a3902b612075470470d37f7",
+    "seller_id": "6954d2dfa8cca61b24a2ea12",
+    "productName": "Apple iPhone 15 Pro",
+    "productDescription": "Premium smartphone with A17 Bionic chip and Pro camera.",
+    "sellerprice": 155000,
+    "offerprice": 153000,
+    "productId": "67bfee576a5bacdf1bcb0cf9",
+    "defaultImage": "productdefault.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67c172740d563d3997cb0cf1",
+      "category_name": "Washing Machine"
+    },
+    "_id": "6a44a667251bdd78f2b3a170",
+    "inventory_id": "6a44a667251bdd78f2b3a170",
+    "seller_id": "6954d2dfa8cca61b24a2ea12",
+    "productName": "er",
+    "productDescription": "rerer",
+    "sellerprice": 0,
+    "offerprice": 0,
+    "productId": "6a44a666251bdd78f2b3a16e",
+    "defaultImage": "bottle2.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67bfee576a5bacdf1bcb0cec",
+      "category_name": "Banana"
+    },
+    "_id": "6a72dd2f465a3a03aaa77614",
+    "inventory_id": "6a72dd2f465a3a03aaa77614",
+    "seller_id": "6954d2dfa8cca61b24a2ea12",
+    "productName": "Milk",
+    "productDescription": "Good taste",
+    "sellerprice": 23,
+    "offerprice": 0,
+    "productId": "6a72dd2f465a3a03aaa77611",
+    "defaultImage": "milk1.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "67bfee576a5bacdf1bcb0cec",
+      "category_name": "Banana"
+    },
+    "_id": "6a72e556465a3a03aaa77617",
+    "inventory_id": "6a72e556465a3a03aaa77617",
+    "seller_id": "6954d2dfa8cca61b24a2ea12",
+    "productName": "Arokia milk",
+    "productDescription": "sdc",
+    "sellerprice": 0,
+    "offerprice": 0,
+    "productId": "6a72e556465a3a03aaa77615",
+    "defaultImage": "milk2.jpg"
+  },
+  {
+    "productCategory": {
+      "_id": "6a7afd34504cd247eb34bd86",
+      "category_name": "Appliances"
+    },
+    "_id": "6a7da2a69512eb1c7fd86f37",
+    "inventory_id": "6a7da2a69512eb1c7fd86f37",
+    "seller_id": "6954d2dfa8cca61b24a2ea12",
+    "productName": "Air fryer 6s",
+    "productDescription": "Good to cook chicken",
+    "sellerprice": 5700,
+    "offerprice": 0,
+    "productId": "6a7da2a69512eb1c7fd86f35",
+    "defaultImage": "Air3.jpg"
+  }
+]

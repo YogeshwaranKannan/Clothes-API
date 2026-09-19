@@ -1,0 +1,1 @@
+var t="https://dev.fr.api.intellesyde.com",e=`${t}/api/buyer`,s=`${t}/api/seller/notifications`,o="https://dev.fr.api.intellesyde.com",p=`${o}/api/buyer`,r=`${o}/uploads/uploadsProductImages`,a=`${o}/uploads/uploadsServiceImages`,c=`${o}/uploads/CategoryCoverImages`,n="Purest";export{t as a,e as b,s as c,o as d,p as e,r as f,a as g,c as h,n as i};

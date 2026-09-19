@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>iNock – Invoice Viewer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        :root {
+          --blue:        #1a5fe0;
+          --blue-dark:   #0f3fa3;
+          --blue-light:  #e8effd;
+          --green:       #12a05c;
+          --green-light: #e6f7ef;
+          --red:         #d93535;
+          --red-light:   #fdeaea;
+          --ink:         #1a1d23;
+          --muted:       #6b7280;
+          --border:      #e2e6ed;
+          --bg:          #f4f6fb;
+          --card:        #ffffff;
+          --radius:      12px;
+          --shadow:      0 2px 12px rgba(26,95,224,.08);
+          --orange:      #b45309;
+          --orange-light:#fff4e0;
+        }
+
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+          :root {
+            --blue:        #4a8af4;
+            --blue-dark:   #2b6dd6;
+            --blue-light:  #1e2a40;
+            --green:       #34d399;
+            --green-light: #1a2e28;
+            --red:         #f87171;
+            --red-light:   #3b1c1c;
+            --ink:         #e5e7eb;
+            --muted:       #9ca3af;
+            --border:      #374151;
+            --bg:          #111827;
+            --card:        #1f2937;
+            --shadow:      0 2px 12px rgba(0,0,0,.3);
+            --orange:      #fbbf24;
+            --orange-light:#2d2410;
+          }
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          background: var(--bg);
+          color: var(--ink);
+          min-height: 100vh;
+          font-size: 13px;
+          line-height: 1.45;
+        }
+
+        /* ── Loader ── */
+        #loader {
+          display: flex; flex-direction: column; align-items: center; justify-content: center;
+          min-height: 60vh; gap: 14px;
+        }
+        .spinner {
+          width: 40px; height: 40px;
+          border: 3px solid var(--blue-light);
+          border-top-color: var(--blue);
+          border-radius: 50%;
+          animation: spin .8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        #loader p { color: var(--muted); font-size: .85rem; }
+
+        /* ── Error ── */
+        #error-box {
+          display: none;
+          margin: 20px auto; max-width: 560px;
+          background: var(--red-light);
+          border: 1.5px solid var(--red);
+          border-radius: var(--radius);
+          padding: 14px 16px;
+          color: var(--red);
+          font-size: .85rem;
+          line-height: 1.5;
+        }
+        #error-box strong { display: block; margin-bottom: 4px; font-size: .95rem; }
+
+        /* ── Main wrapper ── */
+        #content { display: none; padding: 16px 14px 32px; max-width: 680px; margin: 0 auto; }
+
+        /* ── Invoice card ── */
+        .invoice-card {
+          background: var(--card);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+          overflow: hidden;
+          margin-bottom: 14px;
+          animation: fadeUp .4s ease both;
+        }
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(14px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Company header */
+        .company-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.75rem;
+        }
+        .company-logo {
+          width: auto; height: 46px; border-radius: 10px;
+          background: rgba(255,255,255,.2);
+          display: grid; place-items: center;
+          font-size: 1.2rem; font-weight: 700; flex-shrink: 0;
+        }
+        .company-logo img {
+  max-height: 80px;
+  object-fit: contain;
+}
+.company-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.company-info .name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.company-info .refno {
+  font-size: 0.875rem;
+  color: #666;
+}
+        /* Amount hero */
+        .amount-hero {
+          text-align: center;
+          border-bottom: 1px solid var(--border);
+        }
+        .amount-hero .amount {
+          font-size: 1.25rem; font-weight: 600;
+          line-height: 1;
+        }
+        .amount-hero .order-ref {
+          font-size: .7rem; color: var(--muted); margin-top: 5px;
+          font-family: 'JetBrains Mono', monospace;
+        }
+        .amount-hero .order-date {
+          font-size: .7rem; color: var(--muted); margin-top: 3px;padding-bottom: 10px;
+        }
+
+        /* Section title */
+        .section-title {
+          font-size: .64rem; font-weight: 600; text-transform: uppercase;
+          letter-spacing: 1px; color: var(--muted);
+          padding: 8px 14px 5px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        /* Items table */
+        .items-header {
+          display: grid;
+          grid-template-columns: 1fr 70px 50px 80px;
+          padding: 5px 14px;
+          font-size: .64rem; font-weight: 600; text-transform: uppercase;
+          letter-spacing: .6px; color: var(--muted);
+          background: var(--bg);
+          border-bottom: 1px solid var(--border);
+        }
+        .items-header span:not(:first-child) { text-align: center; }
+
+        .item-row {
+          display: grid;
+          grid-template-columns: 1fr 70px 50px 80px;
+          padding: 8px 14px;
+          align-items: center;
+          border-bottom: 1px dashed var(--border);
+          gap: 3px;
+        }
+        .item-row:last-child { border-bottom: none; }
+        /* Alternate row gradient styling */
+        .item-row:nth-child(odd)  { background: linear-gradient(135deg, var(--card) 0%, var(--bg) 100%); }
+        .item-row:nth-child(even) { background: linear-gradient(135deg, var(--bg) 0%, var(--card) 100%); }
+
+        .item-name-cell { display: flex; align-items: center; gap: 7px; }
+        .item-thumb {
+          width: 30px; height: 30px; border-radius: 6px;
+          background: var(--blue-light);
+          display: grid; place-items: center;
+          font-size: .65rem; font-weight: 600; color: var(--blue);
+          flex-shrink: 0; overflow: hidden;
+        }
+        .item-thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+        .item-name  { font-size: .78rem; font-weight: 500; }
+        .item-batch { font-size: .6rem; color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-top: 1px; }
+        .item-type-badge {
+          display: inline-block; font-size: .54rem; font-weight: 600; text-transform: uppercase;
+          letter-spacing: .5px; padding: 1px 5px; border-radius: 4px; margin-top: 2px;
+        }
+        .item-type-badge.product { background: var(--blue-light); color: var(--blue); }
+        /* .item-type-badge.service removed visually */
+
+        .item-row .price, .item-row .qty, .item-row .value {
+          text-align: center; font-size: .64rem;font-weight: 400; color: var(--muted);
+        }
+        .item-row .value { font-weight: 600; }
+
+        /* ── Service Properties ── */
+        .service-props {
+          padding: 4px 14px 8px;
+          border-bottom: 1px dashed var(--border);
+        }
+        .service-props:last-child { border-bottom: none; }
+        .service-props-title {
+          font-size: .68rem; font-weight: 500; color: var(--blue);
+          margin-bottom: 4px; display: flex; align-items: center; gap: 5px;
+        }
+        .service-props-title .svc-icon {
+          width: 14px; height: 14px; display: inline-flex; align-items: center; justify-content: center;
+        }
+
+        .prop-group {
+          display: flex; align-items: center; gap: 12px;
+          margin-bottom: 4px; flex-wrap: wrap;
+        }
+        .prop-group:last-child { margin-bottom: 0; }
+        .prop-label {
+          font-size: .64rem; font-weight: 400;
+          /* camelCase: remove text-transform uppercase */
+          letter-spacing: .3px; color: var(--muted); margin-bottom: 0;
+          white-space: nowrap; min-width: 80px; flex-shrink: 0;
+        }
+        .prop-type-tag {
+          font-size: .52rem; font-weight: 400; text-transform: uppercase;
+          letter-spacing: .4px; color: var(--blue); background: var(--blue-light);
+          padding: 1px 4px; border-radius: 3px; margin-left: 4px; vertical-align: middle;
+        }
+
+        /* Property: Text */
+        .prop-text-value {
+          font-size: .72rem; font-weight: 400; padding: 3px 8px;
+           border-radius: 6px; border: 1px solid var(--border);
+          flex: 1; min-width: 0;
+        }
+
+        /* Property: Radio / Checkbox options */
+        .prop-options {
+          display: flex; flex-wrap: wrap; gap: 4px; flex: 1; min-width: 0;
+        }
+        .prop-option {
+          font-size: .66rem; padding: 2px 8px; border-radius: 16px;
+          border: 1px solid var(--border); background: var(--card);
+          color: var(--muted); font-weight: 400; transition: all .15s;
+        }
+        .prop-option.selected {
+          border-color: var(--blue); background: var(--blue-light);
+          color: var(--blue); font-weight: 400;
+        }
+        .prop-option.selected::before {
+          content: '✓ '; font-size: .58rem;
+        }
+
+        /* Property: Dropdown */
+        .prop-dropdown {
+          display: flex; flex-wrap: wrap; gap: 4px; flex: 1; min-width: 0;
+        }
+        .prop-dropdown-item {
+          font-size: .66rem; padding: 2px 8px; border-radius: 6px;
+          border: 1px solid var(--border); background: var(--card);
+          color: var(--muted); font-weight: 400;
+        }
+        .prop-dropdown-item.selected {
+          border-color: var(--green); background: var(--green-light);
+          color: var(--green); font-weight: 400;
+        }
+
+        /* Property: Table */
+        .prop-table {
+          width: 100%; border-collapse: collapse; font-size: .72rem;
+          border-radius: 6px; overflow: hidden; border: 1px solid var(--border);
+          flex: 1; min-width: 0;
+        }
+        .prop-table th {
+          background: var(--bg); color: var(--muted); font-weight: 400;
+          font-size: .6rem; text-transform: capitalize; letter-spacing: .5px;
+          padding: 4px 8px; text-align: left; border-bottom: 1px var(--border);
+        }
+        .prop-table td {
+          padding: 4px 8px; border-bottom: 1px dashed var(--border);
+          font-weight: 300;
+        }
+        .prop-table tr:last-child td { border-bottom: none; }
+
+        /* Totals */
+        .totals-block { padding: 8px 14px; }
+        .total-row {
+          display: flex; justify-content: space-between; align-items: center;
+          padding: 4px 0;
+          font-size: .76rem;
+          border-bottom: 1px dashed var(--border);
+        }
+        .total-row:last-child { border-bottom: none; }
+        .total-row .label { color: var(--muted); }
+        .total-row .val   { font-weight: 400; }
+        .total-row.highlight .label { font-weight: 400; color: var(--ink); }
+        .total-row.highlight .val   { font-size: .92rem; font-weight: 400; color: var(--blue); }
+        .total-row.saved .val { color: var(--green); font-weight: 400; }
+        .strikethrough { text-decoration: line-through; color: var(--muted); margin-right: 8px; font-weight: 400; }
+
+        /* KV rows – compact */
+        .kv-block { padding: 2px 0; }
+        .kv-row {
+          display: flex; align-items: flex-start; gap: 6px;
+          padding: 4px 14px;
+          border-bottom: 1px dashed var(--border);
+          font-size: .74rem;
+        }
+        .kv-row:last-child { border-bottom: none; }
+        .kv-row .kv-key {
+          min-width: 100px; color: var(--muted); font-size: .50rem;
+          flex-shrink: 0; padding-top: 1px;
+        }
+        .kv-row .kv-val { font-weight: 500; word-break: break-word; }
+        .kv-row .kv-val.mono { font-family: 'JetBrains Mono', monospace; font-size: .7rem; }
+        .kv-row .kv-val.blue { color: var(--blue); font-weight: 500; }
+        .kv-row .kv-val.green { color: var(--green); }
+        .kv-row .kv-val.red   { color: var(--red); }
+
+        /* Badge */
+        .badge {
+          display: inline-block;
+          padding: 2px 7px; border-radius: 16px;
+          font-size: .62rem; font-weight: 400; text-transform: uppercase; letter-spacing: .5px;
+        }
+        .badge.pickup  { background: var(--blue-light);  color: var(--blue); }
+        .badge.upi     { background: var(--green-light); color: var(--green); }
+        .badge.pending { background: var(--orange-light); color: var(--orange); }
+        .badge.generic { background: var(--blue-light);  color: var(--blue); }
+
+        /* Raw JSON */
+        .json-block {
+          background: #1a1d23; border-radius: var(--radius);
+          overflow: hidden; margin-bottom: 14px;
+          box-shadow: var(--shadow);
+          animation: fadeUp .4s .2s ease both;
+        }
+        .json-block-header {
+          display: flex; justify-content: space-between; align-items: center;
+          padding: 10px 14px;
+          background: #252830;
+          border-bottom: 1px solid #33373f;
+        }
+        .json-block-header span { color: #8b949e; font-size: .74rem; font-family: 'JetBrains Mono', monospace; }
+        .copy-btn {
+          background: rgba(255,255,255,.08); border: 1px solid #33373f;
+          color: #c9d1d9; font-size: .72rem; padding: 3px 8px;
+          border-radius: 6px; cursor: pointer; font-family: 'JetBrains Mono', monospace;
+          transition: background .15s;
+        }
+        .copy-btn:hover { background: rgba(255,255,255,.15); }
+        pre#json-output {
+          margin: 0; padding: 14px; overflow-x: auto;
+          font-family: 'JetBrains Mono', monospace; font-size: .74rem; line-height: 1.6;
+          color: #e6edf3;
+        }
+        .tok-key    { color: #79c0ff; }
+        .tok-str    { color: #a5d6ff; }
+        .tok-num    { color: #f78166; }
+        .tok-bool   { color: #d2a8ff; }
+        .tok-null   { color: #8b949e; }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+          .items-header, .item-row { grid-template-columns: 1fr 56px 36px 70px; }
+          .kv-row .kv-key { min-width: 90px; }
+          .amount-hero .amount { font-size: 1.25rem; }
+          .company-header {  }
+          .prop-table { font-size: .66rem; }
+          .prop-table th, .prop-table td { padding: 3px 6px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="loader">
+    <div class="spinner"></div>
+    <p>Loading invoice…</p>
+</div>
+
+<div id="error-box">
+    <strong>⚠ Unable to load invoice</strong>
+    <span id="error-msg">An unexpected error occurred. Please try again.</span>
+</div>
+
+<div id="content"></div>
+
+<script>
+
+
+    /* ─── Helpers ─────────────────────────────────────────────────────────────── */
+    const fmt = n => '₹' + Number(n || 0).toLocaleString('en-IN', { minimumFractionDigits: 2 });
+    const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    function toCamelCase(str) {
+      return (str || '').replace(/(?:^\w|[A-Z]|\b\w)/g, (c, i) => i === 0 ? c.toLowerCase() : c.toUpperCase()).replace(/[\s_-]+/g, '');
+    }
+    function toTitleCase(str) {
+      return String(str)
+        .toLowerCase()
+        .replace(/\b\w/g, c => c.toUpperCase());
+    }
+
+
+    function initials(name) {
+      return (name || 'NA').split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+    }
+
+    function syntaxHighlight(json) {
+      return JSON.stringify(json, null, 2)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        .replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, m => {
+          let cls = 'tok-num';
+          if (/^"/.test(m)) cls = /:$/.test(m) ? 'tok-key' : 'tok-str';
+          else if (/true|false/.test(m)) cls = 'tok-bool';
+          else if (/null/.test(m)) cls = 'tok-null';
+          return `<span class="${cls}">${m}</span>`;
+        });
+    }
+
+    function nullOrDash(v) {
+      return (v === null || v === undefined || v === '') ? '<span style="color:var(--muted)">—</span>' : esc(v);
+    }
+
+<!--    function formatDate(dateStr) {-->
+<!--      if (!dateStr) return null;-->
+<!--      try {-->
+<!--        const d = new Date(dateStr);-->
+<!--        return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) +-->
+<!--               ', ' + d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });-->
+<!--      } catch { return dateStr; }-->
+<!--    }-->
+        function formatDate(dateStr) {
+          if (!dateStr) return null;
+
+          try {
+            // Convert IST → GMT+0530 (browser-friendly)
+            const cleaned = dateStr.replace('IST', 'GMT+0530');
+
+            const d = new Date(cleaned);
+
+            if (isNaN(d)) return dateStr;
+
+            return (
+              d.toLocaleDateString('en-IN', {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric'
+              }) +
+              ', ' +
+              d.toLocaleTimeString('en-IN', {
+                hour: '2-digit',
+                minute: '2-digit'
+              })
+            );
+          } catch {
+            return dateStr;
+          }
+        }
+
+    function getOrderId() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('orderid') || params.get('orderId') || params.get('orderID') || null;
+    }
+
+    /* ─── Normalize data: support both flat (old) and nested (new) JSON ────── */
+    function normalize(d) {
+      return {
+        companyName:   d.companyName || '',
+        companyLogo:   d.companyLogo || '',
+        baseUrl    :   d.baseUrl||'',
+        referenceNo:   d.referenceNo || d.refno || '',
+        orderDate:     d.orderDate || d.order_date || '',
+        orderStatus:   d.order_status || d.orderStatus ||  null,
+        deliveryMode:  d.deliveryMode || d.delivery_mode || null,
+        totalAmount:   d.total_Amount ?? d.total_Amount ?? 0,
+        totalDiscount: d.total_Discount ?? d.total_Discount ?? 0,
+        totalPaid:     d.total_Paid?? d.total_Paid ?? 0,
+        totalAdvance:  d.total_Advance ?? 0,
+        amountDue:     d.pricing?.amountDue ?? d.total_AmountDue ?? 0,
+        paymentMode:   d.payment?.mode ?? d.payment_mode ?? null,
+        paymentStatus: d.payment?.status ?? d.payment_status ?? null,
+        paymentDetails:d.payment?.details ?? null,
+        isDelivered:   d.delivery?.isDelivered ?? d.isDelivered ?? false,
+        deliveryDueDate: d.delivery?.dueDate ?? d.deliveryDueDate ?? null,
+        deliveredDate: d.delivery?.deliveredDate ?? d.deliveredDate ?? null,
+        customerName:  d.customer?.name ?? d.customerInformationDTO?.customerName ?? '',
+        customerMobile:d.customer?.mobile ?? d.customerInformationDTO?.customerMobileNum ?? '',
+        customerAddress:d.customer?.address ?? d.customerInformationDTO?.deliveryAddress ?? d.delivery_details ?? null,
+        inventory:     d.inventory || [],
+      };
+    }
+
+    /* ─── Render Service Properties ───────────────────────────────────────────── */
+    function renderProperties(item,cleanBaseUrl) {
+      console.log("renderProperties items: ",item)
+      const props = item.available_properties;
+      const attrs = item.propertyAttributes || {};
+      if (!props || !props.length) return '';
+
+      function getAttrVal(propName) {
+  if (!attrs) return null;
+
+  const normalize = str =>
+    String(str || '')
+      .toLowerCase()
+      .replace(/[\s_-]/g, '');
+
+  const direct = attrs[propName];
+  if (direct !== undefined) return direct;
+
+  const key = Object.keys(attrs).find(
+    k => normalize(k) === normalize(propName)
+  );
+
+  return key ? attrs[key] : null;
+}
+
+      let html = '<div class="service-props">';
+
+      props.forEach(prop => {
+        const attrVal = getAttrVal(prop.name);
+        const ptype = (prop.type || '').toLowerCase();
+
+        // Skip empty (except table)
+        if (
+          ptype !== 'table' &&
+          (attrVal === null || attrVal === undefined || attrVal === '')
+        )
+          return;
+
+        html += `<div class="prop-group">`;
+        html += `<div class="prop-label">${toTitleCase(prop.name)}</div>`;
+
+        if (ptype === 'table') {
+          html += renderTableProp(prop, attrVal);
+
+        } else if (ptype === 'radio') {
+          html += renderOptionsProp(prop, attrVal, false);
+
+        } else if (ptype === 'checkbox') {
+          html += renderOptionsProp(prop, attrVal, true);
+
+        } else if (ptype === 'dropdown') {
+          html += renderDropdownProp(prop, attrVal);
+
+        } else if (ptype === 'text') {
+          html += `<div class="prop-text-value">${esc(attrVal)}</div>`;
+
+        }  else if (ptype === 'image') {
+
+          const originalVal = getAttrVal(prop.name);
+          const croppedVal = getAttrVal(`cropped ${prop.name}`);
+
+          const formatPath = path =>
+            path ? path.replace(/\\/g, '/') : '';
+
+          if (originalVal) {
+            html += `
+              <div>
+                <small>Original</small><br/>
+                <img
+                  src="${encodeURI(`${cleanBaseUrl}/${formatPath(originalVal)}`)}"
+                  style="max-width:80px; height:80px; border-radius:6px;"
+                />
+              </div>`;
+          }
+
+          if (croppedVal) {
+            html += `
+              <div>
+                <small>Cropped</small><br/>
+                <img
+                  src="${encodeURI(`${cleanBaseUrl}/${formatPath(croppedVal)}`)}"
+                  style="max-width:80px; height:80px; border-radius:6px;"
+                />
+              </div>`;
+          }
+
+          if (!originalVal && !croppedVal) {
+            html += `<div class="prop-text-value">Image not available</div>`;
+          }
+        } else {
+          html += `<div class="prop-text-value">${esc(attrVal)}</div>`;
+        }
+
+        html += `</div>`;
+      });
+
+      html += '</div>';
+      console.log("end properties display images")
+      return html;
+    }
+
+    function renderTableProp(prop, attrVal) {
+      // columns from prop.value: "Height,Width,Length"
+      const columns = (prop.value || '').split(',').map(s => s.trim()).filter(Boolean);
+      if (!columns.length) return '<div class="prop-text-value" style="color:var(--muted)">No data</div>';
+
+      // attrVal format: "Height=65' 45\",Width=55\" 35,Length=45' 25\""
+      // Parse into rows — each entry is "ColName=Value"
+      let rowData = {};
+      if (attrVal) {
+        // Split by comma followed by a known column name
+        const pattern = columns.map(c => c.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+        const regex = new RegExp(`(${pattern})=`, 'g');
+        let matches = [];
+        let match;
+        while ((match = regex.exec(attrVal)) !== null) {
+          matches.push({ col: match[1], start: match.index + match[0].length });
+        }
+        matches.forEach((m, i) => {
+          const end = i + 1 < matches.length ? matches[i+1].start - matches[i+1].col.length - 1 : attrVal.length;
+          let val = attrVal.substring(m.start, end).replace(/,$/, '').trim();
+          rowData[m.col] = val;
+        });
+      }
+
+      let html = '<table class="prop-table"><thead><tr>';
+      html += '<th>Property</th><th>Value</th>';
+      html += '</tr></thead><tbody>';
+      columns.forEach(col => {
+        html += `<tr><td>${esc(col)}</td><td>${esc(rowData[col] || '—')}</td></tr>`;
+      });
+      html += '</tbody></table>';
+      return html;
+    }
+
+    function renderOptionsProp(prop, attrVal, isMulti) {
+      const options = (prop.value || '').split(',').map(s => s.trim()).filter(Boolean);
+      // Selected values: for checkbox can be comma-separated
+      const selected = (attrVal || '').split(',').map(s => s.trim().toLowerCase());
+
+      let html = '<div class="prop-options">';
+      options.forEach(opt => {
+        const isSelected = selected.includes(opt.toLowerCase());
+        html += `<span class="prop-option${isSelected ? ' selected' : ''}">${toTitleCase(opt)}</span>`;
+      });
+      html += '</div>';
+      return html;
+    }
+
+    function renderDropdownProp(prop, attrVal) {
+      const options = (prop.value || '').split(',').map(s => s.trim()).filter(Boolean);
+      const selectedVal = (attrVal || '').trim().toLowerCase();
+
+      let html = '<div class="prop-dropdown">';
+      options.forEach(opt => {
+        const isSelected = opt.toLowerCase() === selectedVal;
+        html += `<span class="prop-dropdown-item${isSelected ? ' selected' : ''}">${toTitleCase(opt)}</span>`;
+      });
+      html += '</div>';
+      return html;
+    }
+
+    /* ─── Main Render ─────────────────────────────────────────────────────────── */
+    function render(rawData) {
+      const d = normalize(rawData);
+      const container = document.getElementById('content');
+      const inv = d.inventory;
+      const products = inv.filter(i => i.flag === null);
+      const services = inv.filter(i => (i.flag || '').toUpperCase() === 'ISSERVICE');
+      const itemCount = inv.reduce((s, i) => s + (i.quantity?.ordered || i.order_quantity || i.Order_quantity || 1), 0);
+      const totalProducts=inv.reduce((s) => s+1, 0);
+      /* ── Company header + amount hero ── */
+     const cleanBaseUrl = (d.baseUrl || '').replace(/^"+|"+$/g, '');
+
+     console.log("cleanBaseUrl : ",cleanBaseUrl);
+
+       const logoUrl = d.companyLogo
+      ? encodeURI(`${cleanBaseUrl}/uploads/${d.companyLogo}`)
+      : null;
+
+        const logoHtml = `
+          <div style="display:flex;align-items:center;gap:8px;">
+            ${
+              logoUrl
+                ? `
+                <a href="${logoUrl}" target="_blank">
+                  <img
+                    src="${logoUrl}"
+                    alt="logo"
+                    style="width:40px;height:40px;border-radius:6px;object-fit:cover;"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+                  />
+                  <span style="display:none;font-weight:600;">
+                    ${initials(d.companyName)}
+                  </span>
+                </a>
+              `
+                : `
+                <span style="font-weight:600;">
+                  ${initials(d.companyName)}
+                </span>
+              `
+            }
+          </div>
+        `;
+
+      let html = `
+      <div class="invoice-card" style="animation-delay:0s">
+        <div class="company-header">
+          <div class="company-logo">${logoHtml}</div>
+          <div class="company-info">
+            <div class="name">${toTitleCase(d.companyName)}</div>
+            <div class="refno">${toTitleCase(d.referenceNo)}</div>
+          </div>
+        </div>
+
+        <div class="amount-hero">
+          <div class="amount">${fmt(d.totalPaid)}</div>
+          <div class="order-date">${formatDate(d.orderDate) || toTitleCase(d.orderDate)}</div>
+        </div>`;
+
+      /* ── Products Section ── */
+
+        html += `
+        <div class="items-header">
+          <span>Product Name</span><span>Price</span><span>Qty</span><span>Value</span>
+        </div>`;
+     if (products.length) {
+     console.log("Products")
+        products.forEach(item => {
+          const qty = item.quantity?.ordered || item.order_quantity || 1;
+          const price = item.offerPrice || item.pricing?.sellerPrice || item.sellerprice || 0;
+         const formattedProductName = (
+          typeof item.productname === 'string' ? item.productname : ''
+          )
+          .trim()
+          .replace(/[\/()]/g, '')
+          .replace(/\s+/g, '-');
+
+          const imgUrl = `${cleanBaseUrl}/uploads/uploadsProductImages/${formattedProductName}/${item.defaultImage}`;
+
+            const thumbHtml = item.defaultImage
+              ? `<a href="${imgUrl}" target="_blank">
+                   <img src="${imgUrl}" alt=""
+                     onerror="this.style.display='none';this.parentNode.nextElementSibling&&(this.parentNode.nextElementSibling.style.display='')" />
+                 </a>
+                 <span style="display:none">${initials(item.name || item.productname || 'P')}</span>`
+              : `<span>${initials(item.name || item.productname || 'P')}</span>`;
+
+<!--        const thumbHtml = item.defaultImage-->
+<!--          ? `<img src="${cleanBaseUrl}/uploads/uploadsProductImages/${formattedProductName}/${item.defaultImage}" alt="" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='')" /><span style="display:none">${initials(item.name || item.productname || 'P')}</span>`-->
+<!--          : `<span>${initials(item.name || item.productname || 'P')}</span>`;-->
+
+          html += `
+          <div class="item-row">
+            <div class="item-name-cell">
+              <div>
+<!--                <div class="item-name">${toTitleCase(item.name || item.productname || '')}</div>-->
+                     <div class="item-name">
+                      ${esc(
+                        `${item.name || item.productname || ''}${
+                          item.variantBatches?.[0]?.variantName
+                            ? ` (${item.variantBatches[0].variantName})`
+                            : ''
+                        }`
+                      )}
+                    </div>
+              </div>
+            </div>
+            <div class="price">₹${Number(price).toLocaleString('en-IN')}</div>
+            <div class="qty">${qty}</div>
+            <div class="value">${fmt(price * qty)}</div>
+          </div>`;
+        });
+      }
+
+      /* ── Services Section ── */
+      if (services.length) {
+      console.log("Services")
+        services.forEach(item => {
+          const qty = item.quantity?.ordered || item.order_quantity || 1;
+          const cost = item.pricing?.serviceCost || item.pricing?.sellerPrice || item.sellerprice || 0;
+<!--          const thumbHtml = item.image-->
+<!--            ? `<img src="${toTitleCase(item.image)}" alt="" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='')" /><span style="display:none">${initials(item.serviceName || item.name || 'S')}</span>`-->
+<!--            : `<span>${initials(item.servicename || item.name || 'S')}</span>`;-->
+
+            const serviceImg = toTitleCase(item.image);
+
+            const thumbHtml = item.image
+              ? `<a href="${serviceImg}" target="_blank">
+                   <img src="${serviceImg}" alt=""
+                     onerror="this.style.display='none';this.parentNode.nextElementSibling&&(this.parentNode.nextElementSibling.style.display='')" />
+                 </a>
+                 <span style="display:none">${initials(item.serviceName || item.name || 'S')}</span>`
+              : `<span>${initials(item.servicename || item.name || 'S')}</span>`;
+
+          html += `
+          <div class="item-row">
+            <div class="item-name-cell">
+              <div>
+                <div class="item-name">${toTitleCase(item.servicename || item.name || '')}</div>
+              </div>
+            </div>
+            <div class="price">₹${Number(cost).toLocaleString('en-IN')}</div>
+            <div class="qty">${qty}</div>
+            <div class="value">${fmt(cost * qty)}</div>
+          </div>`;
+
+          // Render properties for this service
+          html += renderProperties(item,cleanBaseUrl);
+        });
+      }
+
+      /* ── If no products or services but inventory exists (fallback) ── */
+      if (!products.length && !services.length && inv.length) {
+      console.log("!products.length && !services.length && inv.length");
+        html += `<div class="section-title">Order Items</div>
+        <div class="items-header">
+          <span>ITEM</span><span>PRICE</span><span>QTY</span><span>VALUE</span>
+        </div>`;
+        inv.forEach(item => {
+          const qty = item.quantity?.ordered || item.order_quantity || item.Order_quantity || 1;
+          const price = item.pricing?.sellerPrice || item.sellerprice || 0;
+
+          const fallbackImg = toTitleCase(item.image || item.defaultImage);
+
+            const thumbHtml = item.image || item.defaultImage
+              ? `<a href="${fallbackImg}" target="_blank">
+                   <img src="${fallbackImg}" alt="" />
+                 </a>`
+              : `<span>${initials(item.name || item.productname || item.serviceName || 'I')}</span>`;
+
+<!--          const thumbHtml = item.image || item.defaultImage-->
+<!--            ? `<img src="${toTitleCase(item.image || item.defaultImage)}" alt="" />`-->
+<!--            : `<span>${initials(item.name || item.productname || item.serviceName || 'I')}</span>`;-->
+
+          html += `
+          <div class="item-row">
+            <div class="item-name-cell">
+              <div class="item-thumb">${thumbHtml}</div>
+              <div>
+                <div class="item-name">${toTitleCase(item.name || item.productname || item.serviceName || '')}</div>
+              </div>
+            </div>
+            <div class="price">₹${Number(price).toLocaleString('en-IN')}</div>
+            <div class="qty">${qty}</div>
+            <div class="value">${fmt(price * qty)}</div>
+          </div>`;
+          if (item.availableProperties) html += renderProperties(item);
+        });
+      }
+
+      /* ── Totals ── */
+      const saved = d.totalDiscount || 0;
+      html += `
+        <div class="section-title">Summary</div>
+        <div class="totals-block">
+          <div class="total-row">
+            <span class="label">Order Value</span>
+            <span class="val">
+              ${saved > 0 ? `<span class="strikethrough">${fmt(d.totalAmount)}</span>` : ''}
+              ${fmt(d.totalPaid)}
+            </span>
+          </div>
+          ${saved > 0 ? `<div class="total-row saved">
+            <span class="label">You Saved</span>
+            <span class="val">−${fmt(saved)}</span>
+          </div>` : ''}
+          ${d.amountDue > 0 ? `<div class="total-row highlight">
+            <span class="label">Amount Due</span>
+            <span class="val">${fmt(d.amountDue)}</span>
+          </div>` : ''}
+          <div class="total-row">
+            <span class="label">Total # of Items</span>
+            <span class="val">${totalProducts}</span>
+          </div>
+        </div>
+      </div>`;
+
+      /* ── Delviery Information ── */
+      html += `
+      <div class="invoice-card" style="animation-delay:.05s">
+        <div class="section-title">Delivery Information</div>
+          <div class="kv-row">
+            <span class="kv-key">Delivery Address</span>
+            <span class="kv-val">${nullOrDash(d.customerAddress)}</span>
+          </div>
+          <div class="kv-row">
+            <span class="kv-key">Delivery Mode</span>
+            <span class="kv-val">
+              ${d.deliveryMode ? `<span class="badge pickup">${toTitleCase(d.deliveryMode)}</span>` : nullOrDash(null)}
+            </span>
+          </div>
+		  <div class="kv-row">
+            <span class="kv-key">Payment Status</span>
+            <span class="kv-val">${nullOrDash(d.paymentStatus)}</span>
+          </div>
+		  <div class="kv-row">
+            <span class="kv-key">Delivered</span>
+            <span class="kv-val ${d.isDelivered ? 'green' : 'red'}">${d.isDelivered ? 'Yes' : 'No'}</span>
+          </div>
+        </div>
+      </div>`;
+
+      // /* ── Customer Information ── */
+      // html += `
+      // <div class="invoice-card" style="animation-delay:.05s">
+      //   <div class="section-title">Customer Information</div>
+      //   <div class="kv-block">
+      //     <div class="kv-row">
+      //       <span class="kv-key">Name</span>
+      //       <span class="kv-val">${nullOrDash(d.customerName)}</span>
+      //     </div>
+      //     <div class="kv-row">
+      //       <span class="kv-key">Mobile</span>
+      //       <span class="kv-val mono">${nullOrDash(d.customerMobile)}</span>
+      //     </div>
+      //     <div class="kv-row">
+      //       <span class="kv-key">Delivery Address</span>
+      //       <span class="kv-val">${nullOrDash(d.customerAddress)}</span>
+      //     </div>
+      //     <div class="kv-row">
+      //       <span class="kv-key">Delivery Mode</span>
+      //       <span class="kv-val">
+      //         ${d.deliveryMode ? `<span class="badge pickup">${toTitleCase(d.deliveryMode)}</span>` : nullOrDash(null)}
+      //       </span>
+      //     </div>
+      //   </div>
+      // </div>`;
+
+      // /* ── Payment Details ── */
+      // html += `
+      // <div class="invoice-card" style="animation-delay:.1s">
+      //   <div class="section-title">Payment Details</div>
+      //   <div class="kv-block">
+      //     <div class="kv-row">
+      //       <span class="kv-key">Payment Mode</span>
+      //       <span class="kv-val">
+      //         ${d.paymentMode ? `<span class="badge upi">${toTitleCase(d.paymentMode)}</span>` : nullOrDash(null)}
+      //       </span>
+      //     </div>
+      //     <div class="kv-row">
+      //       <span class="kv-key">Payment Ref</span>
+      //       <span class="kv-val mono blue">${nullOrDash(d.referenceNo)}</span>
+      //     </div>
+      //     <div class="kv-row">
+      //       <span class="kv-key">Payment Status</span>
+      //       <span class="kv-val">${nullOrDash(d.paymentStatus)}</span>
+      //     </div>
+      //     <div class="kv-row">
+      //       <span class="kv-key">Order Status</span>
+      //       <span class="kv-val">${nullOrDash(d.orderStatus)}</span>
+      //     </div>
+      //     <div class="kv-row">
+      //       <span class="kv-key">Delivered</span>
+      //       <span class="kv-val ${d.isDelivered ? 'green' : 'red'}">${d.isDelivered ? 'Yes' : 'No'}</span>
+      //     </div>
+      //     <div class="kv-row">
+      //       <span class="kv-key">Delivery Due</span>
+      //       <span class="kv-val">${d.deliveryDueDate ? formatDate(d.deliveryDueDate) : nullOrDash(null)}</span>
+      //     </div>
+      //     <div class="kv-row">
+      //       <span class="kv-key">Delivered Date</span>
+      //       <span class="kv-val">${d.deliveredDate ? formatDate(d.deliveredDate) : nullOrDash(null)}</span>
+      //     </div>
+      //     <div class="kv-row">
+      //       <span class="kv-key">Total Paid</span>
+      //       <span class="kv-val blue">${fmt(d.totalPaid)}</span>
+      //     </div>
+      //     <div class="kv-row">
+      //       <span class="kv-key">Total Due</span>
+      //       <span class="kv-val">${fmt(d.amountDue)}</span>
+      //     </div>
+      //   </div>
+      // </div>`;
+
+      /* ── Raw JSON ── */
+<!--      html += `-->
+<!--      <div class="json-block">-->
+<!--        <div class="json-block-header">-->
+<!--          <span>application/json · Raw Response</span>-->
+<!--          <button class="copy-btn" onclick="copyJSON()">Copy</button>-->
+<!--        </div>-->
+<!--        <pre id="json-output">${syntaxHighlight(rawData)}</pre>-->
+<!--      </div>`;-->
+
+      container.innerHTML = html;
+      document.getElementById('loader').style.display = 'none';
+      container.style.display = 'block';
+    }
+
+    /* ─── Copy helper ─────────────────────────────────────────────────────────── */
+    function copyJSON() {
+      const text = document.getElementById('json-output').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 2000);
+      });
+    }
+
+    /* ─── Fetch ───────────────────────────────────────────────────────────────── */
+    async function loadInvoice() {
+  const orderId = getOrderId();
+
+  if (!orderId) {
+    console.warn('No orderid in URL params, falling back to sample data.');
+    render(SAMPLE);
+    return;
+  }
+
+  try {
+    const res = await fetch(
+      `https://dev.fr.api.intellesyde.com/api/seller/InvoiceData/${orderId}`
+    );
+
+<!--         const res = await fetch(-->
+<!--      `http://192.168.1.10:8080/api/seller/InvoiceData/${orderId}`-->
+<!--    );-->
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+    }
+
+    const data = await res.json();
+    console.log("Data: ",data)
+    render(data);
+
+  } catch (err) {
+    console.warn('API failed, falling back to sample data.', err.message);
+     render({
+      baseUrl: "",
+      companyName: "Error Loading",
+      referenceNo: "",
+      totalPaid: 0,
+      orderDate: "",
+      inventory: []
+    });
+  }
+}
+    window.addEventListener('DOMContentLoaded', loadInvoice);
+</script>
+
+</body>
+</html>

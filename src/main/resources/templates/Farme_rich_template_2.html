@@ -1,0 +1,335 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.order-ref-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+}
+
+.section-title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.items-table,
+.order-table,
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.items-table th,
+.items-table td,
+.order-table th,
+.order-table td,
+.info-table th,
+.info-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.items-table th {
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.order-table th,
+.info-table th {
+  width: 40%;
+  background-color: #f9f9f9;
+  text-align: left;
+}
+
+.info-card {
+  margin-bottom: 20px;
+}
+.total-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.items-table td img {
+  display: block;
+  margin: 6px auto;
+  max-width: 100%;
+  height: auto;
+}
+
+
+.column-1 {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+}
+
+.column-2 {
+  display: flex;
+  flex: 1;
+  margin-left: 20px;
+  flex-direction: column;
+}
+   /* ===============================
+   Tablet View (≤ 768px)
+=================================*/
+@media (max-width: 768px) {
+
+  .measurement-table,
+  .attributes-table {
+    font-size: 13px;
+  }
+
+  .measurement-table th,
+  .measurement-table td,
+  .attributes-table th,
+  .attributes-table td {
+    padding: 6px;
+  }
+
+  .items-table,
+  .order-table,
+  .info-table {
+    font-size: 12px;
+  }
+
+  .items-table th,
+  .items-table td,
+  .order-table th,
+  .order-table td,
+  .info-table th,
+  .info-table td {
+    padding: 6px;
+  }
+
+  .total-column {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .column-1,
+  .column-2 {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+
+
+
+
+/* ===============================
+   Mobile View (≤ 420px)
+=================================*/
+<!--@media (max-width: 420px) {-->
+
+<!--  /* Make ALL tables scroll horizontally */-->
+<!--  .measurement-table,-->
+<!--  .attributes-table,-->
+<!--  .items-table,-->
+<!--  .order-table,-->
+<!--  .info-table {-->
+<!--    display: block;-->
+<!--    width: 100% !important;-->
+<!--    overflow-x: auto;-->
+<!--    white-space: nowrap;-->
+<!--    -webkit-overflow-scrolling: touch;-->
+<!--    font-size: 10px;-->
+
+<!--  }-->
+
+<!--  /* Reduce font + padding for compact layout */-->
+<!--  .measurement-table th,-->
+<!--  .measurement-table td,-->
+<!--  .attributes-table th,-->
+<!--  .attributes-table td,-->
+<!--  .items-table th,-->
+<!--  .items-table td,-->
+<!--  .order-table th,-->
+<!--  .order-table td,-->
+<!--  .info-table th,-->
+<!--  .info-table td {-->
+<!--    font-size: 10px;-->
+<!--    padding: 3px;-->
+<!--  }-->
+
+<!--  /* Stack totals vertically */-->
+<!--  .total-column {-->
+<!--    flex-direction: column;-->
+<!--    gap: 10px;-->
+<!--  }-->
+
+<!--  .column-1,-->
+<!--  .column-2 {-->
+<!--    width: 100%;-->
+<!--    margin-left: 0;-->
+<!--  }-->
+
+<!--}-->
+
+        @media (max-width: 420px) {
+
+  /* Reduce ONLY Order Items table */
+  .items-table {
+    font-size: 9px;
+  }
+
+  .items-table th,
+  .items-table td {
+    font-size: 9px;
+    padding: 2px;
+  }
+
+  .items-table th:nth-child(1),
+  .items-table td:nth-child(1) {
+    width: 50px; /* smaller image column */
+  }
+
+  .items-table img {
+    max-width: 40px;
+    height: auto;
+  }
+
+  /* Keep layout stacked */
+  .total-column {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .column-1,
+  .column-2 {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Order Header -->
+    <div class="order-ref-row">
+        <h2>{{company_name}}</h2>
+        <img src="data:image/png;base64,{{logo_base64}}" class="logo" />
+    </div>
+
+    <table class="order-table">
+        <tr>
+            <th>Order ID</th>
+            <td>{{refno}}</td>
+        </tr>
+        <tr>
+            <th>Order Date</th>
+            <td>{{date}}</td>
+        </tr>
+
+    </table>
+    <div class="total-column">
+    <!-- Product Items -->
+        <div class="column-1">
+            <h3>Order Items</h3>
+
+            <table class="items-table">
+                <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Rate</th>
+                    <th>Amount</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{product_rows}}
+                </tbody>
+            </table>
+
+            <!-- Order Summary -->
+            <table class="order-table">
+                <tr>
+                    <th>Total # of Items</th>
+                    <td>{{cartlength}}</td>
+                </tr>
+                <tr>
+                    <th>Order Value</th>
+                    <td>₹{{order_total}}</td>
+                </tr>
+                <tr>
+                    <th>CGST</th>
+                    <td>₹{{cgst}}</td>
+                </tr>
+                <tr>
+                    <th>SGST</th>
+                    <td>₹{{sgst}}</td>
+                </tr>
+                <tr>
+                    <th>Total GST</th>
+                    <td>₹{{gst_total}}</td>
+                </tr>
+            </table>
+        </div>
+
+    <!-- Payment & Customer Info -->
+        <div class="column-2">
+
+            <div class="info-card">
+                <h3>Customer Information</h3>
+                <table class="info-table compact">
+                    <tr><th>Name</th><td>{{CustomerName}}</td></tr>
+                    <tr><th>Mobile</th><td>{{CustomerMobileNum}}</td></tr>
+
+                </table>
+            </div>
+
+             <div class="info-card">
+        <h3>Delivery Information</h3>
+        <table class="info-table compact">
+
+            <tr><th>Delivery Mode</th><td>{{delivery_mode}}</td></tr>
+            <tr><th>Delivery Address</th><td>{{CustomerDeliveryAddress}}</td></tr>
+            <tr><th>Pickup Address</th><td>{{CustomerPickupAddress}}</td></tr>
+            <tr><th>Delivery Date</th><td>{{DeliveryDate}}</td></tr>
+            <tr><th>Estimated Delivery</th><td>{{EstimatedDeliveryDate}}</td></tr>
+        </table>
+    </div>
+
+             <div class="info-card">
+        <h3>Payment Information</h3>
+        <table class="info-table compact">
+            <tr><th>Payment Mode</th><td>{{payment}}</td></tr>
+            <tr><th>Payment Ref</th><td>{{refno}}</td></tr>
+            <tr><th>Total Amount</th><td>₹{{Total_Amount}}</td></tr>
+            <tr><th>Total Advance</th><td>₹{{Total_Advance}}</td></tr>
+            <tr><th>Total Discount</th><td>₹{{Total_Discount}}</td></tr>
+            <tr><th>Total Paid</th><td>₹{{Total_Paid}}</td></tr>
+            <tr><th>Amount Due</th><td>₹{{Total_AmountDue}}</td></tr>
+        </table>
+    </div>
+         </div>
+     </div>
+
+</div>
+
+</body>
+
+
+</html>

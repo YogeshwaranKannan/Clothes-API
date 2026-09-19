@@ -1,0 +1,1342 @@
+[{
+  "productCategory": {
+    "_id": "695507f51b9f6d2800ce5f92",
+    "category_name": "Helmets"
+  },
+  "_id": "69550df41b9f6d2800ce5fb9",
+  "inventory_id": "69c256cfee61626b4fc860d4",
+  "seller_id": "69c22b3df9f8a15991d96da8",
+  "productName": "Bike Helmet ProShield",
+  "productDescription": "Aerodynamic helmet with advanced ventilation and safety certification",
+  "sellerprice": 10,
+  "offerprice": 0,
+  "productId": "69550df41b9f6d2800ce5fb9",
+  "defaultImage": "productdefault.jpg"
+},
+{
+  "productCategory": {
+    "_id": "697dcf552702eb9071c05b92",
+    "category_name": "Cold Pressed"
+  },
+  "_id": "69de4460e0ece4bba9e35817",
+  "inventory_id": "69de45151572110693f4eda5",
+  "seller_id": "69d64e6730922057b413f5a0",
+  "productName": "Groundnut Oil",
+  "productDescription": "Cold pressed Groundnut Oil",
+  "sellerprice": 325,
+  "offerprice": 0,
+  "productId": "69de4460e0ece4bba9e35817",
+  "defaultImage": "ground-nut-oil-2.png"
+},
+{
+  "productCategory": {
+    "_id": "69c252c88579004fbd0845e5",
+    "category_name": "Oils"
+  },
+  "_id": "69c262da8579004fbd084601",
+  "inventory_id": "69f2ed2e38362932dddf6a4f",
+  "seller_id": "69c22b3df9f8a15991d96da8",
+  "productName": "Coconut oil",
+  "productDescription": "Cold pressed Coconut oil",
+  "sellerprice": 540,
+  "offerprice": 0,
+  "productId": "69c262da8579004fbd084601",
+  "defaultImage": "Coconut-Oil2.png"
+},
+{
+  "productCategory": {
+    "_id": "69f8d8121a26a33bd72947e7",
+    "category_name": "Pulses"
+  },
+  "_id": "69f8d9301a26a33bd72947ed",
+  "inventory_id": "69f8dda51a26a33bd7294804",
+  "seller_id": "69cbd376ea05ef3eb0ba9cd6",
+  "productName": "U Dal",
+  "productDescription": "Cold pressed Groundnut Oil",
+  "sellerprice": 540,
+  "offerprice": 0,
+  "productId": "69f8d9301a26a33bd72947ed",
+  "defaultImage": "ground-nut-oil-2.png"
+},
+{
+  "productCategory": {
+    "_id": "69c252c88579004fbd0845e5",
+    "category_name": "Oils"
+  },
+  "_id": "69fdd370f4a5751cabf2b7ea",
+  "inventory_id": "69fdd370f4a5751cabf2b7ec",
+  "seller_id": "69c22b3df9f8a15991d96da8",
+  "productName": "yuuu",
+  "productDescription": "asads",
+  "sellerprice": 0,
+  "offerprice": 0,
+  "productId": "69fdd370f4a5751cabf2b7ea"
+},
+{
+  "productCategory": {
+    "_id": "697dcf552702eb9071c05b92",
+    "category_name": "Cold Pressed"
+  },
+  "_id": "69de4460e0ece4bba9e35817",
+  "inventory_id": "6a001f94cb894b7f474dc038",
+  "seller_id": "69c7dc8513992d7ffb4752a8",
+  "productName": "Groundnut Oil",
+  "productDescription": "Cold pressed Groundnut Oil",
+  "sellerprice": 300,
+  "offerprice": 0,
+  "productId": "69de4460e0ece4bba9e35817",
+  "defaultImage": "ground-nut-oil-2.png"
+},
+{
+  "productCategory": {
+    "_id": "69c252c88579004fbd0845e5",
+    "category_name": "Oils"
+  },
+  "_id": "6a0048b9d66182277b3f6c3e",
+  "inventory_id": "6a0048b9d66182277b3f6c40",
+  "seller_id": "69c7dc8513992d7ffb4752a8",
+  "productName": "Surf Excel Maric",
+  "productDescription": "Detergent",
+  "sellerprice": 110,
+  "offerprice": 0,
+  "productId": "6a0048b9d66182277b3f6c3e",
+  "defaultImage": "1000302033.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69c252c88579004fbd0845e5",
+    "category_name": "Oils"
+  },
+  "_id": "6a006e00d66182277b3f6c41",
+  "inventory_id": "6a006e00d66182277b3f6c43",
+  "seller_id": "69c7dc8513992d7ffb4752a8",
+  "productName": "Colgate tooth paste",
+  "productDescription": "Tooth paste",
+  "sellerprice": 20,
+  "offerprice": 0,
+  "productId": "6a006e00d66182277b3f6c41",
+  "defaultImage": "1000302243.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69c252c88579004fbd0845e5",
+    "category_name": "Oils"
+  },
+  "_id": "6a006eb6d66182277b3f6c44",
+  "inventory_id": "6a006eb6d66182277b3f6c47",
+  "seller_id": "69c7dc8513992d7ffb4752a8",
+  "productName": "Pepsodent tooth paste",
+  "productDescription": "Tooth oaste",
+  "sellerprice": 110,
+  "offerprice": 0,
+  "productId": "6a006eb6d66182277b3f6c44",
+  "defaultImage": "1000302243.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69f6e26e47a432d2908e0fb3",
+    "category_name": "Lunch"
+  },
+  "_id": "6a01df7e41e7af636dedba84",
+  "inventory_id": "6a01df7e41e7af636dedba86",
+  "seller_id": "69c7dc8513992d7ffb4752a8",
+  "productName": "Rice (Boiled) - 25kg",
+  "productDescription": "Rice ",
+  "sellerprice": 2000,
+  "offerprice": 0,
+  "productId": "6a01df7e41e7af636dedba84",
+  "defaultImage": "1000200441.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69f6e26e47a432d2908e0fb3",
+    "category_name": "Lunch"
+  },
+  "_id": "6a01dfbf41e7af636dedba87",
+  "inventory_id": "6a01dfbf41e7af636dedba89",
+  "seller_id": "69c7dc8513992d7ffb4752a8",
+  "productName": "Rice (Boiled) - 25kg",
+  "productDescription": "Rice ",
+  "sellerprice": 2000,
+  "offerprice": 0,
+  "productId": "6a01dfbf41e7af636dedba87",
+  "defaultImage": "1000200441.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69f6e26e47a432d2908e0fb3",
+    "category_name": "Lunch"
+  },
+  "_id": "6a028e6641e7af636dedba8b",
+  "inventory_id": "6a028e6641e7af636dedba8d",
+  "seller_id": "69c7dc8513992d7ffb4752a8",
+  "productName": "Penguin Rice 25 kg",
+  "productDescription": "Blue Rice",
+  "sellerprice": 1600,
+  "offerprice": 1500,
+  "productId": "6a028e6641e7af636dedba8b",
+  "defaultImage": "1000200551.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69c252c88579004fbd0845e5",
+    "category_name": "Oils"
+  },
+  "_id": "6a02e4be41e7af636dedba92",
+  "inventory_id": "6a02e4be41e7af636dedba94",
+  "seller_id": "69c7dc8513992d7ffb4752a8",
+  "productName": "Horlicks",
+  "productDescription": "Malt based drink",
+  "sellerprice": 175,
+  "offerprice": 165,
+  "productId": "6a02e4be41e7af636dedba92",
+  "defaultImage": "1000303534.png"
+},
+{
+  "productCategory": {
+    "_id": "69c252c88579004fbd0845e5",
+    "category_name": "Oils"
+  },
+  "_id": "6a032d1241e7af636dedba95",
+  "inventory_id": "6a032d1241e7af636dedba98",
+  "seller_id": "69c7dc8513992d7ffb4752a8",
+  "productName": "Boost",
+  "productDescription": "Energy secret",
+  "sellerprice": 250,
+  "offerprice": 0,
+  "productId": "6a032d1241e7af636dedba95",
+  "defaultImage": "1000303534.png"
+},
+{
+  "productCategory": {
+    "_id": "69c252c88579004fbd0845e5",
+    "category_name": "Oils"
+  },
+  "_id": "6a06a0e30b2a984a1126a630",
+  "inventory_id": "6a06a0e30b2a984a1126a633",
+  "seller_id": "69c22b3df9f8a15991d96da8",
+  "productName": "Colgate paste",
+  "productDescription": "nice one to pick ",
+  "sellerprice": 54,
+  "offerprice": 50,
+  "productId": "6a06a0e30b2a984a1126a630",
+  "defaultImage": "cvfd.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69c252c88579004fbd0845e5",
+    "category_name": "Oils"
+  },
+  "_id": "6a094b63eb3ffe6b06d2b074",
+  "inventory_id": "6a094b63eb3ffe6b06d2b076",
+  "seller_id": "69c7dc8513992d7ffb4752a8",
+  "productName": "Boost new",
+  "productDescription": "Boost",
+  "sellerprice": 270,
+  "offerprice": 260,
+  "productId": "6a094b63eb3ffe6b06d2b074",
+  "defaultImage": "1000302033.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69f6e26e47a432d2908e0fb3",
+    "category_name": "Lunch"
+  },
+  "_id": "6a09e7ffeb3ffe6b06d2b078",
+  "inventory_id": "6a09e7ffeb3ffe6b06d2b07c",
+  "seller_id": "69c7dc8513992d7ffb4752a8",
+  "productName": "Wheat Flour",
+  "productDescription": "Wheat Flour",
+  "sellerprice": 300,
+  "offerprice": 290,
+  "productId": "6a09e7ffeb3ffe6b06d2b078",
+  "defaultImage": "1000201861.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69f6e26e47a432d2908e0fb3",
+    "category_name": "Lunch"
+  },
+  "_id": "6a0bd5aaf8b90d33e693a86a",
+  "inventory_id": "6a0bd5aaf8b90d33e693a86e",
+  "seller_id": "69c7dc8513992d7ffb4752a8",
+  "productName": "Country Sugar - நாட்டு சர்க்கரை",
+  "productDescription": "Country Sugar - நாட்டு சர்க்கரை",
+  "sellerprice": 90,
+  "offerprice": 90,
+  "productId": "6a0bd5aaf8b90d33e693a86a",
+  "defaultImage": "1000202193.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69f8d8121a26a33bd72947e7",
+    "category_name": "Pulses பருப்பு வகைகள்"
+  },
+  "_id": "6a1ba29957d4fd5d5be2878d",
+  "inventory_id": "6a1ba29957d4fd5d5be28790",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Toor Dal துவரம் பருப்பு",
+  "productDescription": "தினசரி சாம்பார் மற்றும் கூட்டு வகைகளில் அதிகம் பயன்படுத்தப்படும் முக்கிய பருப்பு.\nideal for sambar and kootu..",
+  "sellerprice": 80,
+  "offerprice": 75,
+  "productId": "6a1ba29957d4fd5d5be2878d",
+  "defaultImage": "toordal.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69f8d8121a26a33bd72947e7",
+    "category_name": "Pulses பருப்பு வகைகள்"
+  },
+  "_id": "6a1ba6c057d4fd5d5be28791",
+  "inventory_id": "6a1ba6c057d4fd5d5be28794",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Urad Dal உளுந்து",
+  "productDescription": "உளுந்து – இட்லி, தோசை மாவு, வடை போன்றவற்றிற்கு மென்மை மற்றும் சுவை தரும் essential for idli/dosa batter and vada, adds softness and texture.[",
+  "sellerprice": 75,
+  "offerprice": 65,
+  "productId": "6a1ba6c057d4fd5d5be28791",
+  "defaultImage": "ulundhu2.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69f8d8121a26a33bd72947e7",
+    "category_name": "Pulses பருப்பு வகைகள்"
+  },
+  "_id": "6a1baf3657d4fd5d5be28795",
+  "inventory_id": "6a1baf3757d4fd5d5be28798",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Moong Dal பாசி பருப்பு",
+  "productDescription": "எளிதில் ஜீரணமாகும், குழந்தைகள் மற்றும் நோயாளிகளுக்கு ஏற்றது.\nLight, easily digestible, suitable for kids and recovery diets.\n",
+  "sellerprice": 58,
+  "offerprice": 50,
+  "productId": "6a1baf3657d4fd5d5be28795",
+  "defaultImage": "moong1.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69f8d8121a26a33bd72947e7",
+    "category_name": "Pulses பருப்பு வகைகள்"
+  },
+  "_id": "6a1bafd857d4fd5d5be28799",
+  "inventory_id": "6a1bafd857d4fd5d5be2879b",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Pachai Payaru பச்சை பயறு",
+  "productDescription": "சுண்டல், கறி மற்றும் பொங்கல் வகைகளில் சத்தான சேர்க்கை.\nNutritious pulse used in sundal, curries, and pongal.",
+  "sellerprice": 78,
+  "offerprice": 75,
+  "productId": "6a1bafd857d4fd5d5be28799",
+  "defaultImage": "pachai.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69f8d8121a26a33bd72947e7",
+    "category_name": "Pulses பருப்பு வகைகள்"
+  },
+  "_id": "6a1bb0a557d4fd5d5be2879c",
+  "inventory_id": "6a1bb0a557d4fd5d5be2879f",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Konda Kadalai கொண்டைக்கடலை \n",
+  "productDescription": "சோறு, சாலட், சுண்டல் மற்றும் சோலை போன்ற உணவுகளில் பயன்படுத்தப்படும்.\nசுண்டல், கறி மற்றும் நெய் வறுவல் வகைகளில் சுவையான பருப்பு.\nflavorful pulse used in sundal, curries, and roasted snacks.\nused in salads, sundal, curries, and chole.",
+  "sellerprice": 97,
+  "offerprice": 90,
+  "productId": "6a1bb0a557d4fd5d5be2879c",
+  "defaultImage": "whitechanna.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69f8d8121a26a33bd72947e7",
+    "category_name": "Pulses பருப்பு வகைகள்"
+  },
+  "_id": "6a1bb10a57d4fd5d5be287a0",
+  "inventory_id": "6a1bb10a57d4fd5d5be287a2",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Kadalai Paruppu கடலை பருப்பு ",
+  "productDescription": "சுண்டல், பருப்பு வடை, மற்றும் பல இனிப்புகளில் பயன்படுத்தப்படும் பருப்பு.\nUsed in sundal, paruppu vadai, and many sweets.",
+  "sellerprice": 45,
+  "offerprice": 41,
+  "productId": "6a1bb10a57d4fd5d5be287a0",
+  "defaultImage": "channa.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bcf433795ee30367053ad",
+    "category_name": "Rice அரிசி வகைகள்"
+  },
+  "_id": "6a1be36b57d4fd5d5be287a3",
+  "inventory_id": "6a1be36b57d4fd5d5be287a6",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Ponni Rice பொன்னி அரிசி",
+  "productDescription": "தினசரி சோறு செய்வதற்கு அதிகம் பயன்படுத்தப்படும் மென்மையான, மணமுள்ள அரிசி.\nSoft, aromatic rice widely used for daily meals",
+  "sellerprice": 50,
+  "offerprice": 43,
+  "productId": "6a1be36b57d4fd5d5be287a3",
+  "defaultImage": "ponni1.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bcf433795ee30367053ad",
+    "category_name": "Rice அரிசி வகைகள்"
+  },
+  "_id": "6a1bf79757d4fd5d5be287a7",
+  "inventory_id": "6a1bf79757d4fd5d5be287aa",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Sona Masoori Rice சோனா மசூரி அரிசி",
+  "productDescription": "இலகுவான, குறைந்த ஒட்டும் தன்மை கொண்டது; தினசரி சோறு மற்றும் புலாவுக்கு ஏற்றது.\nLight, non‑sticky rice ideal for everyday meals and pulao.\n",
+  "sellerprice": 75,
+  "offerprice": 72,
+  "productId": "6a1bf79757d4fd5d5be287a7",
+  "defaultImage": "sona_masoori_rice.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bcf433795ee30367053ad",
+    "category_name": "Rice அரிசி வகைகள்"
+  },
+  "_id": "6a1bf88357d4fd5d5be287ab",
+  "inventory_id": "6a1bf88357d4fd5d5be287ae",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Idli Rice இட்லி அரிசி",
+  "productDescription": "இட்லி, தோசை மாவு அரைக்க சிறப்பாக பயன்படுத்தப்படும் சிறிய தானிய அரிசி.\nShort‑grain rice used mainly for idli and dosa batter.",
+  "sellerprice": 42,
+  "offerprice": 40,
+  "productId": "6a1bf88357d4fd5d5be287ab",
+  "defaultImage": "idlirice.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bcf433795ee30367053ad",
+    "category_name": "Rice அரிசி வகைகள்"
+  },
+  "_id": "6a1bf91757d4fd5d5be287af",
+  "inventory_id": "6a1bf91757d4fd5d5be287b1",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Basmati Rice பாஸ்மதி அரிசி",
+  "productDescription": "நீளமான, மணமுள்ள அரிசி; பிரியாணி மற்றும் புலாவுக்கு சிறந்தது.\nLong‑grain aromatic rice perfect for biryani and pulao.",
+  "sellerprice": 115,
+  "offerprice": 110,
+  "productId": "6a1bf91757d4fd5d5be287af",
+  "defaultImage": "basmati.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bcf433795ee30367053ad",
+    "category_name": "Rice அரிசி வகைகள்"
+  },
+  "_id": "6a1bf9e457d4fd5d5be287b2",
+  "inventory_id": "6a1bf9e457d4fd5d5be287b4",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Seeraga Samba Rice சீரக சம்பா அரிசி",
+  "productDescription": "மணமும் சுவையும் அதிகம்; திண்டுக்கல்/செட்டிநாடு பிரியாணியில் முக்கியமானது.\nHighly aromatic small‑grain rice used in Dindigul & Chettinad biryani.",
+  "sellerprice": 95,
+  "offerprice": 90,
+  "productId": "6a1bf9e457d4fd5d5be287b2",
+  "defaultImage": "seeraga.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bcf433795ee30367053ad",
+    "category_name": "Rice அரிசி வகைகள்"
+  },
+  "_id": "6a1bface57d4fd5d5be287b5",
+  "inventory_id": "6a1bface57d4fd5d5be287b7",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Matta Rice மட்டா அரிசி ",
+  "productDescription": "நார்ச்சத்து நிறைந்த சிவப்பு அரிசி; ஆரோக்கிய உணவாக அதிகம் பயன்படுத்தப்படுகிறது.\nFiber‑rich red rice commonly used for healthy meals.",
+  "sellerprice": 49,
+  "offerprice": 47,
+  "productId": "6a1bface57d4fd5d5be287b5",
+  "defaultImage": "redrice.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bfb2ca0e3e42fc1ba1575",
+    "category_name": "Millets சிறுதானியங்கள்"
+  },
+  "_id": "6a1bfbc957d4fd5d5be287b8",
+  "inventory_id": "6a1bfbc957d4fd5d5be287ba",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Ragi கேழ்வரகு",
+  "productDescription": "எலும்பு பலம் தரும், கால்சியம் நிறைந்த பாரம்பரிய சிறுதானியம்.\nCalcium‑rich millet widely used for porridge, kali, dosa, and kids’ nutrition.",
+  "sellerprice": 45,
+  "offerprice": 43,
+  "productId": "6a1bfbc957d4fd5d5be287b8",
+  "defaultImage": "ragi1.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bfb2ca0e3e42fc1ba1575",
+    "category_name": "Millets சிறுதானியங்கள்"
+  },
+  "_id": "6a1bfcbb57d4fd5d5be287bb",
+  "inventory_id": "6a1bfcbb57d4fd5d5be287be",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Thinai திணை",
+  "productDescription": "இரும்புச் சத்து நிறைந்தது.\nIron‑rich and great for pongal, upma, and rice substitute.",
+  "sellerprice": 45,
+  "offerprice": 42,
+  "productId": "6a1bfcbb57d4fd5d5be287bb",
+  "defaultImage": "thinai.jpeg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bfb2ca0e3e42fc1ba1575",
+    "category_name": "Millets சிறுதானியங்கள்"
+  },
+  "_id": "6a1bfd8a57d4fd5d5be287bf",
+  "inventory_id": "6a1bfd8a57d4fd5d5be287c2",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Kambu கம்பு",
+  "productDescription": "கோடை காலத்தில் கம்பு கூழ் மிகவும் பிரபலமானது; உடல் சூட்டை குறைக்கும்.\nPopular summer millet used for koozh; good for hydration and gut health",
+  "sellerprice": 37,
+  "offerprice": 30,
+  "productId": "6a1bfd8a57d4fd5d5be287bf",
+  "defaultImage": "kambu2.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bfb2ca0e3e42fc1ba1575",
+    "category_name": "Millets சிறுதானியங்கள்"
+  },
+  "_id": "6a1bfe4e57d4fd5d5be287c3",
+  "inventory_id": "6a1bfe4e57d4fd5d5be287c6",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Samai சாமை",
+  "productDescription": "எளிதில் ஜீரணமாகும்; அரிசிக்கு மாற்றாக பயன்படுத்தப்படும் சிறுதானியம்.\nLight, diabetic‑friendly millet used for upma, lemon rice, and curd samai.",
+  "sellerprice": 48,
+  "offerprice": 45,
+  "productId": "6a1bfe4e57d4fd5d5be287c3",
+  "defaultImage": "Samai2.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bfb2ca0e3e42fc1ba1575",
+    "category_name": "Millets சிறுதானியங்கள்"
+  },
+  "_id": "6a1bff1457d4fd5d5be287c7",
+  "inventory_id": "6a1bff1457d4fd5d5be287c9",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Varagu வரகு",
+  "productDescription": "உடல் எடையை கட்டுப்படுத்த உதவும்; ஆன்டி‑ஆக்ஸிடன்ட் நிறைந்தது.\nWeight‑management friendly millet ideal for pongal, pulao, and dosa",
+  "sellerprice": 34,
+  "offerprice": 30,
+  "productId": "6a1bff1457d4fd5d5be287c7",
+  "defaultImage": "varagu.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bfb2ca0e3e42fc1ba1575",
+    "category_name": "Millets சிறுதானியங்கள்"
+  },
+  "_id": "6a1c002157d4fd5d5be287ca",
+  "inventory_id": "6a1c002157d4fd5d5be287cc",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Kuthiraivali குதிரைவாலி",
+  "productDescription": " உடல் சுறுசுறுப்பை அதிகரிக்கும்.\nLow‑calorie millet used for pongal, payasam, and upma.",
+  "sellerprice": 55,
+  "offerprice": 51,
+  "productId": "6a1c002157d4fd5d5be287ca",
+  "defaultImage": "kuthiraivali1.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1c25f8a0e3e42fc1ba1576",
+    "category_name": "Flour மாவு வகைகள்"
+  },
+  "_id": "6a1c278d57d4fd5d5be287cd",
+  "inventory_id": "6a1c278d57d4fd5d5be287cf",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Wheat Flour கோதுமை மாவு",
+  "productDescription": "மென்மையான சப்பாத்தி, ரொட்டி, பூரி போன்றவற்றிற்கு பயன்படுத்தப்படும் கோதுமை மாவு.\nSoft wheat flour used for chapati, roti, and puri.",
+  "sellerprice": 68,
+  "offerprice": 65,
+  "productId": "6a1c278d57d4fd5d5be287cd",
+  "defaultImage": "wheatflour.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1c25f8a0e3e42fc1ba1576",
+    "category_name": "Flour மாவு வகைகள்"
+  },
+  "_id": "6a1c284757d4fd5d5be287d0",
+  "inventory_id": "6a1c284757d4fd5d5be287d2",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Rice Flour அரிசி மாவு",
+  "productDescription": "முறுக்கு, அதிரசம், கொழுக்கட்டை போன்ற பாரம்பரிய உணவுகளுக்கு முக்கியமானது.\nEssential for snacks like murukku, adhirasam, and kozhukattai.",
+  "sellerprice": 57,
+  "offerprice": 55,
+  "productId": "6a1c284757d4fd5d5be287d0",
+  "defaultImage": "riceflour.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1c25f8a0e3e42fc1ba1576",
+    "category_name": "Flour மாவு வகைகள்"
+  },
+  "_id": "6a1ea73f51e99115ef5e457d",
+  "inventory_id": "6a1ea73f51e99115ef5e457f",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Ragi Flour கேழ்வரகு மாவு",
+  "productDescription": "கால்சியம் நிறைந்தது; கூழ், அடை, தோசை போன்ற ஆரோக்கிய உணவுகளில் பயன்படுத்தப்படும்.\nCalcium‑rich flour used for porridge, dosa, and healthy dishes.",
+  "sellerprice": 49,
+  "offerprice": 47,
+  "productId": "6a1ea73f51e99115ef5e457d",
+  "defaultImage": "ragiflour.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1c25f8a0e3e42fc1ba1576",
+    "category_name": "Flour மாவு வகைகள்"
+  },
+  "_id": "6a1ea7bc51e99115ef5e4580",
+  "inventory_id": "6a1ea7bc51e99115ef5e4582",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Besan Flour கடலை மாவு",
+  "productDescription": "பஜ்ஜி, பக்கோடா, மைசூர் பாக் போன்ற இனிப்பு/உப்புக் கலவைகளில் பயன்படுத்தப்படும்.\nUsed for bajji, pakoda, Mysore pak, and many savory mixes.\n",
+  "sellerprice": 57,
+  "offerprice": 49,
+  "productId": "6a1ea7bc51e99115ef5e4580",
+  "defaultImage": "besan-flour-1.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1c25f8a0e3e42fc1ba1576",
+    "category_name": "Flour மாவு வகைகள்"
+  },
+  "_id": "6a1eaa9d51e99115ef5e4583",
+  "inventory_id": "6a1eaa9d51e99115ef5e4586",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Maida மைதா",
+  "productDescription": "பரோட்டா, பூரி, கேக், பிஸ்கட் போன்றவற்றிற்கு பயன்படுத்தப்படும் நெகிழ்வான மாவு.\nSoft refined flour used for parotta, bakery items, and snacks.",
+  "sellerprice": 20,
+  "offerprice": 19,
+  "productId": "6a1eaa9d51e99115ef5e4583",
+  "defaultImage": "plainflour.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1ebcd37d74b04827ac86aa",
+    "category_name": "Sugar சர்க்கரை வகைகள்"
+  },
+  "_id": "6a1ec12f51e99115ef5e4587",
+  "inventory_id": "6a1ec12f51e99115ef5e458a",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Sugar வெள்ளை சர்க்கரை",
+  "productDescription": "தினசரி தேநீர், காபி, இனிப்புகள் தயாரிக்க அதிகம் பயன்படுத்தப்படும் சர்க்கரை.\nRegular refined sugar used for tea, coffee, and everyday sweets.",
+  "sellerprice": 22,
+  "offerprice": 20,
+  "productId": "6a1ec12f51e99115ef5e4587",
+  "defaultImage": "sarkarai.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1ebcd37d74b04827ac86aa",
+    "category_name": "Sugar சர்க்கரை வகைகள்"
+  },
+  "_id": "6a1ec33351e99115ef5e458b",
+  "inventory_id": "6a1ec33351e99115ef5e458e",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Karupatti கருப்பட்டி",
+  "productDescription": "பனை மரச் சாறில் இருந்து தயாரிக்கப்படும்; சத்தான, நாட்டு இனிப்பு.\nNutrient‑rich palm jaggery used in traditional sweets and medicinal drinks",
+  "sellerprice": 35,
+  "offerprice": 32,
+  "productId": "6a1ec33351e99115ef5e458b",
+  "defaultImage": "karuppatti-sarkarai.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1ebcd37d74b04827ac86aa",
+    "category_name": "Sugar சர்க்கரை வகைகள்"
+  },
+  "_id": "6a1ec3dd51e99115ef5e458f",
+  "inventory_id": "6a1ec3dd51e99115ef5e4591",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Jaggery வெல்லம்\n",
+  "productDescription": "கரும்புச் சாறில் இருந்து தயாரிக்கப்படும்; ஆரோக்கியமான இனிப்பு.\nTraditional cane jaggery used in sweets, pongal, and herbal drinks.\n",
+  "sellerprice": 51,
+  "offerprice": 50,
+  "productId": "6a1ec3dd51e99115ef5e458f",
+  "defaultImage": "jaggery.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1ebcd37d74b04827ac86aa",
+    "category_name": "Sugar சர்க்கரை வகைகள்"
+  },
+  "_id": "6a1ec47e51e99115ef5e4592",
+  "inventory_id": "6a1ec47e51e99115ef5e4594",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Palm Jaggery கருப்பட்டி",
+  "productDescription": "பனை மரச் சாறில் இருந்து தயாரிக்கப்படும்; சத்தான, நாட்டு இனிப்பு.\nNutrient‑rich palm jaggery used in traditional sweets and medicinal drinks.\n",
+  "sellerprice": 45,
+  "offerprice": 40,
+  "productId": "6a1ec47e51e99115ef5e4592",
+  "defaultImage": "Palm-Jaggery.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1ebcd37d74b04827ac86aa",
+    "category_name": "Sugar சர்க்கரை வகைகள்"
+  },
+  "_id": "6a1ec51051e99115ef5e4595",
+  "inventory_id": "6a1ec51051e99115ef5e4597",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Crystal sugar கல்கண்டு",
+  "productDescription": "பனை மரச் சாறில் இருந்து தயாரிக்கப்படும்; சத்தான, நாட்டு இனிப்பு.\nTraditional cane jaggery used in sweets, pongal, and herbal drinks.\n",
+  "sellerprice": 49,
+  "offerprice": 47,
+  "productId": "6a1ec51051e99115ef5e4595",
+  "defaultImage": "panamkalkandu.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1feb32e35ff2bd84a6669b",
+    "category_name": "Snacks ஸ்நாக்ஸ் "
+  },
+  "_id": "6a217a89654e5035276f8dfb",
+  "inventory_id": "6a217a89654e5035276f8dfd",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Kambu Murukku கம்பு முறுக்கு",
+  "productDescription": "Pearl millet murukku  crispy, savoury snack \nகம்பு மாவில் செய்யப்பட்ட குருமுருப்பான நாட்டு ஸ்நாக்.\n",
+  "sellerprice": 40,
+  "offerprice": 38,
+  "productId": "6a217a89654e5035276f8dfb",
+  "defaultImage": "KambuMurukku4.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1feb32e35ff2bd84a6669b",
+    "category_name": "Snacks ஸ்நாக்ஸ் "
+  },
+  "_id": "6a2e1a9499e83d31bcd9448a",
+  "inventory_id": "6a2e1a9499e83d31bcd9448c",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "சாமை அதிரசம் (Samai Adhirasam) ",
+  "productDescription": "சாமை மாவு மற்றும் வெல்லம் கொண்டு செய்யப்பட்ட பாரம்பரிய இனிப்பு‑ஸ்நாக்.",
+  "sellerprice": 43,
+  "offerprice": 41,
+  "productId": "6a2e1a9499e83d31bcd9448a",
+  "defaultImage": "adhirasam-1-1.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1feb32e35ff2bd84a6669b",
+    "category_name": "Snacks ஸ்நாக்ஸ் "
+  },
+  "_id": "6a2e1b1a99e83d31bcd9448d",
+  "inventory_id": "6a2e1b1a99e83d31bcd9448f",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "ராகி சேவ் (Ragi Sev)",
+  "productDescription": "கேழ்வரகு மாவில் செய்யப்பட்ட ஆரோக்கியமான கார சேவ்.",
+  "sellerprice": 25,
+  "offerprice": 24,
+  "productId": "6a2e1b1a99e83d31bcd9448d",
+  "defaultImage": "ragi_sev.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1feb32e35ff2bd84a6669b",
+    "category_name": "Snacks ஸ்நாக்ஸ் "
+  },
+  "_id": "6a2e1b8399e83d31bcd94490",
+  "inventory_id": "6a2e1b8399e83d31bcd94492",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "கடலை உருண்டை (Nattu Kadalai Urundai)",
+  "productDescription": "வறுத்த கடலை மற்றும் வெல்லம் கொண்டு செய்யப்பட்ட எளிய ஸ்நாக்.\n",
+  "sellerprice": 15,
+  "offerprice": 14,
+  "productId": "6a2e1b8399e83d31bcd94490",
+  "defaultImage": "Kadalaiurundai.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1feb32e35ff2bd84a6669b",
+    "category_name": "Snacks ஸ்நாக்ஸ் "
+  },
+  "_id": "6a2e1c0b99e83d31bcd94493",
+  "inventory_id": "6a2e1c0b99e83d31bcd94496",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "மிளகு தட்டை (Milagu Thattai)",
+  "productDescription": "அரிசி மாவு, மிளகு, நாட்டு சக்கரை/உப்பு சேர்த்து செய்யப்பட்ட கார தட்டை",
+  "sellerprice": 40,
+  "offerprice": 38,
+  "productId": "6a2e1c0b99e83d31bcd94493",
+  "defaultImage": "Pepperthattai.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1feb32e35ff2bd84a6669b",
+    "category_name": "Snacks ஸ்நாக்ஸ் "
+  },
+  "_id": "6a2e1c6599e83d31bcd94497",
+  "inventory_id": "6a2e1c6599e83d31bcd94499",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "கருப்பட்டி மிட்டாய் (Karupatti Mittai)",
+  "productDescription": "பனை கருப்பட்டியால் செய்யப்பட்ட ஆரோக்கியமான இனிப்பு.",
+  "sellerprice": 20,
+  "offerprice": 19,
+  "productId": "6a2e1c6599e83d31bcd94497",
+  "defaultImage": "Karuppati-Thaen-Kozhal.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1feb32e35ff2bd84a6669b",
+    "category_name": "Snacks ஸ்நாக்ஸ் "
+  },
+  "_id": "6a2e1cd099e83d31bcd9449a",
+  "inventory_id": "6a2e1cd099e83d31bcd9449c",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "நாட்டு சக்கரை லட்டு (Nattu Sakkarai Laddu)",
+  "productDescription": "நாட்டு சக்கரை மற்றும் கடலை மாவு கொண்டு தயாரிக்கப்படும் லட்டு",
+  "sellerprice": 40,
+  "offerprice": 38,
+  "productId": "6a2e1cd099e83d31bcd9449a",
+  "defaultImage": "Naatusakkari.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a2e1d8cd3efdbb0022dd121",
+    "category_name": "Oils எண்ணெய்"
+  },
+  "_id": "6a2e1fd099e83d31bcd9449d",
+  "inventory_id": "6a2e1fd099e83d31bcd944a1",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "நல்லெண்ணெய் (Chekku sesame Oil)\n",
+  "productDescription": "பாரம்பரிய சுவை, உடல் சூட்டை குறைக்கும், தாளிப்பு மற்றும் ஊறுகாய்க்கு சிறந்தது.\nTraditional flavor; cooling oil ideal for tempering and pickles.",
+  "sellerprice": 95,
+  "offerprice": 90,
+  "productId": "6a2e1fd099e83d31bcd9449d",
+  "defaultImage": "cold-pressed-sesame-oil-2.jpeg"
+},
+{
+  "productCategory": {
+    "_id": "6a2e1d8cd3efdbb0022dd121",
+    "category_name": "Oils எண்ணெய்"
+  },
+  "_id": "6a2e223b99e83d31bcd944a2",
+  "inventory_id": "6a2e223b99e83d31bcd944a6",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "கடலை எண்ணெய் (Chekku Groundnut Oil)",
+  "productDescription": "மணமும் சுவையும் அதிகம்; தினசரி சமையலுக்கு ஆரோக்கியமான தேர்வு.\nRich aroma and nutty taste; healthy choice for daily cooking.",
+  "sellerprice": 52,
+  "offerprice": 50,
+  "productId": "6a2e223b99e83d31bcd944a2",
+  "defaultImage": "ground-nut-oil-2.png"
+},
+{
+  "productCategory": {
+    "_id": "6a2e1d8cd3efdbb0022dd121",
+    "category_name": "Oils எண்ணெய்"
+  },
+  "_id": "6a2e22b599e83d31bcd944a7",
+  "inventory_id": "6a2e22b599e83d31bcd944aa",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "தேங்காய் எண்ணெய் (Chekku Coconut Oil)",
+  "productDescription": "தென்னக சமையலின் முக்கிய எண்ணெய்; நெய் போன்ற மணம், ஆரோக்கியமான கொழுப்பு அமிலங்கள்.\nSouth Indian staple; aromatic and rich in healthy fatty acids.",
+  "sellerprice": 42,
+  "offerprice": 40,
+  "productId": "6a2e22b599e83d31bcd944a7",
+  "defaultImage": "Coconut-Oil2.png"
+},
+{
+  "productCategory": {
+    "_id": "69c252c88579004fbd0845e5",
+    "category_name": "Oils"
+  },
+  "_id": "6a2fadb438b5326a184c769f",
+  "inventory_id": "6a2fadb538b5326a184c76a1",
+  "seller_id": "69c22b3df9f8a15991d96da8",
+  "productName": "Water bottle",
+  "productDescription": "1litre bottle",
+  "sellerprice": 180,
+  "offerprice": 175,
+  "productId": "6a2fadb438b5326a184c769f",
+  "defaultImage": "water-bottel1.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a2e1d8cd3efdbb0022dd121",
+    "category_name": "Oils எண்ணெய்"
+  },
+  "_id": "6a3750611b23e76788261ec2",
+  "inventory_id": "6a3750611b23e76788261ec6",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": " சன் பிளவர் மரசெக்கு எண்ணெய் (Sunflower cold pressed Oil)",
+  "productDescription": "பாரம்பரிய முறையில் வாகை மரச்செக்கினால் தயாரிக்கப்பட்ட இயற்கை  சன் பிளவர் மரசெக்கு எண்ணெய்",
+  "sellerprice": 650,
+  "offerprice": 600,
+  "productId": "6a3750611b23e76788261ec2",
+  "defaultImage": "1000208618.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1ebcd37d74b04827ac86aa",
+    "category_name": "Sugar சர்க்கரை வகைகள்"
+  },
+  "_id": "6a3784a21b23e76788261ed6",
+  "inventory_id": "6a3784a21b23e76788261ed9",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Organic vellam",
+  "productDescription": "Organic vellam natural",
+  "sellerprice": 50,
+  "offerprice": 49,
+  "productId": "6a3784a21b23e76788261ed6",
+  "defaultImage": "vellam.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bcf433795ee30367053ad",
+    "category_name": "Rice அரிசி வகைகள்"
+  },
+  "_id": "6a44b39ce84a1c060858e2af",
+  "inventory_id": "6a44b39de84a1c060858e2b1",
+  "seller_id": "69c22b3df9f8a15991d96da8",
+  "productName": "wefefsef",
+  "productDescription": "sdsdfsdf",
+  "sellerprice": 1222222,
+  "offerprice": 0,
+  "productId": "6a44b39ce84a1c060858e2af",
+  "defaultImage": "download.png"
+},
+{
+  "productCategory": {
+    "_id": "69c252de8579004fbd0845e6",
+    "category_name": "Smartphones"
+  },
+  "_id": "6a44f32be84a1c060858e2b3",
+  "inventory_id": "6a44f32be84a1c060858e2b5",
+  "seller_id": "69c22b3df9f8a15991d96da8",
+  "productName": "iphone 18 pro",
+  "productDescription": "Good for battery and DSLR camera adad",
+  "sellerprice": 154500,
+  "offerprice": 150000,
+  "productId": "6a44f32be84a1c060858e2b3",
+  "defaultImage": "vsds.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a6abafd58052e0ab6f14d5e",
+    "category_name": "Wood Pressed Oils"
+  },
+  "_id": "6a6dd53468824c0fccabd8cb",
+  "inventory_id": "6a6dd53468824c0fccabd8ce",
+  "seller_id": "6a6a9e6908602269c1348ca7",
+  "productName": "Groundnut Oil",
+  "productDescription": "100% Pure, Natiral Wood Pressed & Unfiltered Groundnut oil",
+  "sellerprice": 375,
+  "offerprice": 370,
+  "productId": "6a6dd53468824c0fccabd8cb",
+  "defaultImage": "IMG-20260730-WA0007.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a6abafd58052e0ab6f14d5e",
+    "category_name": "Wood Pressed Oils"
+  },
+  "_id": "6a6de56468824c0fccabd8cf",
+  "inventory_id": "6a6de56468824c0fccabd8d2",
+  "seller_id": "6a6a9e6908602269c1348ca7",
+  "productName": "Safflower Oil",
+  "productDescription": "Safflower Oil",
+  "sellerprice": 430,
+  "offerprice": 0,
+  "productId": "6a6de56468824c0fccabd8cf"
+},
+{
+  "productCategory": {
+    "_id": "6a6abafd58052e0ab6f14d5e",
+    "category_name": "Wood Pressed Oils"
+  },
+  "_id": "6a6de61d68824c0fccabd8d3",
+  "inventory_id": "6a6de61d68824c0fccabd8d6",
+  "seller_id": "6a6a9e6908602269c1348ca7",
+  "productName": "Sunflower Oil",
+  "productDescription": "Healthy Cooking with Cold oressed Sunflower Oil",
+  "sellerprice": 440,
+  "offerprice": 0,
+  "productId": "6a6de61d68824c0fccabd8d3",
+  "defaultImage": "IMG-20260730-WA0005.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a6abafd58052e0ab6f14d5e",
+    "category_name": "Wood Pressed Oils"
+  },
+  "_id": "6a6df49168824c0fccabd8d7",
+  "inventory_id": "6a6df49168824c0fccabd8db",
+  "seller_id": "6a6a9e6908602269c1348ca7",
+  "productName": "Sesame Oil",
+  "productDescription": "Health & Taste served together",
+  "sellerprice": 150,
+  "offerprice": 0,
+  "productId": "6a6df49168824c0fccabd8d7",
+  "defaultImage": "IMG-20260730-WA0006.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a6abafd58052e0ab6f14d5e",
+    "category_name": "Wood Pressed Oils"
+  },
+  "_id": "6a6df7fc68824c0fccabd8dc",
+  "inventory_id": "6a6df7fd68824c0fccabd8e0",
+  "seller_id": "6a6a9e6908602269c1348ca7",
+  "productName": "Coconut Oil",
+  "productDescription": "Enhance Dkin and Hair Quality",
+  "sellerprice": 150,
+  "offerprice": 0,
+  "productId": "6a6df7fc68824c0fccabd8dc",
+  "defaultImage": "IMG-20260730-WA0003.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a6abafd58052e0ab6f14d5e",
+    "category_name": "Wood Pressed Oils"
+  },
+  "_id": "6a6df9c468824c0fccabd8e1",
+  "inventory_id": "6a6df9c468824c0fccabd8e5",
+  "seller_id": "6a6a9e6908602269c1348ca7",
+  "productName": "Flaxseed Oil",
+  "productDescription": "Promotes Brain & Heart Wellness",
+  "sellerprice": 80,
+  "offerprice": 0,
+  "productId": "6a6df9c468824c0fccabd8e1",
+  "defaultImage": "IMG-20260730-WA0004.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a6abafd58052e0ab6f14d5e",
+    "category_name": "Wood Pressed Oils"
+  },
+  "_id": "6a6dfd0b68824c0fccabd8ea",
+  "inventory_id": "6a6dfd0b68824c0fccabd8ee",
+  "seller_id": "6a6a9e6908602269c1348ca7",
+  "productName": "Mustard Oil",
+  "productDescription": "Premium Raw Materials \nTop Notch Precision Cold Pressed Mustard Oil",
+  "sellerprice": 120,
+  "offerprice": 0,
+  "productId": "6a6dfd0b68824c0fccabd8ea",
+  "defaultImage": "IMG-20260730-WA0001.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a6abafd58052e0ab6f14d5e",
+    "category_name": "Wood Pressed Oils"
+  },
+  "_id": "6a6dfdd468824c0fccabd8ef",
+  "inventory_id": "6a6dfdd468824c0fccabd8f3",
+  "seller_id": "6a6a9e6908602269c1348ca7",
+  "productName": "Almond Oil",
+  "productDescription": "Nature's Golden Elixir",
+  "sellerprice": 120,
+  "offerprice": 0,
+  "productId": "6a6dfdd468824c0fccabd8ef",
+  "defaultImage": "IMG-20260730-WA0002.jpg"
+},
+{
+  "_id": "6a72b75468824c0fccabd8fe",
+  "inventory_id": "6a72b75468824c0fccabd900",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Salt",
+  "productDescription": "",
+  "sellerprice": 30,
+  "offerprice": 0,
+  "productCategory": {
+    "_id": null,
+    "category_name": null
+  },
+  "productId": "6a72b75468824c0fccabd8fe",
+  "defaultImage": "13924.png"
+},
+{
+  "_id": "6a72bca468824c0fccabd901",
+  "inventory_id": "6a72bca468824c0fccabd903",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Sugar",
+  "productDescription": "",
+  "sellerprice": 30,
+  "offerprice": 0,
+  "productCategory": {
+    "_id": null,
+    "category_name": null
+  },
+  "productId": "6a72bca468824c0fccabd901",
+  "defaultImage": "13960.jpg"
+},
+{
+  "_id": "6a72bd6668824c0fccabd904",
+  "inventory_id": "6a72bd6668824c0fccabd906",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Sugar Fortune",
+  "productDescription": "",
+  "sellerprice": 150,
+  "offerprice": 0,
+  "productCategory": {
+    "_id": null,
+    "category_name": null
+  },
+  "productId": "6a72bd6668824c0fccabd904",
+  "defaultImage": "13939.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a2e1d8cd3efdbb0022dd121",
+    "category_name": "Oils எண்ணெய்"
+  },
+  "_id": "6a72dd4968824c0fccabd907",
+  "inventory_id": "6a72dd4968824c0fccabd909",
+  "seller_id": "6a1b993257d4fd5d5be2878c",
+  "productName": "Fortune oil",
+  "productDescription": "Fortun",
+  "sellerprice": 15,
+  "offerprice": 0,
+  "productId": "6a72dd4968824c0fccabd907",
+  "defaultImage": "1000330610.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1c25f8a0e3e42fc1ba1576",
+    "category_name": "Flour மாவு வகைகள்"
+  },
+  "_id": "6a733a9b5d1cec66e7e38a89",
+  "inventory_id": "6a733a9b5d1cec66e7e38a8b",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Turmeric powder",
+  "productDescription": "Good product",
+  "sellerprice": 15,
+  "offerprice": 0,
+  "productId": "6a733a9b5d1cec66e7e38a89",
+  "defaultImage": "rn_image_picker_lib_temp_4d30f960-4166-4a99-ac61-c0cad97cda9e.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1feb32e35ff2bd84a6669b",
+    "category_name": "Snacks ஸ்நாக்ஸ் "
+  },
+  "_id": "6a733bd75d1cec66e7e38a90",
+  "inventory_id": "6a733bd75d1cec66e7e38a92",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Cashew/ முந்திரி",
+  "productDescription": "Good product",
+  "sellerprice": 48,
+  "offerprice": 0,
+  "productId": "6a733bd75d1cec66e7e38a90",
+  "defaultImage": "rn_image_picker_lib_temp_300c44a6-7f03-4781-bb48-27d9e670f9fb.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1c25f8a0e3e42fc1ba1576",
+    "category_name": "Flour மாவு வகைகள்"
+  },
+  "_id": "6a7452d65d1cec66e7e38a95",
+  "inventory_id": "6a7452d65d1cec66e7e38a98",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Millet Health Mix/ சிறுதானிய சத்து மாவு",
+  "productDescription": "21 பொருட்கள் அடங்கியது",
+  "sellerprice": 180,
+  "offerprice": 150,
+  "productId": "6a7452d65d1cec66e7e38a95"
+},
+{
+  "productCategory": {
+    "_id": "6a1c25f8a0e3e42fc1ba1576",
+    "category_name": "Flour மாவு வகைகள்"
+  },
+  "_id": "6a7453bf5d1cec66e7e38a99",
+  "inventory_id": "6a7453bf5d1cec66e7e38a9c",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Millet dosa mix/ சிறுதானிய தோசை வு",
+  "productDescription": "17 பொருட்கள் அடங்கியது",
+  "sellerprice": 120,
+  "offerprice": 100,
+  "productId": "6a7453bf5d1cec66e7e38a99"
+},
+{
+  "productCategory": {
+    "_id": "6a1c25f8a0e3e42fc1ba1576",
+    "category_name": "Flour மாவு வகைகள்"
+  },
+  "_id": "6a74588d5d1cec66e7e38a9f",
+  "inventory_id": "6a74588d5d1cec66e7e38aa3",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Ragi Flour/ கேழ்வரகு மாவு",
+  "productDescription": "தோசை, கூழ், அடை, களி ஆகியன செய்யலாம்",
+  "sellerprice": 30,
+  "offerprice": 25,
+  "productId": "6a74588d5d1cec66e7e38a9f"
+},
+{
+  "productCategory": {
+    "_id": "6a1c25f8a0e3e42fc1ba1576",
+    "category_name": "Flour மாவு வகைகள்"
+  },
+  "_id": "6a7477435d1cec66e7e38aa4",
+  "inventory_id": "6a7477435d1cec66e7e38aa8",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Pearl flour/ கம்பு மாவு",
+  "productDescription": "தோசை, கூழ், களி, அடை ஆகியன செய்யலாம்",
+  "sellerprice": 30,
+  "offerprice": 25,
+  "productId": "6a7477435d1cec66e7e38aa4"
+},
+{
+  "productCategory": {
+    "_id": "6a1c25f8a0e3e42fc1ba1576",
+    "category_name": "Flour மாவு வகைகள்"
+  },
+  "_id": "6a7478f05d1cec66e7e38aa9",
+  "inventory_id": "6a7478f05d1cec66e7e38aad",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Maize flour/ மக்காசோளம் மாவு",
+  "productDescription": "தோசை, களி ஆகியன செய்யலாம்",
+  "sellerprice": 30,
+  "offerprice": 25,
+  "productId": "6a7478f05d1cec66e7e38aa9"
+},
+{
+  "productCategory": {
+    "_id": "6a1c25f8a0e3e42fc1ba1576",
+    "category_name": "Flour மாவு வகைகள்"
+  },
+  "_id": "6a7d370cbff05a39c55ce2a6",
+  "inventory_id": "6a7d370cbff05a39c55ce2a9",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Black Gram Flour/ உளுந்தங் களி மாவு",
+  "productDescription": "Good product",
+  "sellerprice": 60,
+  "offerprice": 55,
+  "productId": "6a7d370cbff05a39c55ce2a6"
+},
+{
+  "productCategory": {
+    "_id": "6a1bfb2ca0e3e42fc1ba1575",
+    "category_name": "Millets சிறுதானியங்கள்"
+  },
+  "_id": "6a7d38edbff05a39c55ce2aa",
+  "inventory_id": "6a7d38eebff05a39c55ce2ae",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Finger millet/ கேழ்வரகு",
+  "productDescription": "High in calcium, iron, and fiber.",
+  "sellerprice": 65,
+  "offerprice": 58,
+  "productId": "6a7d38edbff05a39c55ce2aa",
+  "defaultImage": "1000931252.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bfb2ca0e3e42fc1ba1575",
+    "category_name": "Millets சிறுதானியங்கள்"
+  },
+  "_id": "6a7d3a4fbff05a39c55ce2af",
+  "inventory_id": "6a7d3a4fbff05a39c55ce2b3",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Pearl Millet/ கம்பு",
+  "productDescription": "உடல் எடையைக் குறைக்க உதவுகிறது.சர்க்கரை அளவைக் கட்டுப்படுத்த உதவும்.இதயத்திற்கு நல்லது.உடலுக்கு வலிமை தரும்.",
+  "sellerprice": 60,
+  "offerprice": 55,
+  "productId": "6a7d3a4fbff05a39c55ce2af",
+  "defaultImage": "1000931253.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bfb2ca0e3e42fc1ba1575",
+    "category_name": "Millets சிறுதானியங்கள்"
+  },
+  "_id": "6a7d3ca5bff05a39c55ce2b4",
+  "inventory_id": "6a7d3ca5bff05a39c55ce2b8",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Little millet/ சாமை",
+  "productDescription": "Samai Rice, also known as Little Millet, packs a powerful punch of health benefits, making it a must-have in your kitchen. From aiding digestion and managing blood sugar to promoting heart health and supporting weight management, this gluten-free wonder grain offers something for everyone.",
+  "sellerprice": 185,
+  "offerprice": 170,
+  "productId": "6a7d3ca5bff05a39c55ce2b4",
+  "defaultImage": "1000931254.png"
+},
+{
+  "productCategory": {
+    "_id": "6a1bfb2ca0e3e42fc1ba1575",
+    "category_name": "Millets சிறுதானியங்கள்"
+  },
+  "_id": "6a7d3e61bff05a39c55ce2b9",
+  "inventory_id": "6a7d3e61bff05a39c55ce2bd",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Kodo millet/ வரகு",
+  "productDescription": "Nutritional Profile (per 100g)Kodo millet is a highly sustainable, nutrient-dense \"nutri-cereal\" that provides:Calories: 329 kcalFiber: 9 grams (significantly higher than white rice)Protein: 8.3 gramsMinerals: Rich in Iron, Calcium, Magnesium, and PotassiumVitamins: Packed with B-complex vitamins (Niacin, Thiamine, B6)",
+  "sellerprice": 120,
+  "offerprice": 110,
+  "productId": "6a7d3e61bff05a39c55ce2b9",
+  "defaultImage": "1000931271.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1bfb2ca0e3e42fc1ba1575",
+    "category_name": "Millets சிறுதானியங்கள்"
+  },
+  "_id": "6a7d406ebff05a39c55ce2be",
+  "inventory_id": "6a7d406ebff05a39c55ce2c2",
+  "seller_id": "6a71fc8968824c0fccabd8fc",
+  "productName": "Barnyard Millet / குதிரைவாலி",
+  "productDescription": "குதிரைவாலி அரிசி ஒரு சத்து நிறைந்த சிறுதானியம். இதில் நார்ச்சத்து, இரும்புச்சத்து, புரதம் மற்றும் கால்சியம் அதிகம் உள்ளன. இது இரத்த சர்க்கரையை கட்டுப்படுத்தவும், உடல் எடையை குறைக்க வும், செரிமானத்தை சீராக்கவும், எலும்புகளை பலப்படுத்தவும் உதவுகிறது",
+  "sellerprice": 160,
+  "offerprice": 150,
+  "productId": "6a7d406ebff05a39c55ce2be",
+  "defaultImage": "1000931277.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a1feb55e35ff2bd84a6669c",
+    "category_name": "Sweets இனிப்புகள்"
+  },
+  "_id": "6a7eaeb8bf622b70549ef6a6",
+  "inventory_id": "6a7eaeb8bf622b70549ef6a8",
+  "seller_id": "69c22b3df9f8a15991d96da8",
+  "productName": "Dairy Milk",
+  "productDescription": "Chocolate",
+  "sellerprice": 450,
+  "offerprice": 0,
+  "productId": "6a7eaeb8bf622b70549ef6a6",
+  "defaultImage": "milk2.jpg"
+},
+{
+  "productCategory": {
+    "_id": "69c252c88579004fbd0845e5",
+    "category_name": "Oils"
+  },
+  "_id": "6a7eb577ccccec7b91489db2",
+  "inventory_id": "6a7eb577ccccec7b91489db4",
+  "seller_id": "69c22b3df9f8a15991d96da8",
+  "productName": "sfdsf",
+  "productDescription": "sfdsf",
+  "sellerprice": 3,
+  "offerprice": 0,
+  "productId": "6a7eb577ccccec7b91489db2",
+  "defaultImage": "vsds.jpg"
+},
+{
+  "productCategory": {
+    "_id": "695507f51b9f6d2800ce5f91",
+    "category_name": "Road Bikes"
+  },
+  "_id": "6a7eb6ff06abe6607f082a52",
+  "inventory_id": "6a7eb70006abe6607f082a54",
+  "seller_id": "69c22b3df9f8a15991d96da8",
+  "productName": "Pomegranate",
+  "productDescription": "fruit",
+  "sellerprice": 100,
+  "offerprice": 0,
+  "productId": "6a7eb6ff06abe6607f082a52",
+  "defaultImage": "fdvsdvsd.jpg"
+},
+{
+  "productCategory": {
+    "_id": "6a6abc2f58052e0ab6f14d5f",
+    "category_name": "Deshi Pulses"
+  },
+  "_id": "6a806048f1abbb2ddc3dcbdd",
+  "inventory_id": "6a806048f1abbb2ddc3dcbdf",
+  "seller_id": "6a6a9e6908602269c1348ca7",
+  "productName": "Toor Dal",
+  "productDescription": "Toor Dal",
+  "sellerprice": 90,
+  "offerprice": 0,
+  "productId": "6a806048f1abbb2ddc3dcbdd",
+  "defaultImage": "19.jpg"
+}]
