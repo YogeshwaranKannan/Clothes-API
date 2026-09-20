@@ -2522,8 +2522,10 @@ public class BuyerService {
             response.profileImgPath = "uploads/" + seller.getId() + "_profile.jpg";
             response.paymentModes = seller.getPaymentModes();
             response.rewardsDTO = new GetSellerDetailsResponse.RewardsDTO();
-            response.deliveryFee = seller.getDeliveryFeeDetails().getDeliveryFee();
-            response.orderThreshold = seller.getDeliveryFeeDetails().getOrderThreshold();
+            if (seller.getDeliveryFeeDetails() != null) {
+                response.deliveryFee = seller.getDeliveryFeeDetails().getDeliveryFee();
+                response.orderThreshold = seller.getDeliveryFeeDetails().getOrderThreshold();
+            }
             if (seller.getRewards() != null) {
                 response.rewardsDTO.RedeemPoints = seller.getRewards().getRedeemPoints();
                 response.rewardsDTO.RedeeemAmount = seller.getRewards().getRedeeemAmount();
