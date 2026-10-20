@@ -39,6 +39,8 @@ public class SignupOrLoginResponse {
 
         public String role; // USER / ADMIN
 
+        public boolean isSeller;
+
         public List<Buyer.LastDeliveryAddess> lastDeliveryAddesses;
 
         public int totalRewards;

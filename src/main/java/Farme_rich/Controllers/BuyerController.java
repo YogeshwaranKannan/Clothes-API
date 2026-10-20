@@ -2,9 +2,16 @@ package Farme_rich.Controllers;
 
 
 import Farme_rich.Buyer.BL.BuyerService;
+import Farme_rich.Buyer.BL.InventoryService;
 import Farme_rich.Buyer.DTO.Request.*;
 import Farme_rich.Buyer.DTO.Response.*;
 import Farme_rich.Security.JwtService;
+import Farme_rich.Seller.BL.SellerService;
+import Farme_rich.Seller.DTO.Request.GetProductRequest;
+import Farme_rich.Seller.DTO.Request.InsertProductsRequest;
+import Farme_rich.Seller.DTO.Response.AddProductResponse;
+import Farme_rich.Seller.DTO.Response.InventoryDTO;
+import Farme_rich.Seller.Model.BackEnd.Inventory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.razorpay.Payment;
 import com.razorpay.RazorpayClient;
@@ -19,10 +26,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -34,16 +38,19 @@ public class BuyerController {
     private static final Logger log = LoggerFactory.getLogger(BuyerController.class);
 
     private final BuyerService buyerService;
-
+    private final SellerService sellerService;
+    private final InventoryService inventoryService;
     @Autowired
     private ObjectMapper objectMapper;
     @Value("${app.upload-dir}")
     private String uploadDir;
 
-    @Autowired
-    public BuyerController(BuyerService buyerService) {
-        this.buyerService = buyerService;
 
+    @Autowired
+    public BuyerController(BuyerService buyerService, InventoryService inventoryService, SellerService sellerService) {
+        this.buyerService = buyerService;
+        this.inventoryService = inventoryService;
+        this.sellerService = sellerService;
     }
 
     @PostMapping("/GetSellerDetails")
@@ -349,5 +356,65 @@ public class BuyerController {
         return null;
     }
 
+
+    @PostMapping("/GetInventory")
+    public List<Inventory> getInventory(@RequestBody InventoryRequest request) {
+        try {
+            return inventoryService.getInventory(request.companyId);
+        } catch (Exception e) {
+            log.error("Error in GetInventory : ", e);
+            return Collections.emptyList();
+        }
+    }
+
+    @PostMapping("/DeleteInventory")
+    public AddProductResponse deleteInventory(@RequestBody InventoryRequest request) {
+        try {
+            return inventoryService.deleteInventory(request.inventoryId, request.companyId);
+        } catch (Exception e) {
+            log.error("Error in DeleteInventory : ", e);
+            AddProductResponse res = new AddProductResponse();
+            res.success = false;
+            res.message = "Couldn't delete the product";
+            return res;
+        }
+    }
+
+    @PostMapping("/isValidName")
+    public boolean isValidNameForProductAndService(@RequestParam String name, @RequestParam String companyId, @RequestParam boolean isService) {
+        try {
+            return sellerService.isValidNameForProductAndService(name, companyId, isService);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @PostMapping("/ViewProduct")
+    public InventoryDTO GetProduct(@RequestBody GetProductRequest getProductRequest) {
+        try {
+            return sellerService.GetProduct(getProductRequest);
+        } catch (Exception e) {
+            log.error("Error in InsertProducts : ", e);
+        }
+        return new InventoryDTO();
+    }
+
+    @PostMapping("/InsertProducts")
+    public AddProductResponse insertProducts(@RequestBody InsertProductsRequest request) {
+        try {
+            return sellerService.InsertProducts(request);
+        } catch (Exception e) {
+            log.error("Error in InsertProducts : ", e);
+            AddProductResponse res = new AddProductResponse();
+            res.success = false;
+            res.message = "Couldn't save the product";
+            return res;
+        }
+    }
+
+    public static class InventoryRequest {
+        public String inventoryId;
+        public String companyId;
+    }
 
 }

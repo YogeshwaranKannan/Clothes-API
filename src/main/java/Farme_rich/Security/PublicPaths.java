@@ -21,7 +21,7 @@ public final class PublicPaths {
      * Exact path matches only (no trailing-segment or extension logic).
      */
     public static final List<String> EXACT = List.of(
-            "/", "/index.html", "/favicon.ico",
+            "/", "/AboutFR", "/index.html", "/favicon.ico",
             "/purest", "/purest/",
             "/wiseGrocer", "/wiseGrocer/",
             "/dolphin-naturals", "/dolphin-naturals/",

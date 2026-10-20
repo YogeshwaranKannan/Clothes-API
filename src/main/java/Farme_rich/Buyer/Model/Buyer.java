@@ -21,6 +21,7 @@ public class Buyer {
     private List<String> roles;
     private BuyerUseSites buyerUseSites;
     private Rewards rewards;
+    private boolean isSeller;
     private boolean isUser;
     private Date createAT;
     private Date updateAT;
@@ -138,6 +139,14 @@ public class Buyer {
 
     public void setBuyerUseSites(BuyerUseSites buyerUseSites) {
         this.buyerUseSites = buyerUseSites;
+    }
+
+    public boolean isSeller() {
+        return isSeller;
+    }
+
+    public void setSeller(boolean seller) {
+        isSeller = seller;
     }
 
     @Override
