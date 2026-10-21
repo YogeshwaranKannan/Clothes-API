@@ -6,12 +6,17 @@ import Farme_rich.Buyer.BL.InventoryService;
 import Farme_rich.Buyer.DTO.Request.*;
 import Farme_rich.Buyer.DTO.Response.*;
 import Farme_rich.Security.JwtService;
+import Farme_rich.Seller.BL.ProductCategoryService;
 import Farme_rich.Seller.BL.SellerService;
+import Farme_rich.Seller.DTO.Request.CategoryRequestDTO;
+import Farme_rich.Seller.DTO.Request.CategoryTreeDTO;
 import Farme_rich.Seller.DTO.Request.GetProductRequest;
 import Farme_rich.Seller.DTO.Request.InsertProductsRequest;
 import Farme_rich.Seller.DTO.Response.AddProductResponse;
 import Farme_rich.Seller.DTO.Response.InventoryDTO;
 import Farme_rich.Seller.Model.BackEnd.Inventory;
+import Farme_rich.Seller.Model.BackEnd.ProductCategory;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.razorpay.Payment;
 import com.razorpay.RazorpayClient;
@@ -25,6 +30,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.*;
 
@@ -40,6 +46,7 @@ public class BuyerController {
     private final BuyerService buyerService;
     private final SellerService sellerService;
     private final InventoryService inventoryService;
+    private final ProductCategoryService productCategoryService;
     @Autowired
     private ObjectMapper objectMapper;
     @Value("${app.upload-dir}")
@@ -47,10 +54,12 @@ public class BuyerController {
 
 
     @Autowired
-    public BuyerController(BuyerService buyerService, InventoryService inventoryService, SellerService sellerService) {
+    public BuyerController(BuyerService buyerService, InventoryService inventoryService,
+                           SellerService sellerService, ProductCategoryService productCategoryService) {
         this.buyerService = buyerService;
         this.inventoryService = inventoryService;
         this.sellerService = sellerService;
+        this.productCategoryService = productCategoryService;
     }
 
     @PostMapping("/GetSellerDetails")
@@ -409,6 +418,64 @@ public class BuyerController {
             res.success = false;
             res.message = "Couldn't save the product";
             return res;
+        }
+    }
+
+    @GetMapping("/SellerFullImages")
+    public ResponseEntity<?> sellerFullImages(@RequestParam String userfolder,
+                                              @RequestParam String type,
+                                              @RequestParam String inventoryId,
+                                              @RequestParam String companyName,
+                                              @RequestParam(required = false) String productId) {
+        return sellerService.getImages(userfolder, type, inventoryId, companyName, productId);
+    }
+
+    @PostMapping("/GetCategoryTree")
+    public List<CategoryTreeDTO> getCategoryTree(@RequestBody(required = false) Map<String, String> body) {
+        return productCategoryService.getCategoryTree();
+    }
+
+    @PostMapping("/GetCategoriesFlat")
+    public List<CategoryTreeDTO> getCategoriesFlat() {
+        return productCategoryService.getAllFlat();
+    }
+
+    @PostMapping("/SaveCategory")
+    public ResponseEntity<?> saveCategory(@ModelAttribute CategoryRequestDTO request,
+                                          @RequestPart(value = "coverImage", required = false) MultipartFile coverImage) {
+
+        try {
+            ProductCategory saved = productCategoryService.addCategory(request, coverImage);
+            return ResponseEntity.ok(Map.of("msg", "Category saved successfully", "category", saved));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.badRequest().body(Map.of("msg", e.getMessage()));
+        }
+    }
+
+    @PostMapping("/UpdateCategory")
+    public ResponseEntity<?> updateCategory(@RequestParam String id, @ModelAttribute CategoryRequestDTO request,
+                                            @RequestPart(value = "coverImage", required = false) MultipartFile coverImage) throws JsonProcessingException {
+
+        log.info("Update category Request: {}", objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(request));
+        try {
+            ProductCategory updated = productCategoryService.updateCategory(id, request, coverImage);
+            return ResponseEntity.ok(Map.of("msg", "Category updated successfully", "category", updated)
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.badRequest().body(Map.of("msg", e.getMessage()));
+        }
+    }
+
+    @PostMapping("/DeleteCategory")
+    public ResponseEntity<?> deleteCategory(@RequestParam String id) {
+        try {
+            productCategoryService.deleteCategory(id);
+            return ResponseEntity.ok("Successfully Deleted");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("msg", e.getMessage()));
         }
     }
 
