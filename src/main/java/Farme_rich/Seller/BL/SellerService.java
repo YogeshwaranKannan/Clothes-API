@@ -6381,33 +6381,6 @@ public class SellerService {
         return a;
     }
 
-    //    public List<ViewOrderListResponse> SearchOrders(SearchOrdersRequest searchOrdersRequest) {
-//
-//        String searchValue = searchOrdersRequest.value != null
-//                ? searchOrdersRequest.value
-//                : "";
-//
-//        List<Save> save = saveOrderRepo.findByCompanyAndNameOrMobile(
-//                new ObjectId(searchOrdersRequest._id),
-//                searchValue,
-//                0
-//        );
-//
-//        List<String> orderStatuses = searchOrdersRequest.order_status;
-//        List<ViewOrderListResponse> responseList = new ArrayList<>();
-//
-//        if (save == null || save.isEmpty()) {
-//            return new ArrayList<>();
-//        }
-//
-//        for (Save i : save) {
-//            if (orderStatuses == null || orderStatuses.isEmpty() || orderStatuses.contains(i.getOrderStatus())) {
-//                responseList.add(SellerAdaptor.ToViewOrderResponse(i, new HashMap<>()));
-//            }
-//        }
-//
-//        return responseList;
-//    }
     public List<ViewOrderListResponse> SearchOrders(SearchOrdersRequest request) {
 
         String searchValue = request.value != null ? request.value.trim() : "";
